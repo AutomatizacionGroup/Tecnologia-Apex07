@@ -971,16 +971,15 @@
         min-height: auto;
       }
       .simulator-visual {
-        min-height: 310px;
-        padding: 200px 0 0 0;
-        background-position: center top;
-        background-size: 100% 215px;
+        min-height: 330px;
+        padding: 215px 0 0 0;
+        background-position: center center;
+        background-size: cover;
         background-repeat: no-repeat;
         background-color: #050e2e;
       }
       .simulator-overlay {
-        height: 215px;
-        bottom: auto;
+        inset: 0;
       }
       .simulator-status {
         grid-template-columns: 1fr;
@@ -1277,7 +1276,7 @@
 
     <div class="simulator-wrap">
       <div class="simulator-visual" id="simVisual" style="background-image: url('https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1600&q=85');">
-        <div class="simulator-overlay" id="simOverlay" style="background: linear-gradient(180deg, rgba(255,235,190,0.08) 0%, rgba(6,6,8,0.86) 100%);"></div>
+        <div class="simulator-overlay" id="simOverlay" style="background: linear-gradient(180deg, rgba(4,11,36,0.04) 0%, rgba(4,11,36,0.32) 100%);"></div>
         <div class="simulator-status">
           <div class="sim-metric">
             <span class="sim-metric-label">Sonido Sonos</span>
@@ -1885,28 +1884,28 @@
     const SCENES = {
       morning: {
         img: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1600&q=85",
-        overlay: "linear-gradient(180deg, rgba(255,235,190,0.08) 0%, rgba(6,6,8,0.86) 100%)",
+        overlay: "linear-gradient(180deg, rgba(255,235,190,0.04) 0%, rgba(4,11,36,0.32) 100%)",
         audio: "Música acústica suave en Suite + Vestier",
         light: "Blackout abre al 80% • Luz cálida 30%",
         net: "Sincronización instantánea sin cortes"
       },
       social: {
         img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85",
-        overlay: "linear-gradient(180deg, rgba(10,12,18,0.15) 0%, rgba(6,6,8,0.88) 100%)",
+        overlay: "linear-gradient(180deg, rgba(4,11,36,0.04) 0%, rgba(4,11,36,0.35) 100%)",
         audio: "Sala empotrada + Move 2 en Terraza",
         light: "Escena 'Social' 45% en Teclado Lux",
         net: "Prioridad Streaming Hi-Res Audio"
       },
       cinema: {
         img: "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1600&q=85",
-        overlay: "linear-gradient(180deg, rgba(5,5,9,0.55) 0%, rgba(6,6,8,0.95) 100%)",
+        overlay: "linear-gradient(180deg, rgba(4,11,36,0.12) 0%, rgba(4,11,36,0.42) 100%)",
         audio: "Dolby Atmos 9.1.4 en Arc Ultra + Sub G4",
         light: "Luz Indirecta 10% • Persianas 100%",
         net: "Streaming 8K Ultra HD sin buffering"
       },
       night: {
-        img: "https://images.unsplash.com/photo-1540518614846-7ede433c4573?auto=format&fit=crop&w=1600&q=85",
-        overlay: "linear-gradient(180deg, rgba(5,5,10,0.65) 0%, rgba(6,6,8,0.96) 100%)",
+        img: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1600&q=85",
+        overlay: "linear-gradient(180deg, rgba(4,11,36,0.18) 0%, rgba(4,11,36,0.48) 100%)",
         audio: "TV Audio Swap en Audífonos Sonos Ace",
         light: "Todo Apagado • Guía Nocturna 5%",
         net: "Red Segura & Doble Fibra Activa"
