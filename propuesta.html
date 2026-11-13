@@ -1,0 +1,4493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">APEX 07 | Propuesta Privada Automatizacion</title>
+  <meta name="description" content="Propuesta exclusiva de Sonido Sonos Architectural, Domótica Control4 Lux y Redes Ubiquiti UniFi para APEX 07 en Valle Arriba, Caracas." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" href="assets/logo-ingenieria.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-obsidian: #040b24;
+      --bg-charcoal: #061030;
+      --bg-surface: #081642;
+      --bg-card: #0c215e;
+      --bg-card-hover: #122d7a;
+      --brand-blue: #0038b8;
+      --brand-cobalt: #0052eb;
+      --gold-primary: #ff551e;
+      --gold-champagne: #ff7e36;
+      --gold-muted: rgba(255, 85, 30, 0.16);
+      --gold-glow: rgba(255, 85, 30, 0.36);
+      --text-primary: #f8fafc;
+      --text-secondary: #bdd0f2;
+      --text-muted: #7694c9;
+      --border-subtle: rgba(100, 165, 255, 0.18);
+      --border-gold: rgba(255, 95, 36, 0.48);
+      --accent-unifi: #38bdf8;
+      --accent-c4: #ff551e;
+      --accent-sonos: #f8fafc;
+      --success: #10b981;
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-obsidian);
+      color: var(--text-primary);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-obsidian);
+      overflow-x: hidden;
+      line-height: 1.65;
+      background-image: 
+        radial-gradient(circle at 12% 8%, rgba(0, 82, 235, 0.32) 0%, transparent 38%),
+        radial-gradient(circle at 88% 28%, rgba(255, 85, 30, 0.14) 0%, transparent 36%),
+        radial-gradient(circle at 50% 78%, rgba(0, 65, 194, 0.25) 0%, transparent 45%);
+    }
+
+    h1, h2, h3, .serif {
+      font-family: 'Montserrat', 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-obsidian);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #122d7a;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--gold-primary);
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 0.9rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(4, 11, 36, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: var(--transition);
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .brand-apex {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-apex-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: var(--text-primary);
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .brand-apex-title span {
+      color: var(--gold-primary);
+    }
+
+    .brand-apex-sub {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--text-secondary);
+      margin-top: 3px;
+      white-space: nowrap;
+    }
+
+    .brand-divider {
+      width: 1px;
+      height: 28px;
+      background: var(--border-subtle);
+    }
+
+    .brand-integrator {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .brand-logo-img {
+      height: 30px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 2px 10px rgba(255, 85, 30, 0.28));
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.83rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: var(--transition);
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-champagne);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      line-height: 1;
+      padding: 0.68rem 1.35rem;
+      background: linear-gradient(135deg, #ff7e36, #ff4500);
+      color: #ffffff !important;
+      font-weight: 800 !important;
+      border-radius: 50px;
+      font-size: 0.78rem !important;
+      letter-spacing: 0.06em !important;
+      text-transform: uppercase;
+      box-shadow: 0 4px 20px rgba(255, 85, 30, 0.38);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(255, 85, 30, 0.55);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 94vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 5% 5rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: 
+        linear-gradient(90deg, rgba(4, 11, 36, 0.96) 0%, rgba(6, 20, 64, 0.86) 52%, rgba(4, 11, 36, 0.72) 100%),
+        linear-gradient(180deg, rgba(0, 62, 190, 0.25) 0%, rgba(4, 11, 36, 1) 100%),
+        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat;
+      transform: scale(1.03);
+    }
+
+    .hero-grid {
+      max-width: 1360px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      background: rgba(255, 85, 30, 0.14);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-champagne);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold-primary);
+      box-shadow: 0 0 8px var(--gold-primary);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 4.4vw, 4.1rem);
+      line-height: 1.08;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold-champagne);
+      font-weight: 800;
+    }
+
+    .hero-lead {
+      font-size: 1.08rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin-bottom: 2.4rem;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #ff7e36, #ff4500);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 50px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 10px 30px rgba(255, 85, 30, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(255, 85, 30, 0.55);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.8rem;
+      background: rgba(12, 33, 94, 0.65);
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.88rem;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 1px solid var(--border-subtle);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(18, 45, 122, 0.9);
+      border-color: var(--gold-primary);
+    }
+
+    .hero-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .pillar-mini {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .pillar-mini-brand {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold-champagne);
+      font-weight: 700;
+    }
+
+    .pillar-mini-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .pillar-mini-desc {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+
+    /* Quick Unit Selector Card in Hero */
+    .hero-selector-card {
+      background: linear-gradient(160deg, rgba(12, 33, 94, 0.92) 0%, rgba(6, 16, 48, 0.96) 100%);
+      backdrop-filter: blur(22px);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      box-shadow: 0 28px 65px rgba(2, 6, 23, 0.8), 0 0 45px rgba(255, 85, 30, 0.14);
+      position: relative;
+    }
+
+    .hero-selector-card::before {
+      content: "DOSSIER PRIVADO AUTOMATIZACION";
+      position: absolute;
+      top: -11px;
+      left: 2rem;
+      background: linear-gradient(135deg, #ff7e36, #ff4500);
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      padding: 0.28rem 0.9rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 14px rgba(255, 85, 30, 0.4);
+    }
+
+    .hero-selector-card h3 {
+      font-size: 1.75rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-selector-card p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-unit-preview {
+      background: rgba(4, 11, 36, 0.55);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Section Globals */
+    section {
+      padding: 6rem 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 4rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      margin-bottom: 1rem;
+      line-height: 1.14;
+    }
+
+    .section-header p {
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+    }
+
+    /* Interactive Ambience Simulator */
+    .simulator-wrap {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      min-height: 460px;
+      box-shadow: 0 25px 60px rgba(2, 6, 23, 0.65);
+    }
+
+    .simulator-visual {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      transition: all 0.7s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2.5rem;
+      min-height: 360px;
+    }
+
+    .simulator-overlay {
+      position: absolute;
+      inset: 0;
+      transition: all 0.7s ease;
+    }
+
+    .simulator-status {
+      position: relative;
+      z-index: 2;
+      background: rgba(4, 11, 36, 0.88);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .sim-metric {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .sim-metric-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-secondary);
+    }
+
+    .sim-metric-val {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--gold-champagne);
+    }
+
+    .simulator-controls {
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.2rem;
+      background: linear-gradient(180deg, #0b1e56 0%, #061238 100%);
+    }
+
+    .scene-btn {
+      padding: 1.1rem 1.25rem;
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      text-align: left;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .scene-btn:hover {
+      border-color: var(--gold-primary);
+      background: var(--bg-card-hover);
+    }
+
+    .scene-btn.active {
+      background: linear-gradient(135deg, rgba(255, 85, 30, 0.24), rgba(0, 82, 235, 0.22));
+      border-color: var(--gold-primary);
+    }
+
+    .scene-btn-title {
+      font-weight: 700;
+      font-size: 0.96rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .scene-btn-sub {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-top: 3px;
+    }
+
+    /* Main Interactive Configurator */
+    .configurator-layout {
+      display: grid;
+      grid-template-columns: 1fr 390px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    /* Category Pillar Tabs */
+    .pillar-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .pillar-tab {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.4rem;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar-tab:hover {
+      border-color: var(--border-gold);
+      background: var(--bg-card);
+    }
+
+    .pillar-tab.active {
+      background: linear-gradient(145deg, rgba(255, 85, 30, 0.2), rgba(12, 33, 94, 0.95));
+      border-color: var(--gold-primary);
+      box-shadow: 0 10px 30px rgba(2, 6, 23, 0.5);
+    }
+
+    .pillar-tab-badge {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold-champagne);
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    .pillar-tab-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .pillar-tab-sub {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    /* Area Cards for Sonos */
+    .zones-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .zone-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .zone-card.selected {
+      border-color: var(--border-gold);
+      background: linear-gradient(180deg, rgba(12, 33, 94, 0.95) 0%, rgba(8, 22, 66, 0.95) 100%);
+    }
+
+    .zone-card:not(.selected) {
+      opacity: 0.62;
+    }
+
+    .zone-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .zone-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .zone-toggle {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      border: 2px solid var(--gold-primary);
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #ffffff;
+      font-weight: 900;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+
+    .zone-card.selected .zone-toggle {
+      background: var(--gold-primary);
+    }
+
+    .zone-name {
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .zone-desc {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      margin-top: 0.2rem;
+    }
+
+    .zone-tag {
+      padding: 0.3rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(255, 85, 30, 0.14);
+      color: var(--gold-champagne);
+      border: 1px solid var(--border-gold);
+      white-space: nowrap;
+    }
+
+    .zone-items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .equipment-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .equipment-item:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-2px);
+    }
+
+    .equipment-thumb {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-sm);
+      background: radial-gradient(circle, #133285 0%, #07143a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      flex-shrink: 0;
+      border: 1px solid rgba(100, 165, 255, 0.16);
+    }
+
+    .equipment-thumb img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+    }
+
+    .equipment-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .equipment-brand {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold-champagne);
+      font-weight: 700;
+    }
+
+    .equipment-model {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .equipment-sku {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .equipment-qty {
+      background: rgba(255, 85, 30, 0.14);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-champagne);
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    /* Sticky Summary Sidebar */
+    .summary-sidebar {
+      position: sticky;
+      top: 96px;
+      background: linear-gradient(165deg, rgba(12, 33, 94, 0.95) 0%, rgba(6, 16, 48, 0.98) 100%);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      box-shadow: 0 22px 55px rgba(2, 6, 23, 0.75);
+    }
+
+    .summary-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .summary-unit-badge {
+      background: linear-gradient(135deg, #ff7e36, #ff4500);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 0.3rem 0.85rem;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    .summary-section-title {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold-champagne);
+      margin: 1rem 0 0.5rem;
+      font-weight: 700;
+    }
+
+    .summary-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      max-height: 280px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .summary-list li {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.38rem 0.6rem;
+      background: rgba(4, 11, 36, 0.55);
+      border: 1px solid rgba(100, 165, 255, 0.1);
+      border-radius: 6px;
+    }
+
+    .summary-list li span.item-tag {
+      font-size: 0.68rem;
+      color: var(--gold-champagne);
+      font-weight: 700;
+    }
+
+    .custom-request-box {
+      margin-top: 1.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .form-group {
+      margin-bottom: 0.85rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.74rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      background: rgba(4, 11, 36, 0.78);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 0.85rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 3px rgba(255, 85, 30, 0.2);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    .summary-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-top: 1.2rem;
+    }
+
+    .btn-whatsapp {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.84rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-gold-full {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: linear-gradient(135deg, #ff7e36, #ff4500);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.82rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .btn-gold-full:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 85, 30, 0.45);
+    }
+
+    .btn-outline-full {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: rgba(4, 11, 36, 0.45);
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 0.78rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+    }
+
+    .btn-outline-full:hover {
+      color: var(--text-primary);
+      border-color: var(--gold-primary);
+    }
+
+    /* Showcase Sections: Control4 Lux & Ubiquiti UniFi */
+    .showcase-banner {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 3rem;
+      box-shadow: 0 22px 55px rgba(2, 6, 23, 0.6);
+    }
+
+    .showcase-hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 2.5rem;
+      padding: 3rem;
+      background: radial-gradient(circle at 80% 50%, rgba(255, 85, 30, 0.14), rgba(0, 82, 235, 0.16) 65%);
+    }
+
+    .showcase-img-wrap {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle, #122d7a 0%, #050d2a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+      padding: 1.5rem;
+    }
+
+    .showcase-img-wrap img {
+      max-width: 100%;
+      max-height: 340px;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+      transition: transform 0.6s ease;
+    }
+
+    .showcase-img-wrap:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Finish Swatches for Control4 Lux */
+    .finish-selector {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .finish-swatch {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 50px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .finish-swatch.active, .finish-swatch:hover {
+      border-color: var(--gold-primary);
+      color: #ffffff;
+      background: linear-gradient(135deg, rgba(255, 85, 30, 0.28), rgba(0, 82, 235, 0.25));
+    }
+
+    .swatch-circle {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    /* Product Cards Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .lux-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .lux-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(2, 6, 23, 0.65);
+    }
+
+    .lux-card.added {
+      border-color: var(--gold-primary);
+      background: linear-gradient(180deg, rgba(255, 85, 30, 0.14) 0%, var(--bg-surface) 100%);
+    }
+
+    .lux-card-img {
+      height: 190px;
+      background: radial-gradient(circle, #133285 0%, #07143a 100%);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(100, 165, 255, 0.14);
+    }
+
+    .lux-card-img img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,0.6));
+    }
+
+    .lux-card-tag {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold-champagne);
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .lux-card h4 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .lux-card p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.3rem;
+      flex-grow: 1;
+    }
+
+    .btn-toggle-module {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-gold);
+      background: rgba(255, 85, 30, 0.12);
+      color: var(--gold-champagne);
+      font-weight: 700;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .lux-card.added .btn-toggle-module {
+      background: linear-gradient(135deg, #ff7e36, #ff4500);
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      background: #020718;
+      padding: 4rem 5% 3rem;
+      margin-top: 4rem;
+    }
+
+    .footer-grid {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .footer-meta {
+      max-width: 1360px;
+      margin: 3rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Print Styles for PDF Generation */
+    @media print {
+      body {
+        background: #fff !important;
+        color: #111 !important;
+      }
+      .navbar, .hero, #ambientes, .pillar-tabs, footer, .summary-actions {
+        display: none !important;
+      }
+      .configurator-layout {
+        grid-template-columns: 1fr !important;
+      }
+      .summary-sidebar {
+        position: static !important;
+        border: 2px solid #000 !important;
+        box-shadow: none !important;
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .zone-card, .lux-card {
+        break-inside: avoid;
+        border: 1px solid #ccc !important;
+        background: #fff !important;
+        color: #000 !important;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .simulator-wrap,
+      .configurator-layout,
+      .showcase-hero {
+        grid-template-columns: 1fr;
+      }
+      .summary-sidebar {
+        position: static;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-pillars,
+      .pillar-tabs,
+      .simulator-status,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="brand-group">
+      <div class="brand-apex">
+        <div class="brand-apex-title">APEX<span>07</span></div>
+        <div class="brand-apex-sub" id="navAptSub">Apartamento • Valle Arriba</div>
+      </div>
+      <div class="brand-divider"></div>
+      <div class="brand-integrator">
+        <img src="assets/logo-automatizacion-white.png" alt="Automatizacion Corp" class="brand-logo-img" />
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">← Volver al Portal</a></li>
+      <li><a href="#ambientes">Experiencia Interactiva</a></li>
+      <li><a href="#configurador" onclick="switchCategory('sonos')" id="navSonosLink">Sonido Sonos</a></li>
+      <li><a href="#domotica">Control4 Lux</a></li>
+      <li><a href="#redes">Redes UniFi</a></li>
+      <li><a href="#configurador" class="nav-cta" id="navCtaBtn">Personalizar Propuesta</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span id="heroEyebrow">Propuesta Privada • Apartamento</span>
+        </div>
+        <h1 id="heroTitle">Tecnología invisible que acompaña la <em>arquitectura</em> de su Apartamento.</h1>
+        <p class="hero-lead" id="heroLead">
+          APEX 07 combina espacios amplios, un área social integrada y una arquitectura contemporánea abierta hacia la terraza en Valle Arriba. Proponemos un ecosistema integral de sonido, domótica y conectividad adaptado a cada ambiente.
+        </p>
+        <div class="hero-actions">
+          <a href="#configurador" class="btn-primary">
+            <span id="heroPrimaryBtnText">Personalizar Mi Propuesta</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#domotica" class="btn-secondary">
+            <span>Explorar Control4 Lux & UniFi</span>
+          </a>
+        </div>
+
+        <div class="hero-pillars">
+          <div class="pillar-mini">
+            <span class="pillar-mini-brand">01 • Acústica Residencial</span>
+            <span class="pillar-mini-title">Sonos & Sonance</span>
+            <span class="pillar-mini-desc">Cornetas empotradas invisibles, cine inmersivo Arc Ultra y audio multi-zona.</span>
+          </div>
+          <div class="pillar-mini">
+            <span class="pillar-mini-brand">02 • Domótica de Lujo</span>
+            <span class="pillar-mini-title">Control4 Serie Lux</span>
+            <span class="pillar-mini-desc">Botoneras metálicas grabadas a láser, escenas de iluminación, clima y persianas.</span>
+          </div>
+          <div class="pillar-mini">
+            <span class="pillar-mini-brand">03 • Conectividad Total</span>
+            <span class="pillar-mini-title">Ubiquiti UniFi</span>
+            <span class="pillar-mini-desc">Roaming sin cortes y estabilidad empresarial en todo el apartamento.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exclusive Dossier Card for This Apartment Only -->
+      <div class="hero-selector-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.9rem; padding-bottom: 0.85rem; border-bottom: 1px solid var(--border-subtle);">
+          <img src="assets/logo-automatizacion-white.png" alt="Automatizacion" style="height: 26px; width: auto;" />
+          <div style="display: flex; align-items: center; gap: 0.55rem;">
+            <span id="dossierProposalBadge" style="background: rgba(255, 85, 30, 0.18); border: 1px solid var(--border-gold); color: var(--gold-champagne); padding: 0.22rem 0.7rem; border-radius: 50px; font-size: 0.72rem; font-weight: 800;">Propuesta</span>
+            <img src="assets/logo-3d-blue.jpg" alt="Emblema Automatizacion" style="width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--border-gold); object-fit: cover;" />
+          </div>
+        </div>
+        <h3 id="dossierAptTitle" style="font-size: 2.1rem; margin-bottom: 0.3rem;">Apartamento</h3>
+        <p id="dossierAptSub" style="margin-bottom: 1.2rem;">Edificio APEX 07, Valle Arriba • Preparado por Andrés Montbrun</p>
+
+        <div style="background: rgba(4, 11, 36, 0.55); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.1rem; margin-bottom: 1.3rem;">
+          <div id="dossierZonesLabel" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-champagne); font-weight: 700; margin-bottom: 0.65rem;">
+            Ambientes Proyectados en su Unidad:
+          </div>
+          <div id="dossierZonesPills" style="display: flex; flex-wrap: wrap; gap: 0.45rem;"></div>
+        </div>
+
+        <div class="hero-unit-preview">
+          <div>
+            <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold-champagne); font-weight: 700;">ESTADO DE PROPUESTA</div>
+            <div style="font-size: 0.95rem; font-weight: 700;">Lista para Personalización</div>
+            <div style="font-size: 0.76rem; color: var(--text-secondary);">Ajuste zonas o agregue equipos Sonos, Control4 Lux y Redes</div>
+          </div>
+          <a href="#configurador" class="btn-primary" style="padding: 0.65rem 1.2rem; font-size: 0.78rem;">
+            Configurar
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Interactive Scene Simulator -->
+  <section id="ambientes">
+    <div class="section-header">
+      <div class="eyebrow"><span class="eyebrow-dot"></span><span id="simEyebrow">Simulador de Estilo de Vida</span></div>
+      <h2>Un solo toque transforma todo su apartamento</h2>
+      <p>Descubra cómo interactúan en perfecta armonía el sonido arquitectónico Sonos, las botoneras Control4 Lux y la red de alta velocidad UniFi en su día a día en Valle Arriba.</p>
+    </div>
+
+    <div class="simulator-wrap">
+      <div class="simulator-visual" id="simVisual" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85');">
+        <div class="simulator-overlay" id="simOverlay" style="background: linear-gradient(180deg, rgba(4,11,36,0.18) 0%, rgba(4,11,36,0.9) 100%);"></div>
+        <div class="simulator-status">
+          <div class="sim-metric">
+            <span class="sim-metric-label">Sonido Sonos</span>
+            <span class="sim-metric-val" id="simAudioStatus">Jazz & Bossa en Sala + Terraza (Move 2)</span>
+          </div>
+          <div class="sim-metric">
+            <span class="sim-metric-label">Control4 Lux</span>
+            <span class="sim-metric-val" id="simLightStatus">Luz Cálida 45% • Cortinas Abiertas</span>
+          </div>
+          <div class="sim-metric">
+            <span class="sim-metric-label">Red UniFi</span>
+            <span class="sim-metric-val" id="simNetStatus">Prioridad Streaming Hi-Res Audio</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="simulator-controls">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold-champagne); font-weight: 700;">Escenas Inteligentes APEX07</div>
+        <h3 style="font-size: 1.6rem; line-height: 1.18;">Pruebe las escenas desde una botonera Control4 Lux</h3>
+
+        <button class="scene-btn active" onclick="setScene('social', this)">
+          <div>
+            <div class="scene-btn-title">🥂 Escena Social / Terraza Valle Arriba</div>
+            <div class="scene-btn-sub">Agrupa Sala/Comedor empotrado + Sonos Move 2 en terraza y luz cálida arquitectónica.</div>
+          </div>
+        </button>
+
+        <button class="scene-btn" onclick="setScene('cinema', this)">
+          <div>
+            <div class="scene-btn-title">🎬 Escena Cine Dolby Atmos</div>
+            <div class="scene-btn-sub">Activa Sonos Arc Ultra + Sub G4 en Sala TV, cierra persianas y atenúa luces al 10%.</div>
+          </div>
+        </button>
+
+        <button class="scene-btn" onclick="setScene('morning', this)">
+          <div>
+            <div class="scene-btn-title">☀️ Escena Buenos Días en Suite & Vestier</div>
+            <div class="scene-btn-sub">Música suave en las cornetas In-Ceiling del Vestier, apertura gradual de cortinas y clima ideal.</div>
+          </div>
+        </button>
+
+        <button class="scene-btn" onclick="setScene('night', this)">
+          <div>
+            <div class="scene-btn-title">🎧 Escena Escucha Privada Nocturna</div>
+            <div class="scene-btn-sub">Transfiere el audio de la TV de la Habitación Principal a los audífonos Sonos Ace sin molestar.</div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Configurator Section -->
+  <section id="configurador">
+    <div class="section-header">
+      <div class="eyebrow"><span class="eyebrow-dot"></span><span id="configEyebrow">Configurador Exclusivo</span></div>
+      <h2>Su Propuesta Personalizada en APEX 07</h2>
+      <p id="configLead">Revise los ambientes y equipos contemplados en su propuesta oficial, active o desactive zonas a su gusto, o incluya Domótica Control4 Lux y Redes Ubiquiti UniFi.</p>
+    </div>
+
+    <!-- 3 Pillars Navigation Tabs -->
+    <div class="pillar-tabs">
+      <div class="pillar-tab active" id="tab-sonos" onclick="switchCategory('sonos')">
+        <span class="pillar-tab-badge" id="tabSonosBadge">Propuesta Oficial</span>
+        <div class="pillar-tab-title">
+          <span>1. Sonido Sonos</span>
+          <span id="badgeCountSonos" style="font-size: 0.78rem; color: var(--gold-champagne);"></span>
+        </div>
+        <div class="pillar-tab-sub">Cornetas empotradas Sonance, barras Arc Ultra, Subwoofers, Move 2 y Sonos Ace.</div>
+      </div>
+
+      <div class="pillar-tab" id="tab-domotica" onclick="switchCategory('domotica')">
+        <span class="pillar-tab-badge">Personalización a Medida</span>
+        <div class="pillar-tab-title">
+          <span>2. Domótica Control4 Lux</span>
+          <span id="badgeCountC4" style="font-size: 0.78rem; color: var(--gold-champagne);">Opcional</span>
+        </div>
+        <div class="pillar-tab-sub">Botoneras y dimmers de lujo, control remoto Halo Touch y automatización.</div>
+      </div>
+
+      <div class="pillar-tab" id="tab-redes" onclick="switchCategory('redes')">
+        <span class="pillar-tab-badge">Infraestructura Enterprise</span>
+        <div class="pillar-tab-title">
+          <span>3. Redes Ubiquiti UniFi</span>
+          <span id="badgeCountUnifi" style="font-size: 0.78rem; color: var(--gold-champagne);">Opcional</span>
+        </div>
+        <div class="pillar-tab-sub">Cobertura total Wi-Fi sin puntos ciegos y estabilidad dedicada en todo el apartamento.</div>
+      </div>
+    </div>
+
+    <div class="configurator-layout">
+      <!-- Left Column: Active Category Content -->
+      <div>
+        <!-- SONOS VIEW -->
+        <div id="view-sonos">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <h3 style="font-size: 1.65rem;" id="sonosViewTitle">Propuesta de Sonido</h3>
+              <p style="font-size: 0.88rem; color: var(--text-secondary);">Puede marcar o desmarcar cada ambiente según cómo desee equipar su propiedad.</p>
+            </div>
+            <div style="display: flex; gap: 0.6rem;">
+              <button class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.78rem;" onclick="toggleAllZones(true)">Seleccionar Todas las Zonas</button>
+            </div>
+          </div>
+
+          <div class="zones-container" id="sonosZonesList"></div>
+
+          <!-- Extra Sonos & Sonance Catalog to Add More Possibilities -->
+          <div style="margin-top: 3rem; padding-top: 2.2rem; border-top: 1px solid var(--border-subtle);">
+            <div style="margin-bottom: 1.4rem;">
+              <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold-champagne); font-weight: 700;">Catálogo Completo Sonos & Sonance • Personalización</span>
+              <h3 style="font-size: 1.55rem; margin-top: 0.25rem;">¿Desea agregar más equipos Sonos a su apartamento?</h3>
+              <p style="font-size: 0.88rem; color: var(--text-secondary);">Explore todas las posibilidades del ecosistema Sonos (altavoces espaciales Era 300, Era 100 para cocina, Sonos Five para tornamesas de vinilo, Roam 2 para baños o cornetas de intemperie Sonance Outdoor) y súmelos a su solicitud con los botones <strong>+ / -</strong>:</p>
+            </div>
+
+            <!-- Filter Tabs for Extra Sonos Equipment -->
+            <div style="display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 1.5rem;">
+              <button class="finish-swatch active" onclick="filterExtraSonos('all', this)">Todos (16)</button>
+              <button class="finish-swatch" onclick="filterExtraSonos('smart', this)">🎵 Altavoces Inteligentes, Surrounds & Vinilos</button>
+              <button class="finish-swatch" onclick="filterExtraSonos('architectural', this)">🏛️ Arquitectónico Empotrado & Exterior</button>
+              <button class="finish-swatch" onclick="filterExtraSonos('cinema', this)">🎬 Cine en Casa & Barras</button>
+              <button class="finish-swatch" onclick="filterExtraSonos('portable', this)">🎧 Portátiles & Personal</button>
+            </div>
+
+            <div class="product-grid" id="sonosExtrasGrid"></div>
+          </div>
+        </div>
+
+        <!-- CONTROL4 LUX VIEW -->
+        <div id="view-domotica" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <h3 style="font-size: 1.65rem;">Domótica Residencial — Colección Control4 Lux</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Agregue a su solicitud los sistemas de automatización Control4 Lux y personalice sus teclados en vivo.</p>
+            </div>
+            <a href="https://lux.automatizacion.io/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 0.7rem 1.35rem; font-size: 0.8rem;">
+              <span>Personalizar Teclados Lux en Vivo</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="product-grid" id="c4SelectorGrid"></div>
+        </div>
+
+        <!-- UBIQUITI UNIFI VIEW -->
+        <div id="view-redes" style="display: none;">
+          <div style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1.65rem;">Redes de Alta Velocidad — Solución Integral Ubiquiti UniFi</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">Una red sólida y sin cortes es la base del sonido multi-zona y la domótica. Incluya la solución de conectividad integral dimensionada a la medida de su apartamento.</p>
+          </div>
+          <div class="product-grid" id="unifiSelectorGrid" style="grid-template-columns: 1fr;"></div>
+        </div>
+      </div>
+
+      <!-- Right Column: Sticky Custom Quote Summary -->
+      <aside class="summary-sidebar">
+        <div class="summary-header">
+          <div>
+            <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-secondary);">Resumen de Solicitud</div>
+            <h3 style="font-size: 1.35rem;">Proyecto APEX 07</h3>
+          </div>
+          <span class="summary-unit-badge" id="summaryAptBadge">APT</span>
+        </div>
+
+        <div id="summaryRefText" style="font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
+          Referencia Oficial
+        </div>
+
+        <div class="summary-section-title">Zonas de Sonido Sonos Seleccionadas</div>
+        <ul class="summary-list" id="summarySonosList"></ul>
+
+        <div class="summary-section-title" id="summaryExtrasTitle" style="display: none;">Equipos Sonos Adicionales</div>
+        <ul class="summary-list" id="summaryExtrasList" style="display: none;"></ul>
+
+        <div class="summary-section-title">Domótica Control4 Lux (A Cotizar)</div>
+        <ul class="summary-list" id="summaryC4List"></ul>
+
+        <div class="summary-section-title">Redes Ubiquiti UniFi (A Cotizar)</div>
+        <ul class="summary-list" id="summaryUnifiList"></ul>
+
+        <div class="custom-request-box">
+          <div class="form-group">
+            <label for="clientName">Su Nombre / Propietario</label>
+            <input type="text" id="clientName" class="form-control" placeholder="Ej. Familia Rodríguez" />
+          </div>
+          <div class="form-group">
+            <label for="clientNotes">Personalización o Solicitudes Especiales</label>
+            <textarea id="clientNotes" class="form-control" placeholder="Ej. Queremos agregar cornetas en la terraza, acabado Brass en botoneras Control4 Lux o revisar opciones..."></textarea>
+          </div>
+        </div>
+
+        <div class="summary-actions">
+          <button class="btn-whatsapp" onclick="sendWhatsAppQuote()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+            <span>Solicitar Cotización por WhatsApp</span>
+          </button>
+          <button class="btn-gold-full" onclick="sendEmailQuote()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span>Enviar Solicitud por Correo</span>
+          </button>
+          <button class="btn-outline-full" onclick="window.print()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            <span>Descargar / Imprimir Resumen PDF</span>
+          </button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Dedicated Showcase: Control4 Lux -->
+  <section id="domotica">
+    <div class="section-header">
+      <div class="eyebrow"><span class="eyebrow-dot"></span><span>Domótica e Iluminación Arquitectónica</span></div>
+      <h2>Control4 Serie Lux: Estética que se siente al tacto</h2>
+      <p>Reemplace múltiples interruptores convencionales en la pared por una sola botonera metálica de precisión con grabado láser retroiluminado, diseñada para integrarse con el interiorismo de APEX 07.</p>
+    </div>
+
+    <div class="showcase-banner">
+      <div class="showcase-hero">
+        <div>
+          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--gold-champagne); font-weight: 700;">Nueva Línea de Lujo • Control4 Lux</span>
+          <h3 style="font-size: 2.1rem; margin: 0.5rem 0 1rem; line-height: 1.15;">Diseño geométrico sin tornillos visibles y acabados metálicos reales</h3>
+          <p style="color: var(--text-secondary); font-size: 0.96rem; margin-bottom: 1.2rem;">
+            Con <strong>Control4 Lux</strong>, un solo botón grabado como <em>"Cena"</em>, <em>"Terraza"</em> o <em>"Buenas Noches"</em> regula simultáneamente las luminarias DALI/0-10V, baja las persianas motorizadas, ajusta el aire acondicionado y activa su playlist favorita en Sonos.
+          </p>
+
+          <div style="font-size: 0.78rem; color: var(--text-primary); font-weight: 600;">Acabados de diseñador disponibles para su apartamento (haga clic para previsualizar):</div>
+          <div class="finish-selector">
+            <div class="finish-swatch active" onclick="highlightFinish(this, 'Obsidian Black')">
+              <span class="swatch-circle" style="background: #141416;"></span>
+              <span>Obsidian Black</span>
+            </div>
+            <div class="finish-swatch" onclick="highlightFinish(this, 'Satin Brass')">
+              <span class="swatch-circle" style="background: linear-gradient(135deg, #d4af37, #9a7b1c);"></span>
+              <span>Satin Brass</span>
+            </div>
+            <div class="finish-swatch" onclick="highlightFinish(this, 'Brushed Nickel')">
+              <span class="swatch-circle" style="background: linear-gradient(135deg, #b8bec8, #7b818c);"></span>
+              <span>Brushed Nickel</span>
+            </div>
+            <div class="finish-swatch" onclick="highlightFinish(this, 'Architectural White')">
+              <span class="swatch-circle" style="background: #f4f4f6;"></span>
+              <span>Architectural White</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.8rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://lux.automatizacion.io/" target="_blank" rel="noopener noreferrer" class="btn-primary">
+              <span>Abrir Personalizador de Teclados Lux</span>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <button class="btn-secondary" onclick="toggleLuxStudio()">
+              <span>Probar Herramienta Aquí Mismo</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="showcase-img-wrap">
+          <img id="luxFinishPreviewImg" src="assets/lux-obsidian.webp" alt="Control4 Lux Keypads & Dimmers" style="transition: opacity 0.2s ease, transform 0.2s ease;" />
+        </div>
+      </div>
+
+      <!-- Embedded Interactive Customizer Drawer -->
+      <div id="luxStudioEmbed" style="display: none; border-top: 1px solid var(--border-gold); background: #040b24; padding: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.8rem;">
+          <div>
+            <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold-champagne); font-weight: 700;">Herramienta Interactiva Oficial • Automatizacion Corp</span>
+            <h4 style="font-size: 1.25rem;">Personalizador de Teclados Control4 Lux (lux.automatizacion.io)</h4>
+          </div>
+          <div style="display: flex; gap: 0.6rem;">
+            <a href="https://lux.automatizacion.io/" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.78rem;">Abrir en Pantalla Completa ↗</a>
+            <button class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.78rem;" onclick="toggleLuxStudio()">Cerrar Vista</button>
+          </div>
+        </div>
+        <iframe src="https://lux.automatizacion.io/" title="Personalizador de Teclados Control4 Lux" style="width: 100%; height: 680px; border: 1px solid var(--border-subtle); border-radius: 12px; background: #040b24;" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="product-grid" id="c4ShowcaseCards"></div>
+  </section>
+
+  <!-- Dedicated Showcase: Ubiquiti UniFi -->
+  <section id="redes">
+    <div class="section-header">
+      <div class="eyebrow"><span class="eyebrow-dot"></span><span>Infraestructura de Red Residencial Enterprise</span></div>
+      <h2>Ubiquiti UniFi: Conectividad total sin compromisos</h2>
+      <p>Para que el cine en casa, el audio multi-zona Sonos sin latencia, las videollamadas y la domótica funcionen siempre al instante, proyectamos una solución integral Ubiquiti UniFi dimensionada exactamente para los planos de su apartamento.</p>
+    </div>
+
+    <div class="showcase-banner">
+      <div class="showcase-hero" style="background: radial-gradient(circle at 80% 50%, rgba(56, 189, 248, 0.16), transparent 60%);">
+        <div>
+          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.16em; color: #38bdf8; font-weight: 700;">Solución Integral de Conectividad • Ubiquiti UniFi</span>
+          <h3 style="font-size: 2.1rem; margin: 0.5rem 0 1rem; line-height: 1.15;">Cobertura total y roaming transparente desde el vestier hasta la terraza</h3>
+          <p style="color: var(--text-secondary); font-size: 0.96rem; margin-bottom: 1.4rem;">
+            Diseñamos la arquitectura de red de su apartamento como un sistema único e invisible: cobertura Wi-Fi de ultra alta velocidad en cada rincón sin cambios de red manuales, estabilidad empresarial para todos sus televisores y sistemas de audio, y soporte para doble proveedor de internet con respaldo automático.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <button class="btn-primary" onclick="toggleUnifiModule('unifi_integral')">
+              <span id="unifiShowcaseBtnText">✓ Red Integral UniFi Incluida en Mi Solicitud</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="showcase-img-wrap">
+          <img src="https://images.svc.ui.com/?u=https%3A%2F%2Fcdn.ecomm.ui.com%2Fproducts%2Ffa8dd4e4-36c8-4c79-a928-22c7bff2ce29%2F55143a40-9ce9-48a0-b7b3-6726988102d6.png&q=75&w=1600" alt="Ubiquiti UniFi Conectividad Residencial" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+          <img src="assets/logo-automatizacion-white.png" alt="Automatizacion Corp" style="height: 32px; width: auto;" />
+          <div style="width: 1px; height: 24px; background: var(--border-subtle);"></div>
+          <div class="brand-apex-title" style="font-size: 1.35rem;">APEX<span>07</span></div>
+        </div>
+        <p id="footerDesc" style="color: var(--text-secondary); font-size: 0.88rem; max-width: 380px; margin-bottom: 1.2rem;">
+          Propuesta privada de Sonido Arquitectónico Sonos, Domótica Control4 Serie Lux y Redes Ubiquiti UniFi en APEX 07, Valle Arriba, Caracas.
+        </p>
+        <div style="display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.8rem; color: var(--gold-champagne); font-weight: 700;">
+          <img src="assets/logo-ingenieria.png" alt="Ingeniería Automatizacion" style="width: 24px; height: 24px; object-fit: contain;" />
+          <span>Preparado por Andrés Montbrun • Automatizacion Corp</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-champagne); margin-bottom: 1rem;">Contacto Directo</h4>
+        <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 0.4rem;"><strong>Automatizacion Corp</strong></p>
+        <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 0.4rem;">Tel / WhatsApp: +58 412-2370080</p>
+        <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 0.4rem;">Email: Willy@automatizaciongroup.com</p>
+        <p style="font-size: 0.86rem; color: var(--text-secondary);">Web: automatizaciongroup.com</p>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-champagne); margin-bottom: 1rem;">Oficina & Respaldo</h4>
+        <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 0.4rem;">2333 Brickell Ave, Suite 2116</p>
+        <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 0.8rem;">Miami, FL 33129 • Atención en Caracas</p>
+        <p style="font-size: 0.78rem; color: var(--text-muted);">
+          Todas las propuestas pueden ajustarse en número de zonas, acabados y capacidades según las preferencias de cada propietario.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-meta">
+      <span id="footerCopyright">© 2026 Automatizacion Corp — Propuesta Exclusiva APEX 07 Valle Arriba.</span>
+      <span>Sonos • Sonance • Control4 Lux • Ubiquiti UniFi</span>
+    </div>
+  </footer>
+
+  <script>
+    const APARTMENTS_DB = {
+  "PBA": {
+    "key": "PBA",
+    "code": "PB A",
+    "proposalNum": "#930",
+    "floor": "Planta Baja",
+    "zones": [
+      {
+        "id": "sala_comedor",
+        "name": "Sala / Comedor",
+        "tag": "Audio Arquitectónico Empotrado",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp ofrecen música con sonido envolvente y una instalación discreta en techo, controlada desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling 6\" Speakers (Par)",
+            "sku": "INCLGWW1",
+            "qty": "x2 Pares (4 Cornetas)",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp + Accesorios de Integración",
+            "sku": "AMPG1US1BLK",
+            "qty": "Sistema Activo",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_principal_habitación_principal",
+        "name": "Habitación Principal",
+        "tag": "Cine & Música en Suite",
+        "desc": "Sonos Arc Ultra y Sub G4 llenan la habitación de sonido inmersivo para películas, series y música, con diálogos claros y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Montaje TV",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_habitación_2",
+        "name": "Habitación 2",
+        "tag": "TV & Música Compacta",
+        "desc": "Sonos Beam Gen 2 y subwoofer Sub Mini mejoran el sonido del televisor y suman graves profundos para disfrutar de películas, series y música.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Beam Gen 2 (Black)",
+            "sku": "BEAM2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub Mini (Black) + Instalación",
+            "sku": "SUBM1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sala_tv",
+        "name": "Sala TV / Family Room",
+        "tag": "Sonido Inmersivo Dolby Atmos",
+        "desc": "Sonos Arc Ultra y Sub G4 brindan sonido inmersivo de cine y música, con diálogos cristalinos y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Instalación",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonido_portatil",
+        "name": "Sonido Portátil / Terraza",
+        "tag": "Exterior & Interior",
+        "desc": "Sonos Move 2 ofrece sonido estéreo potente y movilidad total para disfrutar en la terraza de APEX 07 y otros espacios exteriores, con Wi-Fi y Bluetooth.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Move 2 (Black)",
+            "sku": "MOVE2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/253c32d3e93db9ee17d931d2cfc3e6ba88306b29-1280x1280.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonos_ace",
+        "name": "Experiencia Personal Sonos Ace",
+        "tag": "Escucha Privada TV Audio Swap",
+        "desc": "Sonos Ace ofrece escucha privada de alta fidelidad, cancelación activa de ruido y transferencia inmediata del audio desde cualquier barra Sonos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Sonos Ace (Black)",
+            "sku": "ACEG1US1BLK",
+            "qty": "x1",
+            "img": "https://cdn.sanity.io/images/znqtjj88/production/ee6a3731d218459ac8335ba8ca8e9bb267d31469-874x800.png"
+          }
+        ]
+      }
+    ]
+  },
+  "PBB": {
+    "key": "PBB",
+    "code": "PB B",
+    "proposalNum": "#931",
+    "floor": "Planta Baja",
+    "zones": [
+      {
+        "id": "sala_comedor",
+        "name": "Sala / Comedor",
+        "tag": "Audio Arquitectónico Empotrado",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp ofrecen música con sonido envolvente y una instalación discreta en techo, controlada desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling 6\" Speakers (Par)",
+            "sku": "INCLGWW1",
+            "qty": "x2 Pares (4 Cornetas)",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp + Accesorios de Integración",
+            "sku": "AMPG1US1BLK",
+            "qty": "Sistema Activo",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_principal_habitación_principal",
+        "name": "Habitación Principal",
+        "tag": "Cine & Música en Suite",
+        "desc": "Sonos Arc Ultra y Sub G4 llenan la habitación de sonido inmersivo para películas, series y música, con diálogos claros y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Montaje TV",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "vestier_vestier",
+        "name": "Vestier",
+        "tag": "Audio Discreto en Techo",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp llevan música al vestier con una instalación arquitectónica limpia y control desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling by Sonance 6\"",
+            "sku": "INCLGWW1",
+            "qty": "x1 Par",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp",
+            "sku": "AMPG1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_habitación_2",
+        "name": "Habitación 2",
+        "tag": "TV & Música Compacta",
+        "desc": "Sonos Beam Gen 2 y subwoofer Sub Mini mejoran el sonido del televisor y suman graves profundos para disfrutar de películas, series y música.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Beam Gen 2 (Black)",
+            "sku": "BEAM2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub Mini (Black) + Instalación",
+            "sku": "SUBM1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sala_tv",
+        "name": "Sala TV / Family Room",
+        "tag": "Sonido Inmersivo Dolby Atmos",
+        "desc": "Sonos Arc Ultra y Sub G4 brindan sonido inmersivo de cine y música, con diálogos cristalinos y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Instalación",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonido_portatil",
+        "name": "Sonido Portátil / Terraza",
+        "tag": "Exterior & Interior",
+        "desc": "Sonos Move 2 ofrece sonido estéreo potente y movilidad total para disfrutar en la terraza de APEX 07 y otros espacios exteriores, con Wi-Fi y Bluetooth.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Move 2 (Black)",
+            "sku": "MOVE2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/253c32d3e93db9ee17d931d2cfc3e6ba88306b29-1280x1280.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonos_ace",
+        "name": "Experiencia Personal Sonos Ace",
+        "tag": "Escucha Privada TV Audio Swap",
+        "desc": "Sonos Ace ofrece escucha privada de alta fidelidad, cancelación activa de ruido y transferencia inmediata del audio desde cualquier barra Sonos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Sonos Ace (Black)",
+            "sku": "ACEG1US1BLK",
+            "qty": "x1",
+            "img": "https://cdn.sanity.io/images/znqtjj88/production/ee6a3731d218459ac8335ba8ca8e9bb267d31469-874x800.png"
+          }
+        ]
+      }
+    ]
+  },
+  "1A": {
+    "key": "1A",
+    "code": "1A",
+    "proposalNum": "#932",
+    "floor": "Piso 1",
+    "zones": [
+      {
+        "id": "sala_comedor",
+        "name": "Sala / Comedor",
+        "tag": "Audio Arquitectónico Empotrado",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp ofrecen música con sonido envolvente y una instalación discreta en techo, controlada desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling 6\" Speakers (Par)",
+            "sku": "INCLGWW1",
+            "qty": "x2 Pares (4 Cornetas)",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp + Accesorios de Integración",
+            "sku": "AMPG1US1BLK",
+            "qty": "Sistema Activo",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_principal_habitación_principal",
+        "name": "Habitación Principal",
+        "tag": "Cine & Música en Suite",
+        "desc": "Sonos Arc Ultra y Sub G4 llenan la habitación de sonido inmersivo para películas, series y música, con diálogos claros y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Montaje TV",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "vestier_vestier",
+        "name": "Vestier",
+        "tag": "Audio Discreto en Techo",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp llevan música al vestier con una instalación arquitectónica limpia y control desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling by Sonance 6\"",
+            "sku": "INCLGWW1",
+            "qty": "x1 Par",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp",
+            "sku": "AMPG1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_habitación_2",
+        "name": "Habitación 2",
+        "tag": "TV & Música Compacta",
+        "desc": "Sonos Beam Gen 2 y subwoofer Sub Mini mejoran el sonido del televisor y suman graves profundos para disfrutar de películas, series y música.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Beam Gen 2 (Black)",
+            "sku": "BEAM2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub Mini (Black) + Instalación",
+            "sku": "SUBM1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sala_tv",
+        "name": "Sala TV / Family Room",
+        "tag": "Sonido Inmersivo Dolby Atmos",
+        "desc": "Sonos Arc Ultra y Sub G4 brindan sonido inmersivo de cine y música, con diálogos cristalinos y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Instalación",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonido_portatil",
+        "name": "Sonido Portátil / Terraza",
+        "tag": "Exterior & Interior",
+        "desc": "Sonos Move 2 ofrece sonido estéreo potente y movilidad total para disfrutar en la terraza de APEX 07 y otros espacios exteriores, con Wi-Fi y Bluetooth.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Move 2 (Black)",
+            "sku": "MOVE2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/253c32d3e93db9ee17d931d2cfc3e6ba88306b29-1280x1280.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonos_ace",
+        "name": "Experiencia Personal Sonos Ace",
+        "tag": "Escucha Privada TV Audio Swap",
+        "desc": "Sonos Ace ofrece escucha privada de alta fidelidad, cancelación activa de ruido y transferencia inmediata del audio desde cualquier barra Sonos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Sonos Ace (Black)",
+            "sku": "ACEG1US1BLK",
+            "qty": "x1",
+            "img": "https://cdn.sanity.io/images/znqtjj88/production/ee6a3731d218459ac8335ba8ca8e9bb267d31469-874x800.png"
+          }
+        ]
+      }
+    ]
+  },
+  "1B": {
+    "key": "1B",
+    "code": "1B",
+    "proposalNum": "#933",
+    "floor": "Piso 1",
+    "zones": [
+      {
+        "id": "sala_comedor",
+        "name": "Sala / Comedor",
+        "tag": "Audio Arquitectónico Empotrado",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp ofrecen música con sonido envolvente y una instalación discreta en techo, controlada desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling 6\" Speakers (Par)",
+            "sku": "INCLGWW1",
+            "qty": "x2 Pares (4 Cornetas)",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp + Accesorios de Integración",
+            "sku": "AMPG1US1BLK",
+            "qty": "Sistema Activo",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_principal_habitación_principal",
+        "name": "Habitación Principal",
+        "tag": "Cine & Música en Suite",
+        "desc": "Sonos Arc Ultra y Sub G4 llenan la habitación de sonido inmersivo para películas, series y música, con diálogos claros y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Montaje TV",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_habitación_2",
+        "name": "Habitación 2",
+        "tag": "TV & Música Compacta",
+        "desc": "Sonos Beam Gen 2 y subwoofer Sub Mini mejoran el sonido del televisor y suman graves profundos para disfrutar de películas, series y música.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Beam Gen 2 (Black)",
+            "sku": "BEAM2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub Mini (Black) + Instalación",
+            "sku": "SUBM1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sala_tv",
+        "name": "Sala TV / Family Room",
+        "tag": "Sonido Inmersivo Dolby Atmos",
+        "desc": "Sonos Arc Ultra y Sub G4 brindan sonido inmersivo de cine y música, con diálogos cristalinos y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Instalación",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonido_portatil",
+        "name": "Sonido Portátil / Terraza",
+        "tag": "Exterior & Interior",
+        "desc": "Sonos Move 2 ofrece sonido estéreo potente y movilidad total para disfrutar en la terraza de APEX 07 y otros espacios exteriores, con Wi-Fi y Bluetooth.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Move 2 (Black)",
+            "sku": "MOVE2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/253c32d3e93db9ee17d931d2cfc3e6ba88306b29-1280x1280.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonos_ace",
+        "name": "Experiencia Personal Sonos Ace",
+        "tag": "Escucha Privada TV Audio Swap",
+        "desc": "Sonos Ace ofrece escucha privada de alta fidelidad, cancelación activa de ruido y transferencia inmediata del audio desde cualquier barra Sonos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Sonos Ace (Black)",
+            "sku": "ACEG1US1BLK",
+            "qty": "x1",
+            "img": "https://cdn.sanity.io/images/znqtjj88/production/ee6a3731d218459ac8335ba8ca8e9bb267d31469-874x800.png"
+          }
+        ]
+      }
+    ]
+  },
+  "1C": {
+    "key": "1C",
+    "code": "1C",
+    "proposalNum": "#934",
+    "floor": "Piso 1",
+    "zones": [
+      {
+        "id": "sala_comedor",
+        "name": "Sala / Comedor",
+        "tag": "Audio Arquitectónico Empotrado",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp ofrecen música con sonido envolvente y una instalación discreta en techo, controlada desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling 6\" Speakers (Par)",
+            "sku": "INCLGWW1",
+            "qty": "x2 Pares (4 Cornetas)",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp + Accesorios de Integración",
+            "sku": "AMPG1US1BLK",
+            "qty": "Sistema Activo",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_principal_habitación_principal",
+        "name": "Habitación Principal",
+        "tag": "Cine & Música en Suite",
+        "desc": "Sonos Arc Ultra y Sub G4 llenan la habitación de sonido inmersivo para películas, series y música, con diálogos claros y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Montaje TV",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "vestier_vestier",
+        "name": "Vestier",
+        "tag": "Audio Discreto en Techo",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp llevan música al vestier con una instalación arquitectónica limpia y control desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling by Sonance 6\"",
+            "sku": "INCLGWW1",
+            "qty": "x1 Par",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp",
+            "sku": "AMPG1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_habitación_2",
+        "name": "Habitación 2",
+        "tag": "TV & Música Compacta",
+        "desc": "Sonos Beam Gen 2 y subwoofer Sub Mini mejoran el sonido del televisor y suman graves profundos para disfrutar de películas, series y música.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Beam Gen 2 (Black)",
+            "sku": "BEAM2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub Mini (Black) + Instalación",
+            "sku": "SUBM1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sala_tv",
+        "name": "Sala TV / Family Room",
+        "tag": "Sonido Inmersivo Dolby Atmos",
+        "desc": "Sonos Arc Ultra y Sub G4 brindan sonido inmersivo de cine y música, con diálogos cristalinos y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Instalación",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonido_portatil",
+        "name": "Sonido Portátil / Terraza",
+        "tag": "Exterior & Interior",
+        "desc": "Sonos Move 2 ofrece sonido estéreo potente y movilidad total para disfrutar en la terraza de APEX 07 y otros espacios exteriores, con Wi-Fi y Bluetooth.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Move 2 (Black)",
+            "sku": "MOVE2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/253c32d3e93db9ee17d931d2cfc3e6ba88306b29-1280x1280.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonos_ace",
+        "name": "Experiencia Personal Sonos Ace",
+        "tag": "Escucha Privada TV Audio Swap",
+        "desc": "Sonos Ace ofrece escucha privada de alta fidelidad, cancelación activa de ruido y transferencia inmediata del audio desde cualquier barra Sonos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Sonos Ace (Black)",
+            "sku": "ACEG1US1BLK",
+            "qty": "x1",
+            "img": "https://cdn.sanity.io/images/znqtjj88/production/ee6a3731d218459ac8335ba8ca8e9bb267d31469-874x800.png"
+          }
+        ]
+      }
+    ]
+  },
+  "2A": {
+    "key": "2A",
+    "code": "2A",
+    "proposalNum": "#945",
+    "floor": "Piso 2",
+    "zones": [
+      {
+        "id": "sala_comedor",
+        "name": "Sala / Comedor",
+        "tag": "Audio Arquitectónico Empotrado",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp ofrecen música con sonido envolvente y una instalación discreta en techo, controlada desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling 6\" Speakers (Par)",
+            "sku": "INCLGWW1",
+            "qty": "x2 Pares (4 Cornetas)",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp + Accesorios de Integración",
+            "sku": "AMPG1US1BLK",
+            "qty": "Sistema Activo",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_principal_habitación_principal",
+        "name": "Habitación Principal",
+        "tag": "Cine & Música en Suite",
+        "desc": "Sonos Arc Ultra y Sub G4 llenan la habitación de sonido inmersivo para películas, series y música, con diálogos claros y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Montaje TV",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "vestier_vestier",
+        "name": "Vestier",
+        "tag": "Audio Discreto en Techo",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp llevan música al vestier con una instalación arquitectónica limpia y control desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling by Sonance 6\"",
+            "sku": "INCLGWW1",
+            "qty": "x1 Par",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp",
+            "sku": "AMPG1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_habitación_2",
+        "name": "Habitación 2",
+        "tag": "TV & Música Compacta",
+        "desc": "Sonos Beam Gen 2 y subwoofer Sub Mini mejoran el sonido del televisor y suman graves profundos para disfrutar de películas, series y música.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Beam Gen 2 (Black)",
+            "sku": "BEAM2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub Mini (Black) + Instalación",
+            "sku": "SUBM1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sala_tv",
+        "name": "Sala TV / Family Room",
+        "tag": "Sonido Inmersivo Dolby Atmos",
+        "desc": "Sonos Arc Ultra y Sub G4 brindan sonido inmersivo de cine y música, con diálogos cristalinos y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Instalación",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonido_portatil",
+        "name": "Sonido Portátil / Terraza",
+        "tag": "Exterior & Interior",
+        "desc": "Sonos Move 2 ofrece sonido estéreo potente y movilidad total para disfrutar en la terraza de APEX 07 y otros espacios exteriores, con Wi-Fi y Bluetooth.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Move 2 (Black)",
+            "sku": "MOVE2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/253c32d3e93db9ee17d931d2cfc3e6ba88306b29-1280x1280.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonos_ace",
+        "name": "Experiencia Personal Sonos Ace",
+        "tag": "Escucha Privada TV Audio Swap",
+        "desc": "Sonos Ace ofrece escucha privada de alta fidelidad, cancelación activa de ruido y transferencia inmediata del audio desde cualquier barra Sonos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Sonos Ace (Black)",
+            "sku": "ACEG1US1BLK",
+            "qty": "x1",
+            "img": "https://cdn.sanity.io/images/znqtjj88/production/ee6a3731d218459ac8335ba8ca8e9bb267d31469-874x800.png"
+          }
+        ]
+      }
+    ]
+  },
+  "2B": {
+    "key": "2B",
+    "code": "2B",
+    "proposalNum": "#948",
+    "floor": "Piso 2",
+    "zones": [
+      {
+        "id": "sala_comedor",
+        "name": "Sala / Comedor",
+        "tag": "Audio Arquitectónico Empotrado",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp ofrecen música con sonido envolvente y una instalación discreta en techo, controlada desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling 6\" Speakers (Par)",
+            "sku": "INCLGWW1",
+            "qty": "x2 Pares (4 Cornetas)",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp + Accesorios de Integración",
+            "sku": "AMPG1US1BLK",
+            "qty": "Sistema Activo",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_principal_habitación_principal",
+        "name": "Habitación Principal",
+        "tag": "Cine & Música en Suite",
+        "desc": "Sonos Arc Ultra y Sub G4 llenan la habitación de sonido inmersivo para películas, series y música, con diálogos claros y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Montaje TV",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_habitación_2",
+        "name": "Habitación 2",
+        "tag": "TV & Música Compacta",
+        "desc": "Sonos Beam Gen 2 y subwoofer Sub Mini mejoran el sonido del televisor y suman graves profundos para disfrutar de películas, series y música.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Beam Gen 2 (Black)",
+            "sku": "BEAM2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub Mini (Black) + Instalación",
+            "sku": "SUBM1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sala_tv",
+        "name": "Sala TV / Family Room",
+        "tag": "Sonido Inmersivo Dolby Atmos",
+        "desc": "Sonos Arc Ultra y Sub G4 brindan sonido inmersivo de cine y música, con diálogos cristalinos y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Instalación",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonido_portatil",
+        "name": "Sonido Portátil / Terraza",
+        "tag": "Exterior & Interior",
+        "desc": "Sonos Move 2 ofrece sonido estéreo potente y movilidad total para disfrutar en la terraza de APEX 07 y otros espacios exteriores, con Wi-Fi y Bluetooth.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Move 2 (Black)",
+            "sku": "MOVE2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/253c32d3e93db9ee17d931d2cfc3e6ba88306b29-1280x1280.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonos_ace",
+        "name": "Experiencia Personal Sonos Ace",
+        "tag": "Escucha Privada TV Audio Swap",
+        "desc": "Sonos Ace ofrece escucha privada de alta fidelidad, cancelación activa de ruido y transferencia inmediata del audio desde cualquier barra Sonos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Sonos Ace (Black)",
+            "sku": "ACEG1US1BLK",
+            "qty": "x1",
+            "img": "https://cdn.sanity.io/images/znqtjj88/production/ee6a3731d218459ac8335ba8ca8e9bb267d31469-874x800.png"
+          }
+        ]
+      }
+    ]
+  },
+  "2C": {
+    "key": "2C",
+    "code": "2C",
+    "proposalNum": "#950",
+    "floor": "Piso 2",
+    "zones": [
+      {
+        "id": "sala_comedor",
+        "name": "Sala / Comedor",
+        "tag": "Audio Arquitectónico Empotrado",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp ofrecen música con sonido envolvente y una instalación discreta en techo, controlada desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling 6\" Speakers (Par)",
+            "sku": "INCLGWW1",
+            "qty": "x2 Pares (4 Cornetas)",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp + Accesorios de Integración",
+            "sku": "AMPG1US1BLK",
+            "qty": "Sistema Activo",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_principal_habitación_principal",
+        "name": "Habitación Principal",
+        "tag": "Cine & Música en Suite",
+        "desc": "Sonos Arc Ultra y Sub G4 llenan la habitación de sonido inmersivo para películas, series y música, con diálogos claros y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Montaje TV",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "vestier_vestier",
+        "name": "Vestier",
+        "tag": "Audio Discreto en Techo",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp llevan música al vestier con una instalación arquitectónica limpia y control desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling by Sonance 6\"",
+            "sku": "INCLGWW1",
+            "qty": "x1.5 Pares",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp",
+            "sku": "AMPG1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_habitación_2",
+        "name": "Habitación 2",
+        "tag": "TV & Música Compacta",
+        "desc": "Sonos Beam Gen 2 y subwoofer Sub Mini mejoran el sonido del televisor y suman graves profundos para disfrutar de películas, series y música.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Beam Gen 2 (Black)",
+            "sku": "BEAM2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub Mini (Black) + Instalación",
+            "sku": "SUBM1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sala_tv",
+        "name": "Sala TV / Family Room",
+        "tag": "Sonido Inmersivo Dolby Atmos",
+        "desc": "Sonos Arc Ultra y Sub G4 brindan sonido inmersivo de cine y música, con diálogos cristalinos y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Instalación",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonido_portatil",
+        "name": "Sonido Portátil / Terraza",
+        "tag": "Exterior & Interior",
+        "desc": "Sonos Move 2 ofrece sonido estéreo potente y movilidad total para disfrutar en la terraza de APEX 07 y otros espacios exteriores, con Wi-Fi y Bluetooth.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Move 2 (Black)",
+            "sku": "MOVE2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/253c32d3e93db9ee17d931d2cfc3e6ba88306b29-1280x1280.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonos_ace",
+        "name": "Experiencia Personal Sonos Ace",
+        "tag": "Escucha Privada TV Audio Swap",
+        "desc": "Sonos Ace ofrece escucha privada de alta fidelidad, cancelación activa de ruido y transferencia inmediata del audio desde cualquier barra Sonos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Sonos Ace (Black)",
+            "sku": "ACEG1US1BLK",
+            "qty": "x1",
+            "img": "https://cdn.sanity.io/images/znqtjj88/production/ee6a3731d218459ac8335ba8ca8e9bb267d31469-874x800.png"
+          }
+        ]
+      }
+    ]
+  },
+  "3A": {
+    "key": "3A",
+    "code": "3A",
+    "proposalNum": "#946",
+    "floor": "Piso 3",
+    "zones": [
+      {
+        "id": "sala_comedor",
+        "name": "Sala / Comedor",
+        "tag": "Audio Arquitectónico Empotrado",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp ofrecen música con sonido envolvente y una instalación discreta en techo, controlada desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling 6\" Speakers (Par)",
+            "sku": "INCLGWW1",
+            "qty": "x2 Pares (4 Cornetas)",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp + Accesorios de Integración",
+            "sku": "AMPG1US1BLK",
+            "qty": "Sistema Activo",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_principal_habitación_principal",
+        "name": "Habitación Principal",
+        "tag": "Cine & Música en Suite",
+        "desc": "Sonos Arc Ultra y Sub G4 llenan la habitación de sonido inmersivo para películas, series y música, con diálogos claros y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Montaje TV",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "vestier_vestier",
+        "name": "Vestier",
+        "tag": "Audio Discreto en Techo",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp llevan música al vestier con una instalación arquitectónica limpia y control desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling by Sonance 6\"",
+            "sku": "INCLGWW1",
+            "qty": "x1 Par",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp",
+            "sku": "AMPG1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_habitación_2",
+        "name": "Habitación 2",
+        "tag": "TV & Música Compacta",
+        "desc": "Sonos Beam Gen 2 y subwoofer Sub Mini mejoran el sonido del televisor y suman graves profundos para disfrutar de películas, series y música.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Beam Gen 2 (Black)",
+            "sku": "BEAM2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub Mini (Black) + Instalación",
+            "sku": "SUBM1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sala_tv",
+        "name": "Sala TV / Family Room",
+        "tag": "Sonido Inmersivo Dolby Atmos",
+        "desc": "Sonos Arc Ultra y Sub G4 brindan sonido inmersivo de cine y música, con diálogos cristalinos y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Instalación",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonido_portatil",
+        "name": "Sonido Portátil / Terraza",
+        "tag": "Exterior & Interior",
+        "desc": "Sonos Move 2 ofrece sonido estéreo potente y movilidad total para disfrutar en la terraza de APEX 07 y otros espacios exteriores, con Wi-Fi y Bluetooth.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Move 2 (Black)",
+            "sku": "MOVE2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/253c32d3e93db9ee17d931d2cfc3e6ba88306b29-1280x1280.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonos_ace",
+        "name": "Experiencia Personal Sonos Ace",
+        "tag": "Escucha Privada TV Audio Swap",
+        "desc": "Sonos Ace ofrece escucha privada de alta fidelidad, cancelación activa de ruido y transferencia inmediata del audio desde cualquier barra Sonos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Sonos Ace (Black)",
+            "sku": "ACEG1US1BLK",
+            "qty": "x1",
+            "img": "https://cdn.sanity.io/images/znqtjj88/production/ee6a3731d218459ac8335ba8ca8e9bb267d31469-874x800.png"
+          }
+        ]
+      }
+    ]
+  },
+  "3B": {
+    "key": "3B",
+    "code": "3B",
+    "proposalNum": "#936",
+    "floor": "Piso 3",
+    "zones": [
+      {
+        "id": "sala_comedor",
+        "name": "Sala / Comedor",
+        "tag": "Audio Arquitectónico Empotrado",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp ofrecen música con sonido envolvente y una instalación discreta en techo, controlada desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling 6\" Speakers (Par)",
+            "sku": "INCLGWW1",
+            "qty": "x2 Pares (4 Cornetas)",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp + Accesorios de Integración",
+            "sku": "AMPG1US1BLK",
+            "qty": "Sistema Activo",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_principal_habitación_principal",
+        "name": "Habitación Principal",
+        "tag": "Cine & Música en Suite",
+        "desc": "Sonos Arc Ultra y Sub G4 llenan la habitación de sonido inmersivo para películas, series y música, con diálogos claros y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Montaje TV",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "vestier_vestier_hab._principal",
+        "name": "Vestier Hab. Principal",
+        "tag": "Audio Discreto en Techo",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp llevan música al vestier con una instalación arquitectónica limpia y control desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling by Sonance 6\"",
+            "sku": "INCLGWW1",
+            "qty": "x1.5 Pares",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp",
+            "sku": "AMPG1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_habitación_1",
+        "name": "Habitación 1",
+        "tag": "TV & Música Compacta",
+        "desc": "Sonos Beam Gen 2 y subwoofer Sub Mini mejoran el sonido del televisor y suman graves profundos para disfrutar de películas, series y música.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Beam Gen 2 (Black)",
+            "sku": "BEAM2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub Mini (Black) + Instalación",
+            "sku": "SUBM1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "vestier_vestier_hab._1",
+        "name": "Vestier Hab. 1",
+        "tag": "Audio Discreto en Techo",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp llevan música al vestier con una instalación arquitectónica limpia y control desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling by Sonance 6\"",
+            "sku": "INCLGWW1",
+            "qty": "x1 Par",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp",
+            "sku": "AMPG1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_habitación_2",
+        "name": "Habitación 2",
+        "tag": "TV & Música Compacta",
+        "desc": "Sonos Beam Gen 2 y subwoofer Sub Mini mejoran el sonido del televisor y suman graves profundos para disfrutar de películas, series y música.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Beam Gen 2 (Black)",
+            "sku": "BEAM2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub Mini (Black) + Instalación",
+            "sku": "SUBM1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "estudio",
+        "name": "Estudio",
+        "tag": "Audio Arquitectónico",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp aportan música con una instalación discreta y control independiente para el estudio.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling by Sonance 6\"",
+            "sku": "INCLGWW1",
+            "qty": "x1.5 Pares",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp + Accesorios",
+            "sku": "AMPG1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_habitación_3",
+        "name": "Habitación 3",
+        "tag": "TV & Música Compacta",
+        "desc": "Sonos Beam Gen 2 y subwoofer Sub Mini mejoran el sonido del televisor y suman graves profundos para disfrutar de películas, series y música.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Beam Gen 2 (Black)",
+            "sku": "BEAM2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub Mini (Black) + Instalación",
+            "sku": "SUBM1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sala_tv",
+        "name": "Sala TV / Family Room",
+        "tag": "Sonido Inmersivo Dolby Atmos",
+        "desc": "Sonos Arc Ultra y Sub G4 brindan sonido inmersivo de cine y música, con diálogos cristalinos y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Instalación",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonido_portatil",
+        "name": "Sonido Portátil / Terraza",
+        "tag": "Exterior & Interior",
+        "desc": "Sonos Move 2 ofrece sonido estéreo potente y movilidad total para disfrutar en la terraza de APEX 07 y otros espacios exteriores, con Wi-Fi y Bluetooth.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Move 2 (Black)",
+            "sku": "MOVE2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/253c32d3e93db9ee17d931d2cfc3e6ba88306b29-1280x1280.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonos_ace",
+        "name": "Experiencia Personal Sonos Ace",
+        "tag": "Escucha Privada TV Audio Swap",
+        "desc": "Sonos Ace ofrece escucha privada de alta fidelidad, cancelación activa de ruido y transferencia inmediata del audio desde cualquier barra Sonos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Sonos Ace (Black)",
+            "sku": "ACEG1US1BLK",
+            "qty": "x1",
+            "img": "https://cdn.sanity.io/images/znqtjj88/production/ee6a3731d218459ac8335ba8ca8e9bb267d31469-874x800.png"
+          }
+        ]
+      }
+    ]
+  },
+  "4A": {
+    "key": "4A",
+    "code": "4A",
+    "proposalNum": "#952",
+    "floor": "Piso 4",
+    "zones": [
+      {
+        "id": "sala_comedor",
+        "name": "Sala / Comedor",
+        "tag": "Audio Arquitectónico Empotrado",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp ofrecen música con sonido envolvente y una instalación discreta en techo, controlada desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling 6\" Speakers (Par)",
+            "sku": "INCLGWW1",
+            "qty": "x2 Pares (4 Cornetas)",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp + Accesorios de Integración",
+            "sku": "AMPG1US1BLK",
+            "qty": "Sistema Activo",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_principal_habitación_principal",
+        "name": "Habitación Principal",
+        "tag": "Cine & Música en Suite",
+        "desc": "Sonos Arc Ultra y Sub G4 llenan la habitación de sonido inmersivo para películas, series y música, con diálogos claros y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Montaje TV",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "vestier_vestier",
+        "name": "Vestier",
+        "tag": "Audio Discreto en Techo",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp llevan música al vestier con una instalación arquitectónica limpia y control desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling by Sonance 6\"",
+            "sku": "INCLGWW1",
+            "qty": "x1 Par",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp",
+            "sku": "AMPG1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_habitación_2",
+        "name": "Habitación 2",
+        "tag": "TV & Música Compacta",
+        "desc": "Sonos Beam Gen 2 y subwoofer Sub Mini mejoran el sonido del televisor y suman graves profundos para disfrutar de películas, series y música.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Beam Gen 2 (Black)",
+            "sku": "BEAM2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub Mini (Black) + Instalación",
+            "sku": "SUBM1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sala_tv",
+        "name": "Sala TV / Family Room",
+        "tag": "Sonido Inmersivo Dolby Atmos",
+        "desc": "Sonos Arc Ultra y Sub G4 brindan sonido inmersivo de cine y música, con diálogos cristalinos y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Instalación",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonido_portatil",
+        "name": "Sonido Portátil / Terraza",
+        "tag": "Exterior & Interior",
+        "desc": "Sonos Move 2 ofrece sonido estéreo potente y movilidad total para disfrutar en la terraza de APEX 07 y otros espacios exteriores, con Wi-Fi y Bluetooth.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Move 2 (Black)",
+            "sku": "MOVE2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/253c32d3e93db9ee17d931d2cfc3e6ba88306b29-1280x1280.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonos_ace",
+        "name": "Experiencia Personal Sonos Ace",
+        "tag": "Escucha Privada TV Audio Swap",
+        "desc": "Sonos Ace ofrece escucha privada de alta fidelidad, cancelación activa de ruido y transferencia inmediata del audio desde cualquier barra Sonos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Sonos Ace (Black)",
+            "sku": "ACEG1US1BLK",
+            "qty": "x1",
+            "img": "https://cdn.sanity.io/images/znqtjj88/production/ee6a3731d218459ac8335ba8ca8e9bb267d31469-874x800.png"
+          }
+        ]
+      }
+    ]
+  },
+  "4B": {
+    "key": "4B",
+    "code": "4B",
+    "proposalNum": "#937",
+    "floor": "Piso 4",
+    "zones": [
+      {
+        "id": "sala_comedor",
+        "name": "Sala / Comedor",
+        "tag": "Audio Arquitectónico Empotrado",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp ofrecen música con sonido envolvente y una instalación discreta en techo, controlada desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling 6\" Speakers (Par)",
+            "sku": "INCLGWW1",
+            "qty": "x2 Pares (4 Cornetas)",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp + Accesorios de Integración",
+            "sku": "AMPG1US1BLK",
+            "qty": "Sistema Activo",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_principal_habitación_principal_1",
+        "name": "Habitación Principal 1",
+        "tag": "Cine & Música en Suite",
+        "desc": "Sonos Arc Ultra y Sub G4 llenan la habitación de sonido inmersivo para películas, series y música, con diálogos claros y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Montaje TV",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_principal_habitación_principal_2",
+        "name": "Habitación Principal 2",
+        "tag": "Cine & Música en Suite",
+        "desc": "Sonos Arc Ultra y Sub G4 llenan la habitación de sonido inmersivo para películas, series y música, con diálogos claros y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Montaje TV",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_habitación_1",
+        "name": "Habitación 1",
+        "tag": "TV & Música Compacta",
+        "desc": "Sonos Beam Gen 2 y subwoofer Sub Mini mejoran el sonido del televisor y suman graves profundos para disfrutar de películas, series y música.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Beam Gen 2 (Black)",
+            "sku": "BEAM2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub Mini (Black) + Instalación",
+            "sku": "SUBM1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sala_tv",
+        "name": "Sala TV / Family Room",
+        "tag": "Sonido Inmersivo Dolby Atmos",
+        "desc": "Sonos Arc Ultra y Sub G4 brindan sonido inmersivo de cine y música, con diálogos cristalinos y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Instalación",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonido_portatil",
+        "name": "Sonido Portátil / Terraza",
+        "tag": "Exterior & Interior",
+        "desc": "Sonos Move 2 ofrece sonido estéreo potente y movilidad total para disfrutar en la terraza de APEX 07 y otros espacios exteriores, con Wi-Fi y Bluetooth.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Move 2 (Black)",
+            "sku": "MOVE2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/253c32d3e93db9ee17d931d2cfc3e6ba88306b29-1280x1280.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonos_ace",
+        "name": "Experiencia Personal Sonos Ace",
+        "tag": "Escucha Privada TV Audio Swap",
+        "desc": "Sonos Ace ofrece escucha privada de alta fidelidad, cancelación activa de ruido y transferencia inmediata del audio desde cualquier barra Sonos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Sonos Ace (Black)",
+            "sku": "ACEG1US1BLK",
+            "qty": "x1",
+            "img": "https://cdn.sanity.io/images/znqtjj88/production/ee6a3731d218459ac8335ba8ca8e9bb267d31469-874x800.png"
+          }
+        ]
+      }
+    ]
+  },
+  "5A": {
+    "key": "5A",
+    "code": "5A",
+    "proposalNum": "#947",
+    "floor": "Piso 5",
+    "zones": [
+      {
+        "id": "sala_comedor",
+        "name": "Sala / Comedor",
+        "tag": "Audio Arquitectónico Empotrado",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp ofrecen música con sonido envolvente y una instalación discreta en techo, controlada desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling 6\" Speakers (Par)",
+            "sku": "INCLGWW1",
+            "qty": "x2 Pares (4 Cornetas)",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp + Accesorios de Integración",
+            "sku": "AMPG1US1BLK",
+            "qty": "Sistema Activo",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_principal_habitación_principal",
+        "name": "Habitación Principal",
+        "tag": "Cine & Música en Suite",
+        "desc": "Sonos Arc Ultra y Sub G4 llenan la habitación de sonido inmersivo para películas, series y música, con diálogos claros y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Montaje TV",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "vestier_vestier",
+        "name": "Vestier",
+        "tag": "Audio Discreto en Techo",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp llevan música al vestier con una instalación arquitectónica limpia y control desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling by Sonance 6\"",
+            "sku": "INCLGWW1",
+            "qty": "x1 Par",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp",
+            "sku": "AMPG1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_habitación_2",
+        "name": "Habitación 2",
+        "tag": "TV & Música Compacta",
+        "desc": "Sonos Beam Gen 2 y subwoofer Sub Mini mejoran el sonido del televisor y suman graves profundos para disfrutar de películas, series y música.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Beam Gen 2 (Black)",
+            "sku": "BEAM2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub Mini (Black) + Instalación",
+            "sku": "SUBM1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sala_tv",
+        "name": "Sala TV / Family Room",
+        "tag": "Sonido Inmersivo Dolby Atmos",
+        "desc": "Sonos Arc Ultra y Sub G4 brindan sonido inmersivo de cine y música, con diálogos cristalinos y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Instalación",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonido_portatil",
+        "name": "Sonido Portátil / Terraza",
+        "tag": "Exterior & Interior",
+        "desc": "Sonos Move 2 ofrece sonido estéreo potente y movilidad total para disfrutar en la terraza de APEX 07 y otros espacios exteriores, con Wi-Fi y Bluetooth.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Move 2 (Black)",
+            "sku": "MOVE2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/253c32d3e93db9ee17d931d2cfc3e6ba88306b29-1280x1280.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonos_ace",
+        "name": "Experiencia Personal Sonos Ace",
+        "tag": "Escucha Privada TV Audio Swap",
+        "desc": "Sonos Ace ofrece escucha privada de alta fidelidad, cancelación activa de ruido y transferencia inmediata del audio desde cualquier barra Sonos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Sonos Ace (Black)",
+            "sku": "ACEG1US1BLK",
+            "qty": "x1",
+            "img": "https://cdn.sanity.io/images/znqtjj88/production/ee6a3731d218459ac8335ba8ca8e9bb267d31469-874x800.png"
+          }
+        ]
+      }
+    ]
+  },
+  "5B": {
+    "key": "5B",
+    "code": "5B",
+    "proposalNum": "#949",
+    "floor": "Piso 5",
+    "zones": [
+      {
+        "id": "sala_comedor",
+        "name": "Sala / Comedor",
+        "tag": "Audio Arquitectónico Empotrado",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp ofrecen música con sonido envolvente y una instalación discreta en techo, controlada desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling 6\" Speakers (Par)",
+            "sku": "INCLGWW1",
+            "qty": "x2 Pares (4 Cornetas)",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp + Accesorios de Integración",
+            "sku": "AMPG1US1BLK",
+            "qty": "Sistema Activo",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_principal_habitación_principal",
+        "name": "Habitación Principal",
+        "tag": "Cine & Música en Suite",
+        "desc": "Sonos Arc Ultra y Sub G4 llenan la habitación de sonido inmersivo para películas, series y música, con diálogos claros y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Montaje TV",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_habitación_2",
+        "name": "Habitación 2",
+        "tag": "TV & Música Compacta",
+        "desc": "Sonos Beam Gen 2 y subwoofer Sub Mini mejoran el sonido del televisor y suman graves profundos para disfrutar de películas, series y música.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Beam Gen 2 (Black)",
+            "sku": "BEAM2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub Mini (Black) + Instalación",
+            "sku": "SUBM1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sala_tv",
+        "name": "Sala TV / Family Room",
+        "tag": "Sonido Inmersivo Dolby Atmos",
+        "desc": "Sonos Arc Ultra y Sub G4 brindan sonido inmersivo de cine y música, con diálogos cristalinos y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Instalación",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonido_portatil",
+        "name": "Sonido Portátil / Terraza",
+        "tag": "Exterior & Interior",
+        "desc": "Sonos Move 2 ofrece sonido estéreo potente y movilidad total para disfrutar en la terraza de APEX 07 y otros espacios exteriores, con Wi-Fi y Bluetooth.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Move 2 (Black)",
+            "sku": "MOVE2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/253c32d3e93db9ee17d931d2cfc3e6ba88306b29-1280x1280.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonos_ace",
+        "name": "Experiencia Personal Sonos Ace",
+        "tag": "Escucha Privada TV Audio Swap",
+        "desc": "Sonos Ace ofrece escucha privada de alta fidelidad, cancelación activa de ruido y transferencia inmediata del audio desde cualquier barra Sonos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Sonos Ace (Black)",
+            "sku": "ACEG1US1BLK",
+            "qty": "x1",
+            "img": "https://cdn.sanity.io/images/znqtjj88/production/ee6a3731d218459ac8335ba8ca8e9bb267d31469-874x800.png"
+          }
+        ]
+      }
+    ]
+  },
+  "5C": {
+    "key": "5C",
+    "code": "5C",
+    "proposalNum": "#951",
+    "floor": "Piso 5",
+    "zones": [
+      {
+        "id": "sala_comedor",
+        "name": "Sala / Comedor",
+        "tag": "Audio Arquitectónico Empotrado",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp ofrecen música con sonido envolvente y una instalación discreta en techo, controlada desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling 6\" Speakers (Par)",
+            "sku": "INCLGWW1",
+            "qty": "x2 Pares (4 Cornetas)",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp + Accesorios de Integración",
+            "sku": "AMPG1US1BLK",
+            "qty": "Sistema Activo",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_principal_habitación_principal",
+        "name": "Habitación Principal",
+        "tag": "Cine & Música en Suite",
+        "desc": "Sonos Arc Ultra y Sub G4 llenan la habitación de sonido inmersivo para películas, series y música, con diálogos claros y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Montaje TV",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "vestier_vestier",
+        "name": "Vestier",
+        "tag": "Audio Discreto en Techo",
+        "desc": "Cornetas empotradas Sonos by Sonance y Sonos Amp llevan música al vestier con una instalación arquitectónica limpia y control desde la aplicación Sonos.",
+        "items": [
+          {
+            "brand": "Sonos by Sonance",
+            "model": "In-Ceiling by Sonance 6\"",
+            "sku": "INCLGWW1",
+            "qty": "x1.5 Pares",
+            "img": "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sonos Amp",
+            "sku": "AMPG1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "hab_habitación_2",
+        "name": "Habitación 2",
+        "tag": "TV & Música Compacta",
+        "desc": "Sonos Beam Gen 2 y subwoofer Sub Mini mejoran el sonido del televisor y suman graves profundos para disfrutar de películas, series y música.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Beam Gen 2 (Black)",
+            "sku": "BEAM2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub Mini (Black) + Instalación",
+            "sku": "SUBM1US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sala_tv",
+        "name": "Sala TV / Family Room",
+        "tag": "Sonido Inmersivo Dolby Atmos",
+        "desc": "Sonos Arc Ultra y Sub G4 brindan sonido inmersivo de cine y música, con diálogos cristalinos y graves profundos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Arc Ultra (Black)",
+            "sku": "ARCG2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+          },
+          {
+            "brand": "Sonos",
+            "model": "Sub G4 (Black) + Instalación",
+            "sku": "SUBG4US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonido_portatil",
+        "name": "Sonido Portátil / Terraza",
+        "tag": "Exterior & Interior",
+        "desc": "Sonos Move 2 ofrece sonido estéreo potente y movilidad total para disfrutar en la terraza de APEX 07 y otros espacios exteriores, con Wi-Fi y Bluetooth.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Move 2 (Black)",
+            "sku": "MOVE2US1BLK",
+            "qty": "x1",
+            "img": "https://media.sonos.com/images/znqtjj88/production/253c32d3e93db9ee17d931d2cfc3e6ba88306b29-1280x1280.png?w=800&q=85&fit=clip&auto=format"
+          }
+        ]
+      },
+      {
+        "id": "sonos_ace",
+        "name": "Experiencia Personal Sonos Ace",
+        "tag": "Escucha Privada TV Audio Swap",
+        "desc": "Sonos Ace ofrece escucha privada de alta fidelidad, cancelación activa de ruido y transferencia inmediata del audio desde cualquier barra Sonos.",
+        "items": [
+          {
+            "brand": "Sonos",
+            "model": "Sonos Ace (Black)",
+            "sku": "ACEG1US1BLK",
+            "qty": "x1",
+            "img": "https://cdn.sanity.io/images/znqtjj88/production/ee6a3731d218459ac8335ba8ca8e9bb267d31469-874x800.png"
+          }
+        ]
+      }
+    ]
+  }
+};
+
+    const ALIAS_TO_KEY = {
+      "PBA": "PBA", "PBA930": "PBA", "930": "PBA",
+      "PBB": "PBB", "PBB931": "PBB", "931": "PBB",
+      "1A": "1A", "1A932": "1A", "932": "1A",
+      "1B": "1B", "1B933": "1B", "933": "1B",
+      "1C": "1C", "1C934": "1C", "934": "1C",
+      "2A": "2A", "2A945": "2A", "945": "2A",
+      "2B": "2B", "2B948": "2B", "948": "2B",
+      "2C": "2C", "2C950": "2C", "950": "2C",
+      "3A": "3A", "3A946": "3A", "946": "3A",
+      "3B": "3B", "3B936": "3B", "936": "3B",
+      "4A": "4A", "4A952": "4A", "952": "4A",
+      "4B": "4B", "4B937": "4B", "937": "4B",
+      "5A": "5A", "5A947": "5A", "947": "5A",
+      "5B": "5B", "5B949": "5B", "949": "5B",
+      "5C": "5C", "5C951": "5C", "951": "5C"
+    };
+
+    function resolveApartment() {
+      const params = new URLSearchParams(window.location.search);
+      const rawParam = params.get("apt") || params.get("unidad") || "";
+      const clean = rawParam.toUpperCase().replace(/[^A-Z0-9]/g, "");
+      const key = ALIAS_TO_KEY[clean];
+      if (!key || !APARTMENTS_DB[key]) {
+        window.location.replace("index.html#acceso-privado");
+        return null;
+      }
+      return APARTMENTS_DB[key];
+    }
+
+    const APT = resolveApartment();
+
+    const LUX_FINISH_IMAGES = {
+      "Obsidian Black": "assets/lux-obsidian.webp",
+      "Satin Brass": "assets/lux-brass.webp",
+      "Brushed Nickel": "assets/lux-brushed-nickel.webp",
+      "Architectural White": "assets/lux-white.webp"
+    };
+
+    const C4_MODULES = [
+      {
+        id: "c4_lux_keypads",
+        tag: "Control4 Serie Lux • Iluminación Arquitectónica",
+        title: "Botoneras & Dimmers Inteligentes Control4 Lux",
+        desc: "Solución integral de iluminación con botoneras y dimmers universales de placas metálicas sin tornillos, grabado láser personalizado, escenas de ambiente y atenuación fluida en Sala, Comedor, Terraza y Habitaciones.",
+        img: "assets/lux-obsidian.webp",
+        customizerUrl: "https://lux.automatizacion.io/"
+      },
+      {
+        id: "c4_halo_touch",
+        tag: "Control de Entretenimiento & Hogar",
+        title: "Control Remoto Halo Touch",
+        desc: "Control remoto de aluminio con pantalla táctil a color, control por voz e integración total de TV, Sonos, luces y cortinas desde el sofá o la cama.",
+        img: "https://cdn.prod.website-files.com/67f03f77de69426b9d8fdba4/680bc50c3bf5c940fd3545fe_666303b2e2d0e007811c586c_AD_4nXfp0S9uPlBj8vHX-BNJgdlJKYd8uOmupTLe53ErDbJZ-HxvUOqaJwRwaZ4FAbLVBqJ507ZLNhjsTZR_n8S8LJmWM8QzwmdcAB45EebDmTXqaggY-ug3Ho-_ayuxZSf4-VHtCGHhIxXy2NVfWQ1eLOAT5x4A.png"
+      },
+      {
+        id: "c4_core_touchscreen",
+        tag: "Cerebro Domótico & Clima",
+        title: "Procesador Control4 CORE + Pantalla T4",
+        desc: "Automatización centralizada para aire acondicionado, persianas motorizadas, videoportero, cerraduras inteligentes y control desde la App en cualquier lugar del mundo.",
+        img: "https://cdn.prod.website-files.com/629926620ba03720384bebb3/6812700f948952f6ac0eb3cc_087_25_Control4.com_Controllers_Header.webp"
+      }
+    ];
+
+    const UNIFI_MODULES = [
+      {
+        id: "unifi_integral",
+        tag: "Conectividad Residencial Completa • Ubiquiti UniFi",
+        title: "Sistema Integral de Red & Wi-Fi de Alta Velocidad Ubiquiti UniFi",
+        desc: "Proyecto de red llave en mano dimensionado a la distribución de su apartamento en APEX 07: cobertura total sin puntos ciegos desde las habitaciones hasta la terraza, roaming transparente, soporte para doble proveedor de internet (Failover) y estabilidad dedicada para Sonos y Control4.",
+        img: "https://images.svc.ui.com/?u=https%3A%2F%2Fcdn.ecomm.ui.com%2Fproducts%2Ffa8dd4e4-36c8-4c79-a928-22c7bff2ce29%2F55143a40-9ce9-48a0-b7b3-6726988102d6.png&q=75&w=1200"
+      }
+    ];
+
+    const SONOS_EXTRAS_CATALOG = [
+      {
+        id: "extra_era300",
+        cat: "smart cinema",
+        tag: "Audio Espacial Dolby Atmos • Surrounds",
+        title: "Sonos Era 300 (Black / White)",
+        desc: "Altavoz inteligente con 6 amplificadores que proyectan sonido hacia adelante, los lados y el techo en Dolby Atmos. Ideal para estudio, sala o como par de cornetas traseras (Surround) junto a la Arc Ultra.",
+        img: "https://cdn.sanity.io/images/znqtjj88/production/571452b8db9d5df3cdf9cf98a3aeb5126199117e-437x400.png"
+      },
+      {
+        id: "extra_five",
+        cat: "smart",
+        tag: "Alta Fidelidad • Tornamesa & Vinilos",
+        title: "Sonos Five (Hi-Fi Studio Speaker)",
+        desc: "El altavoz con mayor pureza acústica de Sonos y entrada de línea directa de 3.5 mm para conectar su tocadiscos y transmitir el sonido de sus vinilos a todo el apartamento.",
+        img: "https://cdn.sanity.io/images/znqtjj88/production/d5c8cbbf9ea3334a78df015f670a20bcbe06bced-480x480.png"
+      },
+      {
+        id: "extra_era100",
+        cat: "smart cinema",
+        tag: "Cocina • Escritorio • Mesas de Noche",
+        title: "Sonos Era 100 (Estéreo Compacto)",
+        desc: "Altavoz inteligente compacto con doble tweeter en ángulo para sonido estéreo rico, Wi-Fi y Bluetooth. Perfecto para la cocina, estudio, habitaciones o surrounds traseros.",
+        img: "https://cdn.sanity.io/images/znqtjj88/production/a7ec634d9461c949d4c55b678ce6948d9a3c4e79-437x400.png"
+      },
+      {
+        id: "extra_roam2",
+        cat: "portable",
+        tag: "Baños • Viajes • Sumergible IP67",
+        title: "Sonos Roam 2 (Ultraportátil)",
+        desc: "Ligero, resistente al agua y sumergible (IP67) con 10 horas de batería, Wi-Fi en casa y Bluetooth en viajes. Ideal para baños principales, duchas o llevar en el bolso.",
+        img: "https://media.sonos.com/images/znqtjj88/production/110a711ffb1d9ec82743734ef7477a7d400c8d11-2400x2400.png?w=800&q=85&fit=clip&auto=format"
+      },
+      {
+        id: "extra_outdoor",
+        cat: "architectural",
+        tag: "Terrazas • Jardines PB • Parrilleras",
+        title: "Sonos Outdoor by Sonance (Par)",
+        desc: "Altavoces arquitectónicos de intemperie resistentes al agua, sol directo y humedad para montaje fijo en terrazas amplias, jardines o área de parrillera.",
+        img: "https://media.sonos.com/images/znqtjj88/production/da5b9dcc02bf7e3fcbbf8c2b580b6a6f9fa63138-2000x2000.png?w=800&q=85&fit=clip&auto=format"
+      },
+      {
+        id: "extra_inceiling8",
+        cat: "architectural",
+        tag: "Salones Amplios • Graves Extendidos",
+        title: "Sonos In-Ceiling by Sonance 8\" (Par)",
+        desc: "Cornetas de techo de gran formato (8 pulgadas) para propietarios que buscan mayor presión acústica y bajos más profundos desde el techo.",
+        img: "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+      },
+      {
+        id: "extra_inceiling6",
+        cat: "architectural",
+        tag: "Techo Empotrado Adicional",
+        title: "Sonos In-Ceiling by Sonance 6\" (Par)",
+        desc: "Par adicional de cornetas arquitectónicas de 6 pulgadas al ras del techo para sumar música en cocina, terraza techada, baño principal o pasillos.",
+        img: "https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format"
+      },
+      {
+        id: "extra_amp",
+        cat: "architectural",
+        tag: "Amplificador Multi-Zona 125W/Canal",
+        title: "Sonos Amp Adicional",
+        desc: "Amplificador inteligente de 125W por canal para independizar una nueva zona de cornetas empotradas o de terraza.",
+        img: "https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format"
+      },
+      {
+        id: "extra_port",
+        cat: "architectural smart",
+        tag: "Integración de Equipos Existentes",
+        title: "Sonos Port (Streamer Hi-Fi)",
+        desc: "Conecta su receptor de audio tradicional, amplificador High-End o tornamesa preamplificada al ecosistema inalámbrico Sonos de todo el apartamento.",
+        img: "https://media.sonos.com/images/znqtjj88/production/be90bf7119272e08eaf87e09c44a6ab821a26985-437x400.png"
+      },
+      {
+        id: "extra_arcultra",
+        cat: "cinema",
+        tag: "Barra Insignia 9.1.4 Dolby Atmos",
+        title: "Sonos Arc Ultra Adicional",
+        desc: "Barra de sonido insignia con tecnología Sound Motion™ y 9.1.4 canales Dolby Atmos para un televisor adicional.",
+        img: "https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format"
+      },
+      {
+        id: "extra_subg4",
+        cat: "cinema",
+        tag: "Subwoofer Inalámbrico de Cine",
+        title: "Sonos Sub (Gen 4) Adicional",
+        desc: "Subwoofer inalámbrico de doble woofer con cancelación de fuerza (o para configuración Dual Sub en Sala de TV).",
+        img: "https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format"
+      },
+      {
+        id: "extra_beam2",
+        cat: "cinema",
+        tag: "Barra Inteligente Dolby Atmos",
+        title: "Sonos Beam (Gen 2) Adicional",
+        desc: "Barra de sonido inteligente compacta con Dolby Atmos y HDMI eARC para televisores de dormitorios o estudio.",
+        img: "https://media.sonos.com/images/znqtjj88/production/eaf13ecd3197f5cf7a43bda0c956ef5fef5521c7-1352x226.png?w=800&q=85&fit=clip&auto=format"
+      },
+      {
+        id: "extra_submini",
+        cat: "cinema",
+        tag: "Subwoofer Compacto Negro",
+        title: "Sonos Sub Mini (Black) Adicional",
+        desc: "Subwoofer inalámbrico cilíndrico en acabado negro mate para complementar barras Beam, Ray o altavoces Era 100.",
+        img: "https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format"
+      },
+      {
+        id: "extra_ray",
+        cat: "cinema",
+        tag: "Barra Ultracompacta TV Cocina / Gym",
+        title: "Sonos Ray (Black / White)",
+        desc: "Barra de sonido ultracompacta con acústica frontal ideal para televisores secundarios en cocina, gimnasio en casa o estudio.",
+        img: "https://media.sonos.com/images/znqtjj88/production/4b3a6ceed063070b69ea190c2dde70a658e8109a-4880x917.png?w=800&q=85&fit=clip&auto=format"
+      },
+      {
+        id: "extra_move2",
+        cat: "portable",
+        tag: "Terraza & Exterior • 24h Batería",
+        title: "Sonos Move 2 Adicional",
+        desc: "Altavoz portátil estéreo resistente a intemperie (IP56) con 24 horas de batería para emparejar en estéreo en la terraza.",
+        img: "https://media.sonos.com/images/znqtjj88/production/253c32d3e93db9ee17d931d2cfc3e6ba88306b29-1280x1280.png?w=800&q=85&fit=clip&auto=format"
+      },
+      {
+        id: "extra_ace",
+        cat: "portable cinema",
+        tag: "Audífonos Hi-Fi & TV Audio Swap",
+        title: "Audífonos Sonos Ace Adicionales",
+        desc: "Audífonos inalámbricos con cancelación activa de ruido y transferencia inmediata del sonido desde cualquier barra Sonos.",
+        img: "https://cdn.sanity.io/images/znqtjj88/production/ee6a3731d218459ac8335ba8ca8e9bb267d31469-874x800.png"
+      }
+    ];
+
+    let selectedZones = new Set(APT ? APT.zones.map(z => z.id) : []);
+    let extraQuantities = {};
+    let currentExtraFilter = "all";
+    let selectedC4 = new Set(["c4_lux_keypads"]);
+    let selectedUnifi = new Set(["unifi_integral"]);
+    let selectedFinish = "Obsidian Black";
+
+    function initApp() {
+      if (!APT) return;
+
+      document.title = `APEX 07 | Apartamento ${APT.code} (${APT.proposalNum}) — Propuesta Privada Automatizacion`;
+      document.getElementById("navAptSub").textContent = `Apartamento ${APT.code} • Valle Arriba`;
+      document.getElementById("navSonosLink").textContent = `Sonido Sonos (${APT.code})`;
+      document.getElementById("navCtaBtn").textContent = `Personalizar Apt. ${APT.code}`;
+      document.getElementById("heroEyebrow").textContent = `Propuesta Privada ${APT.proposalNum} • Apartamento ${APT.code}`;
+      document.getElementById("heroTitle").innerHTML = `Tecnología invisible que acompaña la <em>arquitectura</em> de su Apartamento ${APT.code}.`;
+      document.getElementById("heroLead").innerHTML = `APEX 07 combina espacios amplios, un área social integrada y una arquitectura contemporánea abierta hacia la terraza en Valle Arriba. Para el <strong>Apartamento ${APT.code}</strong> proponemos un ecosistema integral de sonido, domótica y conectividad adaptado a cada ambiente.`;
+      document.getElementById("heroPrimaryBtnText").textContent = `Personalizar Mi Propuesta (${APT.code})`;
+
+      document.getElementById("dossierProposalBadge").textContent = `Propuesta ${APT.proposalNum}`;
+      document.getElementById("dossierAptTitle").textContent = `Apartamento ${APT.code}`;
+      document.getElementById("dossierAptSub").textContent = `${APT.floor} • Edificio APEX 07, Valle Arriba • Preparado por Andrés Montbrun`;
+      document.getElementById("dossierZonesLabel").textContent = `Ambientes Proyectados en su Unidad (${APT.zones.length} Zonas):`;
+      document.getElementById("dossierZonesPills").innerHTML = APT.zones
+        .map(z => `<span style="font-size: 0.76rem; padding: 0.3rem 0.65rem; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; color: var(--text-primary);">✓ ${z.name}</span>`)
+        .join('');
+
+      document.getElementById("simEyebrow").textContent = `Simulador de Estilo de Vida • Apt. ${APT.code}`;
+      document.getElementById("configEyebrow").textContent = `Configurador Exclusivo • Apartamento ${APT.code}`;
+      document.getElementById("configLead").textContent = `Revise los ambientes y equipos contemplados en su propuesta oficial (${APT.proposalNum}), active o desactive zonas a su gusto, o incluya Domótica Control4 Lux y Redes Ubiquiti UniFi.`;
+      document.getElementById("tabSonosBadge").textContent = `Propuesta ${APT.proposalNum} • Apt. ${APT.code}`;
+      document.getElementById("sonosViewTitle").textContent = `Propuesta de Sonido — Apartamento ${APT.code}`;
+      document.getElementById("summaryAptBadge").textContent = `APT ${APT.code}`;
+      document.getElementById("summaryRefText").textContent = `Referencia Oficial: Propuesta ${APT.proposalNum} • ${APT.floor}`;
+      document.getElementById("footerDesc").textContent = `Propuesta privada de Sonido Arquitectónico Sonos, Domótica Control4 Serie Lux y Redes Ubiquiti UniFi para el Apartamento ${APT.code} de APEX 07 en Valle Arriba, Caracas.`;
+      document.getElementById("footerCopyright").textContent = `© 2026 Automatizacion Corp — Propuesta Exclusiva Apartamento ${APT.code} (${APT.proposalNum}) • APEX 07 Valle Arriba.`;
+
+      renderSonosZones();
+      renderSonosExtras();
+      renderC4AndUnifiCards();
+      updateSummarySidebar();
+    }
+
+    function renderSonosExtras() {
+      const grid = document.getElementById("sonosExtrasGrid");
+      if (!grid) return;
+      grid.innerHTML = SONOS_EXTRAS_CATALOG.filter(item => {
+        if (currentExtraFilter === "all") return true;
+        return item.cat.split(" ").includes(currentExtraFilter);
+      }).map(item => {
+        const qty = extraQuantities[item.id] || 0;
+        return `
+          <div class="lux-card ${qty > 0 ? 'added' : ''}">
+            <div>
+              <div class="lux-card-img">
+                <img src="${item.img}" alt="${item.title}" loading="lazy" />
+              </div>
+              <div class="lux-card-tag">${item.tag}</div>
+              <h4>${item.title}</h4>
+              <p>${item.desc}</p>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; padding-top: 0.8rem; border-top: 1px solid var(--border-subtle);">
+              <span style="font-size: 0.78rem; color: ${qty > 0 ? 'var(--gold-champagne)' : 'var(--text-secondary)'}; font-weight: 600;">
+                ${qty > 0 ? `✓ ${qty} agregado(s)` : 'Opcional a medida'}
+              </span>
+              <div style="display: flex; align-items: center; gap: 0.45rem;">
+                <button onclick="changeExtraQty('${item.id}', -1)" style="width: 30px; height: 30px; border-radius: 8px; border: 1px solid var(--border-subtle); background: var(--bg-card); color: var(--text-primary); cursor: pointer; font-weight: 700;">-</button>
+                <span style="min-width: 22px; text-align: center; font-weight: 700; font-size: 0.88rem;">${qty}</span>
+                <button onclick="changeExtraQty('${item.id}', 1)" style="width: 30px; height: 30px; border-radius: 8px; border: 1px solid var(--gold-primary); background: rgba(255,85,30,0.2); color: var(--gold-champagne); cursor: pointer; font-weight: 700;">+</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function changeExtraQty(id, delta) {
+      const next = Math.max(0, (extraQuantities[id] || 0) + delta);
+      if (next === 0) delete extraQuantities[id];
+      else extraQuantities[id] = next;
+      renderSonosExtras();
+      updateSummarySidebar();
+    }
+
+    function filterExtraSonos(cat, btn) {
+      currentExtraFilter = cat;
+      btn.parentElement.querySelectorAll(".finish-swatch").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderSonosExtras();
+    }
+
+    function renderSonosZones() {
+      const container = document.getElementById("sonosZonesList");
+      container.innerHTML = "";
+
+      APT.zones.forEach(zone => {
+        const isSelected = selectedZones.has(zone.id);
+        const card = document.createElement("div");
+        card.className = "zone-card " + (isSelected ? "selected" : "");
+        card.innerHTML = `
+          <div class="zone-header" onclick="toggleZone('${zone.id}')" style="cursor: pointer;">
+            <div class="zone-title-wrap">
+              <button class="zone-toggle" aria-label="Seleccionar zona">
+                ${isSelected ? '✓' : ''}
+              </button>
+              <div>
+                <div class="zone-name">${zone.name}</div>
+                <div class="zone-desc">${zone.desc}</div>
+              </div>
+            </div>
+            <span class="zone-tag">${zone.tag}</span>
+          </div>
+          <div class="zone-items-grid">
+            ${zone.items.map(item => `
+              <div class="equipment-item">
+                <div class="equipment-thumb">
+                  <img src="${item.img}" alt="${item.model}" loading="lazy" />
+                </div>
+                <div class="equipment-info">
+                  <div class="equipment-brand">${item.brand}</div>
+                  <div class="equipment-model" title="${item.model}">${item.model}</div>
+                  <div class="equipment-sku">Modelo: ${item.sku}</div>
+                </div>
+                <div class="equipment-qty">${item.qty}</div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function toggleZone(zoneId) {
+      if (selectedZones.has(zoneId)) selectedZones.delete(zoneId);
+      else selectedZones.add(zoneId);
+      renderSonosZones();
+      updateSummarySidebar();
+    }
+
+    function toggleAllZones(selectAll) {
+      if (selectAll) selectedZones = new Set(APT.zones.map(z => z.id));
+      else selectedZones.clear();
+      renderSonosZones();
+      updateSummarySidebar();
+    }
+
+    function renderC4AndUnifiCards() {
+      const renderGroup = (modules, selectedSet, toggleFnName) => modules.map(m => {
+        const isAdded = selectedSet.has(m.id);
+        return `
+          <div class="lux-card ${isAdded ? 'added' : ''}">
+            <div>
+              <div class="lux-card-img">
+                <img src="${m.img}" alt="${m.title}" loading="lazy" />
+              </div>
+              <div class="lux-card-tag">${m.tag}</div>
+              <h4>${m.title}</h4>
+              <p>${m.desc}</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.55rem;">
+              ${m.customizerUrl ? `
+                <a href="${m.customizerUrl}" target="_blank" rel="noopener noreferrer" class="btn-outline-full" style="border-color: var(--gold-primary); color: var(--gold-champagne); text-decoration: none; font-weight: 700;">
+                  <span>🎨 Personalizar Teclados en lux.automatizacion.io</span>
+                </a>
+              ` : ''}
+              <button class="btn-toggle-module" onclick="${toggleFnName}('${m.id}')">
+                <span>${isAdded ? '✓ Incluido en mi solicitud' : '+ Incluir en mi cotización'}</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      const c4Html = renderGroup(C4_MODULES, selectedC4, 'toggleC4Module');
+      const unifiHtml = renderGroup(UNIFI_MODULES, selectedUnifi, 'toggleUnifiModule');
+
+      document.getElementById("c4SelectorGrid").innerHTML = c4Html;
+      document.getElementById("c4ShowcaseCards").innerHTML = c4Html;
+      document.getElementById("unifiSelectorGrid").innerHTML = unifiHtml;
+
+      const unifiBtnText = document.getElementById("unifiShowcaseBtnText");
+      if (unifiBtnText) {
+        unifiBtnText.textContent = selectedUnifi.has("unifi_integral")
+          ? "✓ Red Integral UniFi Incluida en Mi Solicitud"
+          : "+ Incluir Red Integral UniFi en Mi Cotización";
+      }
+    }
+
+    function toggleLuxStudio() {
+      const embed = document.getElementById("luxStudioEmbed");
+      if (embed.style.display === "none") {
+        embed.style.display = "block";
+        embed.scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        embed.style.display = "none";
+      }
+    }
+
+    function toggleC4Module(id) {
+      if (selectedC4.has(id)) selectedC4.delete(id);
+      else selectedC4.add(id);
+      renderC4AndUnifiCards();
+      updateSummarySidebar();
+    }
+
+    function toggleUnifiModule(id) {
+      if (selectedUnifi.has(id)) selectedUnifi.delete(id);
+      else selectedUnifi.add(id);
+      renderC4AndUnifiCards();
+      updateSummarySidebar();
+    }
+
+    function updateSummarySidebar() {
+      const sonosUl = document.getElementById("summarySonosList");
+      const extrasTitle = document.getElementById("summaryExtrasTitle");
+      const extrasUl = document.getElementById("summaryExtrasList");
+      const c4Ul = document.getElementById("summaryC4List");
+      const unifiUl = document.getElementById("summaryUnifiList");
+
+      const extraCount = Object.values(extraQuantities).reduce((a, b) => a + b, 0);
+      document.getElementById("badgeCountSonos").textContent = `${selectedZones.size}/${APT.zones.length} Zonas` + (extraCount > 0 ? ` + ${extraCount} Extra` : '');
+      document.getElementById("badgeCountC4").textContent = `${selectedC4.size} Seleccionados`;
+      document.getElementById("badgeCountUnifi").textContent = `${selectedUnifi.size} Seleccionado`;
+
+      const activeZones = APT.zones.filter(z => selectedZones.has(z.id));
+      sonosUl.innerHTML = activeZones.length === 0
+        ? '<li style="color: var(--text-muted);">Ninguna zona seleccionada</li>'
+        : activeZones.map(z => `<li><span>✓ ${z.name}</span><span class="item-tag">${z.items.length} ítem(s)</span></li>`).join('');
+
+      const activeExtras = SONOS_EXTRAS_CATALOG.filter(item => (extraQuantities[item.id] || 0) > 0);
+      if (activeExtras.length > 0) {
+        extrasTitle.style.display = "block";
+        extrasUl.style.display = "block";
+        extrasUl.innerHTML = activeExtras.map(item => `<li><span>+ ${item.title}</span><span class="item-tag">x${extraQuantities[item.id]}</span></li>`).join('');
+      } else {
+        extrasTitle.style.display = "none";
+        extrasUl.style.display = "none";
+      }
+
+      const activeC4 = C4_MODULES.filter(m => selectedC4.has(m.id));
+      c4Ul.innerHTML = activeC4.length === 0
+        ? '<li style="color: var(--text-muted);">Sin módulos seleccionados</li>'
+        : activeC4.map(m => `<li><span>✓ ${m.title}</span><span class="item-tag">A Medida</span></li>`).join('');
+
+      const activeUnifi = UNIFI_MODULES.filter(m => selectedUnifi.has(m.id));
+      unifiUl.innerHTML = activeUnifi.length === 0
+        ? '<li style="color: var(--text-muted);">Sin módulos seleccionados</li>'
+        : activeUnifi.map(m => `<li><span>✓ ${m.title}</span><span class="item-tag">A Medida</span></li>`).join('');
+    }
+
+    function switchCategory(cat) {
+      document.getElementById("view-sonos").style.display = cat === "sonos" ? "block" : "none";
+      document.getElementById("view-domotica").style.display = cat === "domotica" ? "block" : "none";
+      document.getElementById("view-redes").style.display = cat === "redes" ? "block" : "none";
+
+      document.getElementById("tab-sonos").classList.toggle("active", cat === "sonos");
+      document.getElementById("tab-domotica").classList.toggle("active", cat === "domotica");
+      document.getElementById("tab-redes").classList.toggle("active", cat === "redes");
+    }
+
+    function highlightFinish(el, finishName) {
+      selectedFinish = finishName;
+      el.parentElement.querySelectorAll(".finish-swatch").forEach(s => s.classList.remove("active"));
+      el.classList.add("active");
+      const imgEl = document.getElementById("luxFinishPreviewImg");
+      if (imgEl && LUX_FINISH_IMAGES[finishName]) {
+        imgEl.style.opacity = "0.35";
+        imgEl.style.transform = "scale(0.985)";
+        setTimeout(() => {
+          imgEl.src = LUX_FINISH_IMAGES[finishName];
+          imgEl.alt = "Control4 Lux Keypads & Dimmers - " + finishName;
+          imgEl.style.opacity = "1";
+          imgEl.style.transform = "scale(1)";
+        }, 90);
+      }
+    }
+
+    const SCENES = {
+      social: {
+        img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85",
+        overlay: "linear-gradient(180deg, rgba(4,11,36,0.18) 0%, rgba(4,11,36,0.9) 100%)",
+        audio: "Jazz & Bossa en Sala + Terraza (Move 2)",
+        light: "Luz Cálida 45% • Cortinas Abiertas",
+        net: "Prioridad Streaming Hi-Res Audio"
+      },
+      cinema: {
+        img: "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1600&q=85",
+        overlay: "linear-gradient(180deg, rgba(4,11,36,0.55) 0%, rgba(4,11,36,0.95) 100%)",
+        audio: "Dolby Atmos en Arc Ultra + Sub G4",
+        light: "Luz Indirecta 10% • Blackout 100%",
+        net: "Ancho de Banda 8K Ultra HD Dedicado"
+      },
+      morning: {
+        img: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1600&q=85",
+        overlay: "linear-gradient(180deg, rgba(255,126,54,0.1) 0%, rgba(4,11,36,0.88) 100%)",
+        audio: "Playlist Mañana en Suite + Vestier",
+        light: "Luz Natural • Cortinas al 80% • 22°C",
+        net: "Roaming Wi-Fi Activo en Todo el Apt"
+      },
+      night: {
+        img: "https://images.unsplash.com/photo-1540518614846-7ede433c4573?auto=format&fit=crop&w=1600&q=85",
+        overlay: "linear-gradient(180deg, rgba(4,11,36,0.65) 0%, rgba(4,11,36,0.96) 100%)",
+        audio: "Audio TV en Audífonos Sonos Ace",
+        light: "Todo Apagado • Guía Nocturna 5%",
+        net: "Seguridad & Red Activa"
+      }
+    };
+
+    function setScene(key, btnEl) {
+      const s = SCENES[key];
+      document.querySelectorAll(".scene-btn").forEach(b => b.classList.remove("active"));
+      btnEl.classList.add("active");
+
+      document.getElementById("simVisual").style.backgroundImage = `url('${s.img}')`;
+      document.getElementById("simOverlay").style.background = s.overlay;
+      document.getElementById("simAudioStatus").textContent = s.audio;
+      document.getElementById("simLightStatus").textContent = s.light;
+      document.getElementById("simNetStatus").textContent = s.net;
+    }
+
+    function buildQuoteText() {
+      const clientName = document.getElementById("clientName").value.trim() || "Propietario APEX 07";
+      const clientNotes = document.getElementById("clientNotes").value.trim() || "Sin notas adicionales";
+
+      const zonesText = APT.zones
+        .filter(z => selectedZones.has(z.id))
+        .map(z => `  • ${z.name}: ${z.items.map(i => `${i.model} (${i.qty})`).join(" + ")}`)
+        .join("\n") || "  • Ninguna zona de sonido seleccionada";
+
+      const extrasText = SONOS_EXTRAS_CATALOG
+        .filter(item => (extraQuantities[item.id] || 0) > 0)
+        .map(item => `  • + ${item.title} (Cantidad: x${extraQuantities[item.id]})`)
+        .join("\n");
+
+      const c4Text = C4_MODULES
+        .filter(m => selectedC4.has(m.id))
+        .map(m => `  • ${m.title}`)
+        .join("\n") || "  • No solicitado";
+
+      const unifiText = UNIFI_MODULES
+        .filter(m => selectedUnifi.has(m.id))
+        .map(m => `  • ${m.title}`)
+        .join("\n") || "  • No solicitado";
+
+      return `Hola Andrés / Automatizacion Corp,
+
+Soy *${clientName}*, propietario del *Apartamento ${APT.code}* en *APEX 07 (Valle Arriba)*.
+He revisado y personalizado mi propuesta en el portal web (Ref. ${APT.proposalNum}):
+
+*1. SONIDO RESIDENCIAL SONOS (Zonas Base):*
+${zonesText}${extrasText ? `\n\n*EQUIPOS SONOS ADICIONALES SOLICITADOS:*\n${extrasText}` : ''}
+
+*2. DOMÓTICA CONTROL4 SERIE LUX (Acabado preferido: ${selectedFinish}):*
+${c4Text}
+
+*3. REDES UBIQUITI UNIFI:*
+${unifiText}
+
+*COMENTARIOS / PERSONALIZACIÓN:*
+${clientNotes}
+
+Quedo atento para revisar la cotización personalizada.`;
+    }
+
+    function sendWhatsAppQuote() {
+      const msg = encodeURIComponent(buildQuoteText());
+      window.open(`https://wa.me/584122370080?text=${msg}`, "_blank");
+    }
+
+    function sendEmailQuote() {
+      const subject = encodeURIComponent(`Solicitud de Propuesta Personalizada - APEX 07 Apt ${APT.code} (${APT.proposalNum})`);
+      const body = encodeURIComponent(buildQuoteText());
+      window.location.href = `mailto:Willy@automatizaciongroup.com?subject=${subject}&body=${body}`;
+    }
+
+    window.addEventListener("DOMContentLoaded", initApp);
+  </script>
+</body>
+</html>

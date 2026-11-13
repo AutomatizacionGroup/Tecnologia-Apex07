@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APEX 07 | Valle Arriba — Tecnología Arquitectónica de Lujo por Automatizacion Corp</title>
+  <meta name="description" content="Descubra la experiencia residencial definitiva para APEX 07 en Valle Arriba, Caracas: Sonido Arquitectónico Sonos & Sonance, Domótica Control4 Serie Lux y Conectividad Ubiquiti UniFi." />
+  <link rel="icon" type="image/png" href="assets/logo-ingenieria.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-obsidian: #040b24;
+      --bg-surface: #081642;
+      --bg-card: #0c215e;
+      --bg-card-hover: #122d7a;
+      --gold-primary: #ff551e;
+      --gold-champagne: #ff7e36;
+      --gold-muted: rgba(255, 85, 30, 0.16);
+      --brand-blue: #0052cc;
+      --brand-blue-light: #0088ff;
+      --text-primary: #f8fafc;
+      --text-secondary: #bdd0f2;
+      --text-muted: #7694c9;
+      --border-subtle: rgba(100, 165, 255, 0.18);
+      --border-gold: rgba(255, 95, 36, 0.48);
+      --radius-xl: 26px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 8px;
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-obsidian);
+      color: var(--text-primary);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-obsidian);
+      overflow-x: hidden;
+      line-height: 1.65;
+      background-image:
+        radial-gradient(circle at 12% 8%, rgba(0, 136, 255, 0.22) 0%, transparent 36%),
+        radial-gradient(circle at 88% 30%, rgba(255, 85, 30, 0.14) 0%, transparent 38%),
+        radial-gradient(circle at 50% 78%, rgba(0, 82, 204, 0.2) 0%, transparent 45%);
+    }
+
+    h1, h2, h3, .serif {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-obsidian); }
+    ::-webkit-scrollbar-thumb { background: #15358a; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--gold-primary); }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0.9rem 4%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      background: rgba(4, 11, 36, 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      flex-shrink: 0;
+    }
+
+    .brand-apex-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .brand-apex-title span { color: var(--gold-primary); }
+
+    .brand-apex-sub {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-secondary);
+      margin-top: 3px;
+      white-space: nowrap;
+    }
+
+    .brand-divider {
+      width: 1px;
+      height: 30px;
+      background: var(--border-subtle);
+      flex-shrink: 0;
+    }
+
+    .brand-integrator {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      white-space: nowrap;
+    }
+
+    .brand-integrator img {
+      height: 30px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.35rem;
+      list-style: none;
+      flex-shrink: 0;
+    }
+
+    .nav-links li {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover { color: var(--gold-champagne); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1.3rem;
+      background: linear-gradient(135deg, var(--gold-champagne), var(--gold-primary));
+      color: #ffffff !important;
+      font-weight: 700 !important;
+      border-radius: 50px;
+      font-size: 0.76rem !important;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      line-height: 1;
+      box-shadow: 0 4px 20px rgba(255, 85, 30, 0.38);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(255, 85, 30, 0.55);
+    }
+
+    /* Buttons & Badges */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.42rem 1.05rem;
+      border-radius: 50px;
+      background: rgba(255, 85, 30, 0.14);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-champagne);
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1.4rem;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold-primary);
+      box-shadow: 0 0 10px var(--gold-primary);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, var(--gold-champagne), var(--gold-primary));
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.86rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 50px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 10px 30px rgba(255, 85, 30, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 38px rgba(255, 85, 30, 0.52);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 1rem 1.8rem;
+      background: rgba(0, 136, 255, 0.12);
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.86rem;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 1px solid var(--border-subtle);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold-primary);
+      background: rgba(255, 85, 30, 0.14);
+    }
+
+    /* Hero Commercial Section */
+    .hero {
+      position: relative;
+      min-height: 95vh;
+      display: flex;
+      align-items: center;
+      padding: 8.5rem 5% 5rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(4,11,36,0.96) 0%, rgba(7,22,66,0.88) 55%, rgba(4,11,36,0.68) 100%),
+        linear-gradient(180deg, rgba(0,119,204,0.22) 0%, rgba(4,11,36,1) 100%),
+        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat;
+    }
+
+    .hero-grid {
+      max-width: 1380px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 4.4vw, 4.1rem);
+      line-height: 1.08;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold-champagne);
+      font-weight: 800;
+    }
+
+    .hero-lead {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 630px;
+      margin-bottom: 2.3rem;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .stat-box strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--gold-champagne);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .stat-box span {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    /* Private Access Card in Hero */
+    .access-vault-card {
+      background: linear-gradient(160deg, rgba(12, 33, 94, 0.92) 0%, rgba(4, 11, 36, 0.96) 100%);
+      backdrop-filter: blur(22px);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-xl);
+      padding: 2.4rem;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.65), 0 0 40px rgba(255, 85, 30, 0.14);
+      position: relative;
+    }
+
+    .access-vault-card::before {
+      content: "PORTAL PRIVADO DE PROPIETARIOS";
+      position: absolute;
+      top: -12px;
+      left: 2rem;
+      background: linear-gradient(135deg, var(--gold-champagne), var(--gold-primary));
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      padding: 0.28rem 0.9rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 14px rgba(255, 85, 30, 0.4);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.95rem 1.1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 0.98rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 3px rgba(255, 85, 30, 0.22);
+    }
+
+    .unit-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.45rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .unit-pill {
+      padding: 0.55rem 0.35rem;
+      border-radius: 10px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-secondary);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .unit-pill:hover {
+      border-color: rgba(255, 138, 92, 0.55);
+      color: var(--text-primary);
+      background: rgba(255, 85, 30, 0.1);
+    }
+
+    .unit-pill.active {
+      border-color: var(--gold-primary);
+      background: linear-gradient(135deg, rgba(255, 85, 30, 0.26), rgba(255, 138, 92, 0.14));
+      color: #ffffff;
+      box-shadow: 0 0 14px rgba(255, 85, 30, 0.28);
+    }
+
+    @media (max-width: 500px) {
+      .unit-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Section Globals */
+    section {
+      padding: 6.5rem 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 4rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 3.6vw, 3.1rem);
+      line-height: 1.14;
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      color: var(--text-secondary);
+      font-size: 1.04rem;
+    }
+
+    /* Problem vs Solution Luxury Comparison */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .comp-card {
+      padding: 2.5rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+    }
+
+    .comp-card.apex-standard {
+      border-color: var(--border-gold);
+      background: linear-gradient(155deg, rgba(255, 85, 30, 0.14) 0%, rgba(0, 82, 204, 0.32) 48%, rgba(8, 22, 66, 0.98) 100%);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.5);
+    }
+
+    .comp-list {
+      list-style: none;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .comp-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+    }
+
+    .comp-card.apex-standard .comp-list li {
+      color: var(--text-primary);
+    }
+
+    /* Interactive 24-Hour Lifestyle Simulator */
+    .simulator-wrap {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      min-height: 490px;
+      box-shadow: 0 25px 65px rgba(0, 0, 0, 0.55);
+    }
+
+    .simulator-visual {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      transition: all 0.7s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2.5rem;
+      min-height: 380px;
+    }
+
+    .simulator-overlay {
+      position: absolute;
+      inset: 0;
+      transition: all 0.7s ease;
+    }
+
+    .simulator-status {
+      position: relative;
+      z-index: 2;
+      background: rgba(4, 11, 36, 0.88);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      padding: 1.3rem 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .sim-metric-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-secondary);
+      display: block;
+    }
+
+    .sim-metric-val {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--gold-champagne);
+      margin-top: 2px;
+      display: block;
+    }
+
+    .simulator-controls {
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      background: linear-gradient(180deg, #0b1e56 0%, #061133 100%);
+    }
+
+    .scene-btn {
+      padding: 1.1rem 1.25rem;
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      text-align: left;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .scene-btn:hover {
+      border-color: var(--gold-primary);
+      background: var(--bg-card-hover);
+    }
+
+    .scene-btn.active {
+      background: linear-gradient(135deg, rgba(255, 85, 30, 0.25), rgba(0, 136, 255, 0.15));
+      border-color: var(--gold-primary);
+    }
+
+    .scene-btn-title {
+      font-weight: 700;
+      font-size: 0.96rem;
+      margin-bottom: 3px;
+    }
+
+    .scene-btn-sub {
+      font-size: 0.79rem;
+      color: var(--text-secondary);
+    }
+
+    /* Product Commercial Cards */
+    .product-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.6rem;
+    }
+
+    .commercial-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .commercial-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+    }
+
+    .commercial-img-box {
+      height: 210px;
+      background: radial-gradient(circle, #14368a 0%, #07143a 100%);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.3rem;
+      margin-bottom: 1.4rem;
+      border: 1px solid rgba(100, 165, 255, 0.16);
+    }
+
+    .commercial-img-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+      transition: transform 0.5s ease;
+    }
+
+    .commercial-card:hover .commercial-img-box img {
+      transform: scale(1.06);
+    }
+
+    .commercial-tag {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold-champagne);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .commercial-card h3 {
+      font-size: 1.32rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .commercial-card p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.2rem;
+    }
+
+    .use-case-pill {
+      padding: 0.65rem 0.9rem;
+      background: rgba(255, 85, 30, 0.1);
+      border-left: 3px solid var(--gold-primary);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.8rem;
+      color: var(--text-primary);
+    }
+
+    .use-case-pill strong {
+      color: var(--gold-champagne);
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
+
+    /* Feature Banner (Control4 Lux & UniFi) */
+    .feature-banner {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+
+    .feature-hero {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 3rem;
+      padding: 3.2rem;
+      align-items: center;
+      background: radial-gradient(circle at 82% 50%, rgba(255, 85, 30, 0.16), transparent 60%);
+    }
+
+    .feature-img-stage {
+      background: radial-gradient(circle, #102a70 0%, #050d2a 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 340px;
+    }
+
+    .feature-img-stage img {
+      max-width: 100%;
+      max-height: 340px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .finish-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.2rem;
+    }
+
+    .finish-swatch {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.42rem 0.85rem;
+      border-radius: 50px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.76rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .finish-swatch.active, .finish-swatch:hover {
+      border-color: var(--gold-primary);
+      color: #ffffff;
+      background: rgba(255, 85, 30, 0.22);
+    }
+
+    .swatch-circle {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .benefits-3col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .benefit-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+    }
+
+    .benefit-box h4 {
+      font-size: 1.12rem;
+      margin-bottom: 0.5rem;
+      color: var(--gold-champagne);
+    }
+
+    .benefit-box p {
+      font-size: 0.87rem;
+      color: var(--text-secondary);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      background: #020616;
+      padding: 4.5rem 5% 3rem;
+      margin-top: 4rem;
+    }
+
+    .footer-grid {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .footer-meta {
+      max-width: 1360px;
+      margin: 3rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    @media (max-width: 1240px) {
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.78rem; }
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .comparison-grid,
+      .simulator-wrap,
+      .feature-hero,
+      .benefits-3col {
+        grid-template-columns: 1fr;
+      }
+      .nav-links li:not(:last-child) { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-stats,
+      .simulator-status,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="#" class="brand-group">
+      <div class="brand-apex">
+        <div class="brand-apex-title">APEX<span>07</span></div>
+        <div class="brand-apex-sub">Valle Arriba • Caracas</div>
+      </div>
+      <div class="brand-divider"></div>
+      <div class="brand-integrator">
+        <img src="assets/logo-automatizacion-white.png" alt="Automatizacion Corp" />
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#experiencia">Por Qué Integrar Ahora</a></li>
+      <li><a href="#simulador">Un Día en APEX 07</a></li>
+      <li><a href="#sonido">Sonido Sonos</a></li>
+      <li><a href="#domotica">Control4 Lux</a></li>
+      <li><a href="#redes">Redes UniFi</a></li>
+      <li><a href="#acceso-privado" class="nav-cta">Acceder a Mi Propuesta</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section: High-Impact Commercial Pitch + Private Vault -->
+  <header class="hero" id="acceso-privado">
+    <div class="hero-bg"></div>
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>Experiencia Residencial para Propietarios de APEX 07</span>
+        </div>
+        <h1>Su apartamento en Valle Arriba merece una tecnología tan <em>extraordinaria</em> como su arquitectura.</h1>
+        <p class="hero-lead">
+          Imagine entrar a su apartamento en <strong>APEX 07</strong> y que un solo toque en una botonera metálica <strong>Control4 Lux</strong> atenúe las luces a la perfección, abra las cortinas hacia el Ávila y llene la sala y la terraza de música envolvente <strong>Sonos & Sonance</strong> sin un solo cable ni equipo a la vista.
+        </p>
+        <div class="hero-actions">
+          <a href="#sonido" class="btn-primary">
+            <span>Descubrir el Ecosistema</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#domotica" class="btn-secondary">
+            <span>Personalizar Teclados Lux en Vivo</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-box">
+            <strong>0 Cables</strong>
+            <span>Acústica empotrada al ras del techo que respeta el diseño interior.</span>
+          </div>
+          <div class="stat-box">
+            <strong>1 Solo Toque</strong>
+            <span>Luces, cortinas, clima y música sincronizados en escenas inteligentes.</span>
+          </div>
+          <div class="stat-box">
+            <strong>100% Cobertura</strong>
+            <span>Red empresarial Ubiquiti UniFi sin puntos ciegos desde el vestier hasta la terraza.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Private Proposal Access Vault -->
+      <div class="access-vault-card">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--border-subtle);">
+          <img src="assets/logo-automatizacion-white.png" alt="Automatizacion" style="height: 26px; width: auto;" />
+          <img src="assets/logo-3d-blue.jpg" alt="Emblema Automatizacion" style="width: 42px; height: 42px; border-radius: 10px; border: 1px solid var(--border-gold); box-shadow: 0 4px 12px rgba(0,0,0,0.4);" />
+        </div>
+        <h3 style="font-size: 1.65rem; margin-bottom: 0.35rem;">Consulte la Propuesta de su Apartamento</h3>
+        <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.35rem;">
+          Cada apartamento de <strong>APEX 07</strong> cuenta con un proyecto acústico y tecnológico diseñado a medida. Ingrese el <strong>número de su apartamento</strong> para abrir su propuesta privada:
+        </p>
+
+        <form onsubmit="handleAccess(event)" style="display: flex; flex-direction: column; gap: 1rem;">
+          <div>
+            <label for="accessCode" style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.13em; color: var(--gold-champagne); font-weight: 700; display: block; margin-bottom: 0.5rem;">
+              Número de Apartamento
+            </label>
+            <input type="text" id="accessCode" autocomplete="off" class="form-control" placeholder="Ej. 3B, 1A, PB A..." style="text-align: center; font-weight: 800; font-size: 1.15rem; letter-spacing: 0.12em; text-transform: uppercase;" required />
+          </div>
+
+          <div id="errorMsg" style="color: #f87171; font-size: 0.8rem; text-align: center; display: none; background: rgba(248,113,113,0.1); padding: 0.6rem; border-radius: 8px; border: 1px solid rgba(248,113,113,0.25);">
+            No encontramos ese apartamento en APEX 07. Ejemplos válidos: PB A, PB B, 1A, 2C, 3B, 4B, 5A.
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+            <span>Abrir Mi Propuesta Personalizada</span>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+
+        <div style="margin-top: 1.35rem; padding-top: 1.15rem; border-top: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.8rem; color: var(--text-secondary);">
+          <span>¿Desea atención directa o agendar una visita técnica en obra?</span>
+          <a id="waPinLink" href="https://wa.me/584122370080?text=Hola%20Automatizacion%20Corp,%20soy%20propietario%20en%20APEX%2007%20y%20quisiera%20revisar%20la%20propuesta%20de%20mi%20apartamento." target="_blank" style="color: var(--gold-champagne); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem;">
+            <span>Contactar por WhatsApp (+58 412-2370080) →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Why Integrate During Pre-Finish / Obra Gris -->
+  <section id="experiencia">
+    <div class="section-header">
+      <div class="eyebrow"><span class="eyebrow-dot"></span><span>El Valor de la Planificación Arquitectónica</span></div>
+      <h2>La diferencia entre instalar equipos y diseñar una experiencia de vida</h2>
+      <p>Planificar el sonido, la iluminación y la red antes de cerrar techos y acabados en APEX 07 transforma por completo la estética, el confort y la revalorización de su propiedad en Valle Arriba.</p>
+    </div>
+
+    <div class="comparison-grid">
+      <div class="comp-card">
+        <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-muted); font-weight: 700;">El Enfoque Convencional</span>
+        <h3 style="font-size: 1.65rem; margin-top: 0.4rem; color: var(--text-secondary);">Tecnología improvisada después de mudarse</h3>
+        <ul class="comp-list">
+          <li>
+            <span style="color: #ef4444; font-weight: 700;">✕</span>
+            <span><strong>Muros saturados de interruptores:</strong> Filas de 4 o 5 suiches plásticos distintos en cada entrada sin saber cuál enciende cada luz.</span>
+          </li>
+          <li>
+            <span style="color: #ef4444; font-weight: 700;">✕</span>
+            <span><strong>Zonas muertas de Wi-Fi:</strong> La señal se cae al pasar de la habitación principal o el vestier hacia el área social y la terraza.</span>
+          </li>
+          <li>
+            <span style="color: #ef4444; font-weight: 700;">✕</span>
+            <span><strong>Televisores con sonido plano o cables visibles:</strong> Diálogos difíciles de escuchar en películas y cornetas que ocupan espacio en mesas.</span>
+          </li>
+          <li>
+            <span style="color: #ef4444; font-weight: 700;">✕</span>
+            <span><strong>Múltiples controles y aplicaciones aisladas:</strong> Un control para el aire, otro para las persianas, otro para las luces y otro para la TV.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="comp-card apex-standard">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
+          <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold-champagne); font-weight: 700;">El Estándar APEX 07 • Automatizacion</span>
+          <img src="assets/logo-ingenieria.png" alt="Ingeniería Automatizacion" style="width: 44px; height: 44px; object-fit: contain;" />
+        </div>
+        <h3 style="font-size: 1.65rem; margin-top: 0.4rem;">Ingeniería invisible integrada a la arquitectura</h3>
+        <ul class="comp-list">
+          <li>
+            <span style="color: var(--gold-primary); font-weight: 700;">✓</span>
+            <span><strong>Paredes limpias con Control4 Serie Lux:</strong> Una sola botonera metálica grabada a láser reemplaza múltiples interruptores y crea ambientes completos.</span>
+          </li>
+          <li>
+            <span style="color: var(--gold-primary); font-weight: 700;">✓</span>
+            <span><strong>Sonido que fluye con usted:</strong> Cornetas Sonance empotradas al ras del techo en Sala, Comedor y Vestier, pintables del mismo color del plafón.</span>
+          </li>
+          <li>
+            <span style="color: var(--gold-primary); font-weight: 700;">✓</span>
+            <span><strong>Cine Dolby Atmos en Casa:</strong> Sonos Arc Ultra + Sub G4 en Sala TV y Suite Principal para vivir el cine con graves profundos y diálogos cristalinos.</span>
+          </li>
+          <li>
+            <span style="color: var(--gold-primary); font-weight: 700;">✓</span>
+            <span><strong>Red Ubiquiti UniFi siempre activa:</strong> Roaming automático de alta velocidad y soporte para doble proveedor de fibra óptica sin interrupciones.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive 24-Hour Lifestyle Simulator -->
+  <section id="simulador">
+    <div class="section-header">
+      <div class="eyebrow"><span class="eyebrow-dot"></span><span>Casos de Uso Reales en APEX 07</span></div>
+      <h2>Viva un día completo en su apartamento inteligente</h2>
+      <p>Haga clic en cada momento del día para ver cómo trabajan juntos nuestros productos de Sonido Sonos, Domótica Control4 Lux y Redes Ubiquiti UniFi.</p>
+    </div>
+
+    <div class="simulator-wrap">
+      <div class="simulator-visual" id="simVisual" style="background-image: url('https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1600&q=85');">
+        <div class="simulator-overlay" id="simOverlay" style="background: linear-gradient(180deg, rgba(255,235,190,0.08) 0%, rgba(6,6,8,0.86) 100%);"></div>
+        <div class="simulator-status">
+          <div class="sim-metric">
+            <span class="sim-metric-label">Sonido Sonos</span>
+            <span class="sim-metric-val" id="simAudioStatus">Música acústica suave en Suite + Vestier</span>
+          </div>
+          <div class="sim-metric">
+            <span class="sim-metric-label">Control4 Lux</span>
+            <span class="sim-metric-val" id="simLightStatus">Blackout abre al 80% • Luz cálida 30%</span>
+          </div>
+          <div class="sim-metric">
+            <span class="sim-metric-label">Red UniFi</span>
+            <span class="sim-metric-val" id="simNetStatus">Sincronización instantánea sin cortes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="simulator-controls">
+        <div style="font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold-champagne); font-weight: 700;">Simulador de Escenas Cotidianas</div>
+        <h3 style="font-size: 1.7rem; line-height: 1.15;">¿Cómo se usa en la vida real?</h3>
+
+        <button class="scene-btn active" onclick="setScene('morning', this)">
+          <div class="scene-btn-title">☀️ 07:30 AM — Despertar en Suite & Vestier</div>
+          <div class="scene-btn-sub">Mientras se prepara en el vestier, las cornetas empotradas reproducen sus noticias o playlist matutina y las cortinas se abren suavemente.</div>
+        </button>
+
+        <button class="scene-btn" onclick="setScene('social', this)">
+          <div class="scene-btn-title">🥂 05:30 PM — Atardecer y Amigos en la Terraza</div>
+          <div class="scene-btn-sub">Agrupa las cornetas empotradas de la Sala/Comedor con el Sonos Move 2 en la terraza y activa la escena "Social" en su teclado Control4 Lux.</div>
+        </button>
+
+        <button class="scene-btn" onclick="setScene('cinema', this)">
+          <div class="scene-btn-title">🎬 08:30 PM — Noche de Cine en Sala TV</div>
+          <div class="scene-btn-sub">La barra Sonos Arc Ultra y el Sub G4 crean una cúpula Dolby Atmos; las luces se atenúan al 10% desde el control remoto Halo Touch.</div>
+        </button>
+
+        <button class="scene-btn" onclick="setScene('night', this)">
+          <div class="scene-btn-title">🎧 11:15 PM — Televisión en Silencio con Sonos Ace</div>
+          <div class="scene-btn-sub">Con presionar un botón, el sonido de la barra Arc Ultra pasa a los audífonos Sonos Ace con audio espacial para ver una serie sin despertar a nadie.</div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillar 1: SONOS & SONANCE COMMERCIAL SHOWCASE -->
+  <section id="sonido">
+    <div class="section-header">
+      <div class="eyebrow"><span class="eyebrow-dot"></span><span>Pilar 01 • Catálogo Completo Sonos & Sonance</span></div>
+      <h2>Sonos & Sonance: Todas las posibilidades para cada rincón</h2>
+      <p>Además de la configuración base proyectada para su apartamento en APEX 07, usted puede personalizar o ampliar cualquier área con el portafolio completo de Sonos y Sonance. Filtre por categoría para explorar cada equipo, sus beneficios y usos reales:</p>
+    </div>
+
+    <!-- Category Filter Bar -->
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 0.65rem; margin-bottom: 2.5rem;">
+      <button class="finish-swatch active" onclick="filterSonos('all', this)" style="padding: 0.6rem 1.2rem; font-size: 0.8rem; font-weight: 600;">
+        <span>Todos los Equipos (15)</span>
+      </button>
+      <button class="finish-swatch" onclick="filterSonos('cinema', this)" style="padding: 0.6rem 1.2rem; font-size: 0.8rem; font-weight: 600;">
+        <span>🎬 Cine en Casa & Dolby Atmos</span>
+      </button>
+      <button class="finish-swatch" onclick="filterSonos('architectural', this)" style="padding: 0.6rem 1.2rem; font-size: 0.8rem; font-weight: 600;">
+        <span>🏛️ Arquitectónico Empotrado & Exterior</span>
+      </button>
+      <button class="finish-swatch" onclick="filterSonos('smart', this)" style="padding: 0.6rem 1.2rem; font-size: 0.8rem; font-weight: 600;">
+        <span>🎵 Altavoces Inteligentes, Surrounds & Vinilos</span>
+      </button>
+      <button class="finish-swatch" onclick="filterSonos('portable', this)" style="padding: 0.6rem 1.2rem; font-size: 0.8rem; font-weight: 600;">
+        <span>🎧 Portátiles & Escucha Personal</span>
+      </button>
+    </div>
+
+    <div class="product-showcase-grid" id="sonosCatalogGrid">
+      <!-- 1. Sonance In-Ceiling 6" -->
+      <div class="commercial-card" data-cat="architectural">
+        <div>
+          <div class="commercial-img-box">
+            <img src="https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format" alt="Sonos In-Ceiling 6 by Sonance" loading="lazy" />
+          </div>
+          <div class="commercial-tag">Sala / Comedor • Vestier • Estudio</div>
+          <h3>Sonos In-Ceiling by Sonance 6"</h3>
+          <p>Cornetas arquitectónicas diseñadas junto a Sonance que quedan totalmente al ras del techo. Sus rejillas magnéticas sin bisel se pintan del tono exacto del plafón para desaparecer visualmente mientras entregan un sonido cálido y cristalino.</p>
+        </div>
+        <div class="use-case-pill">
+          <strong>Beneficio & Uso Real</strong>
+          Música envolvente en cenas, reuniones en la sala o mientras se viste en el vestier, sin ocupar un solo centímetro de muebles ni paredes.
+        </div>
+      </div>
+
+      <!-- 2. Sonance In-Ceiling 8" -->
+      <div class="commercial-card" data-cat="architectural">
+        <div>
+          <div class="commercial-img-box">
+            <img src="https://media.sonos.com/images/znqtjj88/production/5d47ea9eb6ff198ded0fdffc151dcfe676564ca5-1685x1685.png?w=800&q=85&fit=clip&auto=format" alt="Sonos In-Ceiling 8 by Sonance" loading="lazy" />
+          </div>
+          <div class="commercial-tag">Salones Amplios • Techos Altos</div>
+          <h3>Sonos In-Ceiling by Sonance 8"</h3>
+          <p>La versión de gran formato con woofer de 8 pulgadas de excursión extendida y tweeter pivotante. Ofrece mayor presión sonora y graves mucho más profundos directamente desde el techo.</p>
+        </div>
+        <div class="use-case-pill">
+          <strong>Beneficio & Uso Real</strong>
+          Ideal para propietarios que desean aún más pegada y presencia musical en el área social principal sin colocar subwoofers de piso.
+        </div>
+      </div>
+
+      <!-- 3. Sonance Outdoor -->
+      <div class="commercial-card" data-cat="architectural">
+        <div>
+          <div class="commercial-img-box">
+            <img src="https://media.sonos.com/images/znqtjj88/production/da5b9dcc02bf7e3fcbbf8c2b580b6a6f9fa63138-2000x2000.png?w=800&q=85&fit=clip&auto=format" alt="Sonos Outdoor by Sonance" loading="lazy" />
+          </div>
+          <div class="commercial-tag">Terrazas • Jardines PB • Parrilleras</div>
+          <h3>Sonos Outdoor by Sonance</h3>
+          <p>Altavoces arquitectónicos de intemperie construidos para resistir lluvia tropical, humedad, sol directo y temperaturas extremas año tras año sin perder fidelidad acústica.</p>
+        </div>
+        <div class="use-case-pill">
+          <strong>Beneficio & Uso Real</strong>
+          La solución fija definitiva para terrazas amplias, jardines de Planta Baja o áreas de parrillera que requieren sonido potente permanente.
+        </div>
+      </div>
+
+      <!-- 5. Sonos Amp -->
+      <div class="commercial-card" data-cat="architectural">
+        <div>
+          <div class="commercial-img-box">
+            <img src="https://media.sonos.com/images/znqtjj88/production/69e4c22cbda507adf22a7902da6c51191c387b39-1000x850.png?w=800&q=85&fit=clip&auto=format" alt="Sonos Amp" loading="lazy" />
+          </div>
+          <div class="commercial-tag">Cerebro de Potencia • 125W por Canal</div>
+          <h3>Amplificador Sonos Amp</h3>
+          <p>El corazón oculto en el rack o clóset técnico que alimenta las cornetas Sonance con 125 Watts por canal, habilita calibración acústica Trueplay™ y suma AirPlay 2, Spotify Connect y HDMI ARC.</p>
+        </div>
+        <div class="use-case-pill">
+          <strong>Beneficio & Uso Real</strong>
+          Queda completamente oculto a la vista y le permite controlar el volumen y la música de cada zona de techo o terraza desde su celular o teclado Control4.
+        </div>
+      </div>
+
+      <!-- 6. Sonos Arc Ultra -->
+      <div class="commercial-card" data-cat="cinema">
+        <div>
+          <div class="commercial-img-box">
+            <img src="https://media.sonos.com/images/znqtjj88/production/c6e84e0ad4ee82bcada3148dee547f972f2e2d7f-2880x2880.png?w=800&q=85&fit=clip&auto=format" alt="Sonos Arc Ultra" loading="lazy" />
+          </div>
+          <div class="commercial-tag">Sala TV • Habitación Principal</div>
+          <h3>Sonos Arc Ultra (Sound Motion™)</h3>
+          <p>La barra de sonido insignia más avanzada de Sonos. Con arquitectura acústica de 9.1.4 canales y Dolby Atmos espacial, proyecta el sonido desde todas las direcciones (incluso desde el techo) con mejora de diálogos por IA.</p>
+        </div>
+        <div class="use-case-pill">
+          <strong>Beneficio & Uso Real</strong>
+          Convierte la Sala de TV y la Habitación Principal en verdaderas salas de cine privadas y en sistemas de música Hi-Fi cuando el televisor está apagado.
+        </div>
+      </div>
+
+      <!-- 7. Sonos Sub G4 -->
+      <div class="commercial-card" data-cat="cinema">
+        <div>
+          <div class="commercial-img-box">
+            <img src="https://media.sonos.com/images/znqtjj88/production/9e362ccb2638b2aa0730e78c054b6c0b3f24d0bc-2440x2440.png?w=800&q=85&fit=clip&auto=format" alt="Sonos Sub G4" loading="lazy" />
+          </div>
+          <div class="commercial-tag">Graves de Cine Sin Vibración</div>
+          <h3>Sonos Sub (Gen 4) Inalámbrico</h3>
+          <p>El icónico subwoofer inalámbrico con dos woofers orientados hacia adentro con cancelación de fuerza: genera bajos profundos y cinematográficos que se sienten en el pecho, pero con cero vibración en el piso.</p>
+        </div>
+        <div class="use-case-pill">
+          <strong>Beneficio & Uso Real</strong>
+          Libera a la barra Arc Ultra de las frecuencias bajas para que las voces y la música ganen aún más riqueza, pudiendo incluso ocultarse debajo de un sofá.
+        </div>
+      </div>
+
+      <!-- 8. Sonos Era 300 -->
+      <div class="commercial-card" data-cat="smart cinema">
+        <div>
+          <div class="commercial-img-box">
+            <img src="https://cdn.sanity.io/images/znqtjj88/production/571452b8db9d5df3cdf9cf98a3aeb5126199117e-437x400.png" alt="Sonos Era 300" loading="lazy" />
+          </div>
+          <div class="commercial-tag">Audio Espacial Dolby Atmos • Surrounds</div>
+          <h3>Sonos Era 300</h3>
+          <p>Altavoz inteligente con diseño de reloj de arena y 6 amplificadores que proyectan sonido hacia adelante, los lados y hacia arriba para colocarte literalmente dentro de la música en Dolby Atmos.</p>
+        </div>
+        <div class="use-case-pill">
+          <strong>Beneficio & Uso Real</strong>
+          Úselo solo en un estudio o bar, o agregue un par detrás del sofá junto a la Arc Ultra + Sub G4 para crear el sistema de cine en casa Dolby Atmos 7.1.4 definitivo.
+        </div>
+      </div>
+
+      <!-- 9. Sonos Five -->
+      <div class="commercial-card" data-cat="smart">
+        <div>
+          <div class="commercial-img-box">
+            <img src="https://cdn.sanity.io/images/znqtjj88/production/d5c8cbbf9ea3334a78df015f670a20bcbe06bced-480x480.png" alt="Sonos Five" loading="lazy" />
+          </div>
+          <div class="commercial-tag">Alta Fidelidad • Tornamesa & Vinilos</div>
+          <h3>Sonos Five (Fidelidad de Estudio)</h3>
+          <p>El altavoz con mayor potencia y pureza musical de Sonos. Cuenta con 3 woofers de alta excursión en gabinete sellado y entrada de línea directa de 3.5 mm para conectar un tocadiscos.</p>
+        </div>
+        <div class="use-case-pill">
+          <strong>Beneficio & Uso Real</strong>
+          Conecte su tornamesa de vinilos al Sonos Five en la sala o estudio y escuche sus discos de vinilo en vivo en todas las cornetas del apartamento.
+        </div>
+      </div>
+
+      <!-- 10. Sonos Era 100 -->
+      <div class="commercial-card" data-cat="smart cinema">
+        <div>
+          <div class="commercial-img-box">
+            <img src="https://cdn.sanity.io/images/znqtjj88/production/a7ec634d9461c949d4c55b678ce6948d9a3c4e79-437x400.png" alt="Sonos Era 100" loading="lazy" />
+          </div>
+          <div class="commercial-tag">Cocina • Escritorio • Mesas de Noche</div>
+          <h3>Sonos Era 100 (Estéreo Compacto)</h3>
+          <p>Diseño cilíndrico compacto con arquitectura acústica de doble tweeter en ángulo para separación estéreo real, graves un 25% más profundos, Wi-Fi, Bluetooth y control por voz.</p>
+        </div>
+        <div class="use-case-pill">
+          <strong>Beneficio & Uso Real</strong>
+          Perfecto para colocar en la cocina, el escritorio del estudio, habitaciones de servicio o como par de cornetas traseras surround junto a la barra Beam Gen 2.
+        </div>
+      </div>
+
+      <!-- 11. Sonos Beam Gen 2 + Sub Mini -->
+      <div class="commercial-card" data-cat="cinema">
+        <div>
+          <div class="commercial-img-box">
+            <img src="https://media.sonos.com/images/znqtjj88/production/172f10868dcaeef227f3e634fbdc75aa62e382f2-1671x1672.png?w=800&q=85&fit=clip&auto=format" alt="Sonos Beam Gen 2 + Sub Mini Black" loading="lazy" />
+          </div>
+          <div class="commercial-tag">Habitaciones Secundarias</div>
+          <h3>Sonos Beam (Gen 2) + Sub Mini (Black)</h3>
+          <p>La combinación ideal para dormitorios secundarios: una barra inteligente compacta con Dolby Atmos acompañada del diseño cilíndrico negro mate del <strong>Sub Mini</strong>.</p>
+        </div>
+        <div class="use-case-pill">
+          <strong>Beneficio & Uso Real</strong>
+          Sonido de cine redondo, potente y equilibrado para videojuegos, películas, series y música en cada habitación sin ocupar espacio.
+        </div>
+      </div>
+
+      <!-- 12. Sonos Ray -->
+      <div class="commercial-card" data-cat="cinema">
+        <div>
+          <div class="commercial-img-box">
+            <img src="https://media.sonos.com/images/znqtjj88/production/4b3a6ceed063070b69ea190c2dde70a658e8109a-4880x917.png?w=800&q=85&fit=clip&auto=format" alt="Sonos Ray" loading="lazy" />
+          </div>
+          <div class="commercial-tag">Televisores de Cocina • Estudio • Gym</div>
+          <h3>Sonos Ray (Barra Ultracompacta)</h3>
+          <p>Barra de sonido compacta con todos los componentes acústicos orientados hacia adelante, ideal para empotrar dentro de nichos de carpintería sin que rebote el sonido.</p>
+        </div>
+        <div class="use-case-pill">
+          <strong>Beneficio & Uso Real</strong>
+          Excelente para mejorar radicalmente la claridad de voz en televisores pequeños de cocina, gimnasio en casa o estudio.
+        </div>
+      </div>
+
+      <!-- 13. Sonos Move 2 -->
+      <div class="commercial-card" data-cat="portable">
+        <div>
+          <div class="commercial-img-box">
+            <img src="https://media.sonos.com/images/znqtjj88/production/253c32d3e93db9ee17d931d2cfc3e6ba88306b29-1280x1280.png?w=800&q=85&fit=clip&auto=format" alt="Sonos Move 2" loading="lazy" />
+          </div>
+          <div class="commercial-tag">Terraza • Exterior & Movilidad (24h)</div>
+          <h3>Sonos Move 2 (Estéreo Portátil)</h3>
+          <p>Altavoz inteligente ultra resistente (certificación IP56 contra lluvia, humedad y sol) con 24 horas de batería, carga en base inalámbrica y calibración automática Trueplay™.</p>
+        </div>
+        <div class="use-case-pill">
+          <strong>Beneficio & Uso Real</strong>
+          Llévelo a la terraza de APEX 07 para una parrilla sincronizado por Wi-Fi con la sala, o llévelo de viaje a la playa o montaña por Bluetooth.
+        </div>
+      </div>
+
+      <!-- 14. Sonos Roam 2 -->
+      <div class="commercial-card" data-cat="portable">
+        <div>
+          <div class="commercial-img-box">
+            <img src="https://media.sonos.com/images/znqtjj88/production/110a711ffb1d9ec82743734ef7477a7d400c8d11-2400x2400.png?w=800&q=85&fit=clip&auto=format" alt="Sonos Roam 2" loading="lazy" />
+          </div>
+          <div class="commercial-tag">Baños • Viajes • Ultraportátil IP67</div>
+          <h3>Sonos Roam 2 (Sumergible)</h3>
+          <p>El altavoz más ligero y versátil de Sonos. Totalmente impermeable y sumergible (IP67), con 10 horas de batería, Wi-Fi en casa y Bluetooth automático al salir de viaje.</p>
+        </div>
+        <div class="use-case-pill">
+          <strong>Beneficio & Uso Real</strong>
+          Ideal para tener música en la ducha o el baño principal sin instalación, o llevarlo en el bolso de mano a cualquier destino.
+        </div>
+      </div>
+
+      <!-- 15. Sonos Ace -->
+      <div class="commercial-card" data-cat="portable cinema">
+        <div>
+          <div class="commercial-img-box">
+            <img src="https://cdn.sanity.io/images/znqtjj88/production/ee6a3731d218459ac8335ba8ca8e9bb267d31469-874x800.png" alt="Sonos Ace" loading="lazy" />
+          </div>
+          <div class="commercial-tag">Escucha Privada & TV Audio Swap</div>
+          <h3>Audífonos Sonos Ace</h3>
+          <p>Audífonos de alta fidelidad con cancelación activa de ruido de clase mundial y la función exclusiva <strong>TV Audio Swap</strong> que transfiere el audio de su barra Sonos a sus oídos con un toque.</p>
+        </div>
+        <div class="use-case-pill">
+          <strong>Beneficio & Uso Real</strong>
+          Vea una película de acción o un partido a medianoche con sonido de cine 3D Dolby Atmos sin despertar a nadie en la habitación.
+        </div>
+      </div>
+
+      <!-- 16. Sonos Port -->
+      <div class="commercial-card" data-cat="architectural smart">
+        <div>
+          <div class="commercial-img-box">
+            <img src="https://media.sonos.com/images/znqtjj88/production/be90bf7119272e08eaf87e09c44a6ab821a26985-437x400.png" alt="Sonos Port" loading="lazy" />
+          </div>
+          <div class="commercial-tag">Integración Hi-Fi & Tornamesas</div>
+          <h3>Sonos Port (Streamer de Audio)</h3>
+          <p>El puente inteligente con conversor DAC de alta precisión que conecta cualquier amplificador tradicional, sistema de audio High-End existente o tornamesa preamplificada al ecosistema Sonos.</p>
+        </div>
+        <div class="use-case-pill">
+          <strong>Beneficio & Uso Real</strong>
+          Si usted ya posee un equipo de sonido audiófilo o una colección de vinilos, Sonos Port lo integra al resto del apartamento sin cables.
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom Upgrades Banner -->
+    <div style="margin-top: 2.5rem; background: linear-gradient(135deg, rgba(255,85,30,0.16), rgba(8,22,66,0.96)); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 2rem 2.5rem;">
+      <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--gold-champagne); font-weight: 700; margin-bottom: 0.5rem;">Ideas de Personalización Frecuentes en APEX 07</div>
+      <h3 style="font-size: 1.55rem; margin-bottom: 1.2rem;">¿Cómo suelen ampliar su propuesta nuestros clientes?</h3>
+      <div class="benefits-3col" style="margin-top: 0;">
+        <div style="background: rgba(4,11,36,0.68); padding: 1.35rem; border-radius: 12px; border: 1px solid var(--border-subtle);">
+          <h4 style="color: var(--gold-champagne); font-size: 1.05rem; margin-bottom: 0.4rem;">🎬 Cine 360° con Surrounds Traseros</h4>
+          <p style="font-size: 0.83rem; color: var(--text-secondary);">Sumar un par de <strong>Sonos Era 300</strong> o cornetas empotradas <strong>Sonance In-Ceiling</strong> detrás del sofá en la Sala de TV para rodear la sala en Dolby Atmos real.</p>
+        </div>
+        <div style="background: rgba(4,11,36,0.68); padding: 1.35rem; border-radius: 12px; border: 1px solid var(--border-subtle);">
+          <h4 style="color: var(--gold-champagne); font-size: 1.05rem; margin-bottom: 0.4rem;">🎛️ Rincón de Vinilos & Tornamesa</h4>
+          <p style="font-size: 0.83rem; color: var(--text-secondary);">Agregar un <strong>Sonos Five</strong> o un <strong>Sonos Port</strong> en el área social o estudio para conectar un tocadiscos y transmitir el sonido del vinilo a todo el apartamento.</p>
+        </div>
+        <div style="background: rgba(4,11,36,0.68); padding: 1.35rem; border-radius: 12px; border: 1px solid var(--border-subtle);">
+          <h4 style="color: var(--gold-champagne); font-size: 1.05rem; margin-bottom: 0.4rem;">🌿 Cocina, Baños & Terrazas Fijas</h4>
+          <p style="font-size: 0.83rem; color: var(--text-secondary);">Colocar un <strong>Era 100</strong> en la cocina, un <strong>Roam 2</strong> impermeable en el baño principal, o cornetas fijas <strong>Sonance Outdoor</strong> en terrazas y jardines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillar 2: CONTROL4 LUX COMMERCIAL SHOWCASE -->
+  <section id="domotica">
+    <div class="section-header">
+      <div class="eyebrow"><span class="eyebrow-dot"></span><span>Pilar 02 • Domótica e Iluminación de Lujo</span></div>
+      <h2>Control4 Serie Lux: Joyería arquitectónica en sus paredes</h2>
+      <p>La iluminación define cómo se siente cada espacio de su hogar. Con Control4 Lux, eliminamos el desorden de múltiples interruptores para darle el control absoluto de luces, cortinas, clima y música con una estética impecable.</p>
+    </div>
+
+    <div class="feature-banner">
+      <div class="feature-hero">
+        <div>
+          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--gold-champagne); font-weight: 700;">Botoneras & Dimmers Inteligentes • Control4 Lux</span>
+          <h3 style="font-size: 2rem; margin: 0.5rem 0 1rem; line-height: 1.15;">Personalice cada botón con el nombre de sus momentos favoritos</h3>
+          <p style="color: var(--text-secondary); font-size: 0.96rem; margin-bottom: 1.2rem;">
+            Olvídese de adivinar qué interruptor enciende cada lámpara. Los teclados <strong>Control4 Lux</strong> cuentan con placas metálicas sin tornillos visibles, grabado láser personalizado (<em>"Bienvenida"</em>, <em>"Cena"</em>, <em>"Terraza"</em>, <em>"Apagar Todo"</em>) y sensores de luz ambiental que ajustan el brillo del texto automáticamente en la oscuridad.
+          </p>
+
+          <div style="font-size: 0.8rem; color: var(--text-primary); font-weight: 600;">Acabados metálicos y arquitectónicos disponibles:</div>
+          <div class="finish-selector">
+            <div class="finish-swatch active" onclick="highlightFinish(this, 'Obsidian Black')">
+              <span class="swatch-circle" style="background: #141416;"></span>
+              <span>Obsidian Black</span>
+            </div>
+            <div class="finish-swatch" onclick="highlightFinish(this, 'Satin Brass')">
+              <span class="swatch-circle" style="background: linear-gradient(135deg, #d4af37, #9a7b1c);"></span>
+              <span>Satin Brass</span>
+            </div>
+            <div class="finish-swatch" onclick="highlightFinish(this, 'Brushed Nickel')">
+              <span class="swatch-circle" style="background: linear-gradient(135deg, #b8bec8, #7b818c);"></span>
+              <span>Brushed Nickel</span>
+            </div>
+            <div class="finish-swatch" onclick="highlightFinish(this, 'Architectural White')">
+              <span class="swatch-circle" style="background: #f4f4f6;"></span>
+              <span>Architectural White</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.8rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://lux.automatizacion.io/" target="_blank" rel="noopener noreferrer" class="btn-primary">
+              <span>🎨 Diseñar Mis Teclados en lux.automatizacion.io</span>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <button class="btn-secondary" onclick="toggleLuxStudio()">
+              <span>Abrir Personalizador Interactivo Aquí</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="feature-img-stage">
+          <img id="luxFinishPreviewImg" src="assets/lux-obsidian.webp" alt="Control4 Lux Keypads & Dimmers - Obsidian Black" style="transition: opacity 0.2s ease, transform 0.25s ease;" />
+        </div>
+      </div>
+
+      <!-- Embedded Interactive Customizer Drawer -->
+      <div id="luxStudioEmbed" style="display: none; border-top: 1px solid var(--border-gold); background: #040b24; padding: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.8rem;">
+          <div>
+            <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold-champagne); font-weight: 700;">Herramienta Interactiva Oficial • Automatizacion</span>
+            <h4 style="font-size: 1.25rem;">Personalizador de Teclados Control4 Lux (lux.automatizacion.io)</h4>
+          </div>
+          <div style="display: flex; gap: 0.6rem;">
+            <a href="https://lux.automatizacion.io/" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.78rem;">Abrir en Pantalla Completa ↗</a>
+            <button class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.78rem;" onclick="toggleLuxStudio()">Cerrar Vista</button>
+          </div>
+        </div>
+        <iframe src="https://lux.automatizacion.io/" title="Personalizador de Teclados Control4 Lux" style="width: 100%; height: 680px; border: 1px solid var(--border-subtle); border-radius: 12px; background: #040b24;" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="benefits-3col">
+      <div class="benefit-box">
+        <h4>Botoneras & Dimmers Lux</h4>
+        <p>Unifique el control de todas sus luminarias DALI, cintas LED indirectas y lámparas decorativas en una sola pieza de diseño que eleva la estética de cada pared.</p>
+      </div>
+      <div class="benefit-box">
+        <h4>Control Remoto Halo Touch</h4>
+        <p>Desde el sofá de la Sala de TV o la cama, un solo control de aluminio cepillado con pantalla táctil maneja su televisor, Apple TV, sonido Sonos, luces y persianas.</p>
+      </div>
+      <div class="benefit-box">
+        <h4>Control Total Dentro y Fuera de Casa</h4>
+        <p>El botón <em>"Salir de Casa"</em> apaga todas las luces y televisores, baja las cortinas, ajusta los aires acondicionados y le permite monitorear su hogar desde su iPhone en cualquier parte del mundo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillar 3: UBIQUITI UNIFI COMMERCIAL SHOWCASE -->
+  <section id="redes">
+    <div class="section-header">
+      <div class="eyebrow"><span class="eyebrow-dot"></span><span>Pilar 03 • Conectividad Residencial Enterprise</span></div>
+      <h2>Ubiquiti UniFi: La columna vertebral invisible de su hogar</h2>
+      <p>En una residencia contemporánea en APEX 07, el entretenimiento en ultra alta definición, el teletrabajo ejecutivo y la domótica dependen de una red que nunca falle.</p>
+    </div>
+
+    <div class="feature-banner">
+      <div class="feature-hero" style="background: radial-gradient(circle at 82% 50%, rgba(0, 136, 255, 0.24), transparent 60%);">
+        <div>
+          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--gold-champagne); font-weight: 700;">Solución Integral Llave en Mano • Ubiquiti UniFi</span>
+          <h3 style="font-size: 2rem; margin: 0.5rem 0 1rem; line-height: 1.15;">Wi-Fi ultrarrápido y continuo desde el vestier hasta la terraza</h3>
+          <p style="color: var(--text-secondary); font-size: 0.96rem; margin-bottom: 1.5rem;">
+            Los routers domésticos tradicionales no están diseñados para atravesar muros de concreto ni sostener decenas de dispositivos inteligentes al mismo tiempo. Nuestra solución integral <strong>Ubiquiti UniFi</strong> se diseña a la medida del plano de su apartamento para garantizar cobertura total bajo una sola red inteligente.
+          </p>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.8rem;">
+            <div style="background: rgba(4,11,36,0.55); padding: 1rem; border-radius: 10px; border: 1px solid var(--border-subtle);">
+              <strong style="color: var(--text-primary); font-size: 0.88rem; display: block; margin-bottom: 3px;">Roaming Transparente</strong>
+              <span style="color: var(--text-secondary); font-size: 0.78rem;">Camine por todo el apartamento en una videollamada sin cortes ni cambios manuales de red.</span>
+            </div>
+            <div style="background: rgba(4,11,36,0.55); padding: 1rem; border-radius: 10px; border: 1px solid var(--border-subtle);">
+              <strong style="color: var(--text-primary); font-size: 0.88rem; display: block; margin-bottom: 3px;">Doble Internet (Failover)</strong>
+              <span style="color: var(--text-secondary); font-size: 0.78rem;">Permite conectar 2 proveedores de internet distintos para cambio automático si uno falla.</span>
+            </div>
+          </div>
+
+          <a href="#acceso-privado" class="btn-primary">
+            <span>Ver Propuesta de Mi Apartamento</span>
+          </a>
+        </div>
+
+        <div class="feature-img-stage">
+          <img src="https://images.svc.ui.com/?u=https%3A%2F%2Fcdn.ecomm.ui.com%2Fproducts%2Ffa8dd4e4-36c8-4c79-a928-22c7bff2ce29%2F55143a40-9ce9-48a0-b7b3-6726988102d6.png&q=75&w=1600" alt="Ubiquiti UniFi Conectividad Total" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Call to Action Banner -->
+  <section style="padding-top: 2rem;">
+    <div style="background: linear-gradient(135deg, rgba(255,85,30,0.22) 0%, rgba(0,82,204,0.45) 50%, rgba(8,22,66,0.98) 100%); border: 1px solid var(--border-gold); border-radius: var(--radius-xl); padding: 3.5rem; text-align: center; max-width: 1050px; margin: 0 auto;">
+      <img src="assets/logo-3d-blue.jpg" alt="Automatizacion" style="width: 68px; height: 68px; border-radius: 16px; border: 2px solid var(--gold-primary); margin-bottom: 1.2rem; box-shadow: 0 12px 30px rgba(0,0,0,0.5);" />
+      <div>
+        <div class="eyebrow"><span class="eyebrow-dot"></span><span>Atención Personalizada para Propietarios APEX 07</span></div>
+      </div>
+      <h2 style="font-size: clamp(1.85rem, 3.2vw, 2.7rem); margin-bottom: 1rem;">¿Listo para revisar o personalizar la propuesta de su unidad?</h2>
+      <p style="color: var(--text-secondary); max-width: 660px; margin: 0 auto 2rem; font-size: 1rem;">
+        Ingrese el número de su apartamento en la parte superior para abrir el configurador de su unidad, o escríbanos directamente para agendar una demostración privada.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a href="#acceso-privado" class="btn-primary">
+          <span>Ingresar Mi Número de Apartamento</span>
+        </a>
+        <a href="https://wa.me/584122370080?text=Hola%20Automatizacion%20Corp,%20soy%20propietario%20en%20APEX%2007%20y%20me%20gustar%C3%ADa%20revisar%20la%20propuesta%20de%20sonido,%20dom%C3%B3tica%20y%20redes%20para%20mi%20apartamento." target="_blank" class="btn-secondary">
+          <span>Hablar por WhatsApp (+58 412-2370080)</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+          <div class="brand-apex-title">APEX<span>07</span></div>
+          <span style="color: var(--border-subtle);">|</span>
+          <img src="assets/logo-automatizacion-white.png" alt="Automatizacion" style="height: 28px; width: auto;" />
+        </div>
+        <p style="color: var(--text-secondary); font-size: 0.88rem; max-width: 380px; margin-bottom: 1.2rem;">
+          Soluciones residenciales de Sonido Arquitectónico Sonos & Sonance, Domótica Control4 Serie Lux y Redes Ubiquiti UniFi para propietarios de APEX 07 en Valle Arriba, Caracas.
+        </p>
+        <div style="display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.8rem; color: var(--gold-champagne); font-weight: 700;">
+          <img src="assets/logo-ingenieria.png" alt="Ingeniería Automatizacion" style="width: 26px; height: 26px; object-fit: contain;" />
+          <span>Preparado por Andrés Montbrun • Automatizacion Corp</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-champagne); margin-bottom: 1rem;">Contacto Directo</h4>
+        <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 0.4rem;"><strong>Automatizacion Corp</strong></p>
+        <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 0.4rem;">Tel / WhatsApp: +58 412-2370080</p>
+        <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 0.4rem;">Email: Willy@automatizaciongroup.com</p>
+        <p style="font-size: 0.86rem; color: var(--text-secondary);">Web: automatizaciongroup.com</p>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-champagne); margin-bottom: 1rem;">Oficina & Respaldo</h4>
+        <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 0.4rem;">2333 Brickell Ave, Suite 2116</p>
+        <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 0.8rem;">Miami, FL 33129 • Atención en Caracas</p>
+        <p style="font-size: 0.78rem; color: var(--text-muted);">
+          Cada propietario dispone de un enlace privado con el cómputo exacto proyectado para las áreas de su apartamento.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-meta">
+      <span>© 2026 Automatizacion Corp — Proyecto Residencial APEX 07 Valle Arriba.</span>
+      <span>Sonos • Sonance • Control4 Lux • Ubiquiti UniFi</span>
+    </div>
+  </footer>
+
+  <script>
+    // Private Access Routing by Apartment Number
+    const APT_KEYS = {
+      "PBA": "PBA",
+      "PBA930": "PBA",
+      "930": "PBA",
+      "PBB": "PBB",
+      "PBB931": "PBB",
+      "931": "PBB",
+      "1A": "1A",
+      "1A932": "1A",
+      "932": "1A",
+      "1B": "1B",
+      "1B933": "1B",
+      "933": "1B",
+      "1C": "1C",
+      "1C934": "1C",
+      "934": "1C",
+      "2A": "2A",
+      "2A945": "2A",
+      "945": "2A",
+      "2B": "2B",
+      "2B948": "2B",
+      "948": "2B",
+      "2C": "2C",
+      "2C950": "2C",
+      "950": "2C",
+      "3A": "3A",
+      "3A946": "3A",
+      "946": "3A",
+      "3B": "3B",
+      "3B936": "3B",
+      "936": "3B",
+      "4A": "4A",
+      "4A952": "4A",
+      "952": "4A",
+      "4B": "4B",
+      "4B937": "4B",
+      "937": "4B",
+      "5A": "5A",
+      "5A947": "5A",
+      "947": "5A",
+      "5B": "5B",
+      "5B949": "5B",
+      "949": "5B",
+      "5C": "5C",
+      "5C951": "5C",
+      "951": "5C"
+    };
+
+    function normalizeAptInput(str) {
+      return (str || "")
+        .toUpperCase()
+        .replace(/APARTAMENTO|APTO\.?|APT\.?|UNIDAD|PISO/g, "")
+        .replace(/[^A-Z0-9]/g, "");
+    }
+
+    function handleAccess(e) {
+      e.preventDefault();
+      const raw = normalizeAptInput(document.getElementById("accessCode").value);
+      const aptKey = APT_KEYS[raw];
+      if (aptKey) {
+        document.getElementById("errorMsg").style.display = "none";
+        window.location.href = `propuesta.html?apt=${aptKey}`;
+      } else {
+        document.getElementById("errorMsg").style.display = "block";
+      }
+    }
+
+    // Direct URL parameter support (?apt=3B)
+    window.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const aptParam = params.get("apt") || params.get("unidad");
+      if (aptParam) {
+        const key = APT_KEYS[normalizeAptInput(aptParam)];
+        if (key) {
+          window.location.href = `propuesta.html?apt=${key}`;
+        }
+      }
+    });
+
+    // 24-Hour Lifestyle Simulator
+    const SCENES = {
+      morning: {
+        img: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1600&q=85",
+        overlay: "linear-gradient(180deg, rgba(255,235,190,0.08) 0%, rgba(6,6,8,0.86) 100%)",
+        audio: "Música acústica suave en Suite + Vestier",
+        light: "Blackout abre al 80% • Luz cálida 30%",
+        net: "Sincronización instantánea sin cortes"
+      },
+      social: {
+        img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85",
+        overlay: "linear-gradient(180deg, rgba(10,12,18,0.15) 0%, rgba(6,6,8,0.88) 100%)",
+        audio: "Sala empotrada + Move 2 en Terraza",
+        light: "Escena 'Social' 45% en Teclado Lux",
+        net: "Prioridad Streaming Hi-Res Audio"
+      },
+      cinema: {
+        img: "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1600&q=85",
+        overlay: "linear-gradient(180deg, rgba(5,5,9,0.55) 0%, rgba(6,6,8,0.95) 100%)",
+        audio: "Dolby Atmos 9.1.4 en Arc Ultra + Sub G4",
+        light: "Luz Indirecta 10% • Persianas 100%",
+        net: "Streaming 8K Ultra HD sin buffering"
+      },
+      night: {
+        img: "https://images.unsplash.com/photo-1540518614846-7ede433c4573?auto=format&fit=crop&w=1600&q=85",
+        overlay: "linear-gradient(180deg, rgba(5,5,10,0.65) 0%, rgba(6,6,8,0.96) 100%)",
+        audio: "TV Audio Swap en Audífonos Sonos Ace",
+        light: "Todo Apagado • Guía Nocturna 5%",
+        net: "Red Segura & Doble Fibra Activa"
+      }
+    };
+
+    function setScene(key, btnEl) {
+      const s = SCENES[key];
+      document.querySelectorAll(".scene-btn").forEach(b => b.classList.remove("active"));
+      btnEl.classList.add("active");
+
+      document.getElementById("simVisual").style.backgroundImage = `url('${s.img}')`;
+      document.getElementById("simOverlay").style.background = s.overlay;
+      document.getElementById("simAudioStatus").textContent = s.audio;
+      document.getElementById("simLightStatus").textContent = s.light;
+      document.getElementById("simNetStatus").textContent = s.net;
+    }
+
+    const LUX_FINISH_IMAGES = {
+      "Obsidian Black": "assets/lux-obsidian.webp",
+      "Satin Brass": "assets/lux-brass.webp",
+      "Brushed Nickel": "assets/lux-brushed-nickel.webp",
+      "Architectural White": "assets/lux-white.webp"
+    };
+
+    function highlightFinish(el, finishName) {
+      el.parentElement.querySelectorAll(".finish-swatch").forEach(s => s.classList.remove("active"));
+      el.classList.add("active");
+      const name = finishName || el.textContent.trim();
+      const imgEl = document.getElementById("luxFinishPreviewImg") || (el.closest(".feature-highlight") && el.closest(".feature-highlight").querySelector(".feature-img-stage img"));
+      if (imgEl && LUX_FINISH_IMAGES[name]) {
+        imgEl.style.opacity = "0.35";
+        imgEl.style.transform = "scale(0.985)";
+        setTimeout(() => {
+          imgEl.src = LUX_FINISH_IMAGES[name];
+          imgEl.alt = "Control4 Lux Keypads & Dimmers - " + name;
+          imgEl.style.opacity = "1";
+          imgEl.style.transform = "scale(1)";
+        }, 90);
+      }
+    }
+
+    function filterSonos(cat, btn) {
+      btn.parentElement.querySelectorAll(".finish-swatch").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      document.querySelectorAll("#sonosCatalogGrid .commercial-card").forEach(card => {
+        const cats = (card.getAttribute("data-cat") || "").split(" ");
+        if (cat === "all" || cats.includes(cat)) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    function toggleLuxStudio() {
+      const embed = document.getElementById("luxStudioEmbed");
+      if (embed.style.display === "none") {
+        embed.style.display = "block";
+        embed.scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        embed.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
