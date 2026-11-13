@@ -441,8 +441,76 @@
       font-size: 1.04rem;
     }
 
-    /* Problem vs Solution Luxury Comparison */
-    .comparison-grid {
+    /* Architectural Gallery APEX 07 */
+    .apex-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: #040b24;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+      transition: transform 0.35s ease, border-color 0.35s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-primary);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.2rem 1.1rem 0.9rem;
+      background: linear-gradient(180deg, transparent 0%, rgba(2, 6, 23, 0.92) 80%);
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .gallery-caption span:first-child {
+      color: var(--gold-champagne);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+    }
+
+    .gallery-col-7 { grid-column: span 7; min-height: 380px; }
+    .gallery-col-5 { grid-column: span 5; min-height: 380px; }
+    .gallery-col-4 { grid-column: span 4; min-height: 320px; }
+
+    @media (max-width: 900px) {
+      .gallery-col-7, .gallery-col-5, .gallery-col-4 {
+        grid-column: span 12;
+        min-height: 260px;
+      }
+    }
+
+    /* Comparison Grid */
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
@@ -1119,7 +1187,8 @@
     </a>
 
     <ul class="nav-links">
-      <li><a href="#experiencia">Por Qué Integrar Ahora</a></li>
+      <li><a href="#arquitectura">El Edificio</a></li>
+      <li><a href="#experiencia">Por Qué Integrar</a></li>
       <li><a href="#simulador">Un Día en APEX 07</a></li>
       <li><a href="#sonido">Sonido Sonos</a></li>
       <li><a href="#domotica">Control4 Lux</a></li>
@@ -1137,17 +1206,17 @@
           <span class="eyebrow-dot"></span>
           <span>Experiencia Residencial para Propietarios de APEX 07</span>
         </div>
-        <h1>Su apartamento en Valle Arriba merece una tecnología tan <em>extraordinaria</em> como su arquitectura.</h1>
+        <h1>Tecnología tan <em>extraordinaria</em> como la arquitectura de APEX 07.</h1>
         <p class="hero-lead">
-          Imagine entrar a su apartamento en <strong>APEX 07</strong> y que un solo toque en una botonera metálica <strong>Control4 Lux</strong> atenúe las luces a la perfección, abra las cortinas hacia el Ávila y llene la sala y la terraza de música envolvente <strong>Sonos & Sonance</strong> sin un solo cable ni equipo a la vista.
+          Sonido arquitectónico <strong>Sonos & Sonance</strong>, iluminación y botoneras <strong>Control4 Lux</strong> y redes <strong>UniFi</strong> diseñados a la medida de su apartamento en Valle Arriba.
         </p>
         <div class="hero-actions">
-          <a href="#sonido" class="btn-primary">
-            <span>Descubrir el Ecosistema</span>
+          <a href="#arquitectura" class="btn-primary">
+            <span>Ver Renders de APEX 07</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#domotica" class="btn-secondary">
-            <span>Personalizar Teclados Lux en Vivo</span>
+          <a href="#acceso-privado" class="btn-secondary">
+            <span>Ingresar a Mi Propuesta</span>
           </a>
         </div>
 
@@ -1205,6 +1274,53 @@
       </div>
     </div>
   </header>
+
+  <!-- Architectural Showcase APEX 07 -->
+  <section id="arquitectura">
+    <div class="section-header">
+      <div class="eyebrow"><span class="eyebrow-dot"></span><span>Arquitectura Vanguardista • Valle Arriba</span></div>
+      <h2>APEX 07: Diseño icónico y tecnología invisible</h2>
+      <p>Líneas puras, terrazas voladas y vistas privilegiadas. Integramos audio, domótica y conectividad directamente en la fase constructiva para respetar la estética del edificio.</p>
+    </div>
+
+    <div class="apex-gallery-grid">
+      <div class="gallery-item gallery-col-7">
+        <img src="assets/apex-apartamento.webp" alt="Apartamento APEX 07 integrado a la terraza" loading="lazy" />
+        <div class="gallery-caption">
+          <span>Área Social & Terraza</span>
+          <strong>Integración interior-exterior con cornetas empotradas y teclados Control4 Lux</strong>
+        </div>
+      </div>
+      <div class="gallery-item gallery-col-5">
+        <img src="assets/apex-proa.webp" alt="Fachada Proa APEX 07" loading="lazy" />
+        <div class="gallery-caption">
+          <span>Fachada Vanguardista</span>
+          <strong>Arquitectura contemporánea con terrazas en voladizo en Valle Arriba</strong>
+        </div>
+      </div>
+      <div class="gallery-item gallery-col-4">
+        <img src="assets/apex-amenidades-dia.webp" alt="Rooftop & Piscina APEX 07" loading="lazy" />
+        <div class="gallery-caption">
+          <span>Rooftop & Piscina</span>
+          <strong>Área de amenidades y piscina infinita con vistas panorámicas</strong>
+        </div>
+      </div>
+      <div class="gallery-item gallery-col-4">
+        <img src="assets/apex-corona-ocaso.webp" alt="Rooftop Corona al Ocaso APEX 07" loading="lazy" />
+        <div class="gallery-caption">
+          <span>Corona al Atardecer</span>
+          <strong>El ambiente perfecto para disfrutar con sonido Sonos Move 2</strong>
+        </div>
+      </div>
+      <div class="gallery-item gallery-col-4">
+        <img src="assets/apex-calle.webp" alt="Entrada y Calle APEX 07" loading="lazy" />
+        <div class="gallery-caption">
+          <span>Acceso Residencial</span>
+          <strong>Entrada privada y paisajismo entre Calle Maury y Calle Ottama</strong>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Why Integrate During Pre-Finish / Obra Gris -->
   <section id="experiencia">
@@ -1275,7 +1391,7 @@
     </div>
 
     <div class="simulator-wrap">
-      <div class="simulator-visual" id="simVisual" style="background-image: url('https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1600&q=85');">
+      <div class="simulator-visual" id="simVisual" style="background-image: url('assets/apex-apartamento.webp');">
         <div class="simulator-overlay" id="simOverlay" style="background: linear-gradient(180deg, rgba(4,11,36,0.04) 0%, rgba(4,11,36,0.32) 100%);"></div>
         <div class="simulator-status">
           <div class="sim-metric">
@@ -1873,14 +1989,14 @@
     // 24-Hour Lifestyle Simulator
     const SCENES = {
       morning: {
-        img: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1600&q=85",
+        img: "assets/apex-apartamento.webp",
         overlay: "linear-gradient(180deg, rgba(255,235,190,0.04) 0%, rgba(4,11,36,0.32) 100%)",
         audio: "Música acústica suave en Suite + Vestier",
         light: "Blackout abre al 80% • Luz cálida 30%",
         net: "Sincronización instantánea sin cortes"
       },
       social: {
-        img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85",
+        img: "assets/apex-corona-ocaso.webp",
         overlay: "linear-gradient(180deg, rgba(4,11,36,0.04) 0%, rgba(4,11,36,0.35) 100%)",
         audio: "Sala empotrada + Move 2 en Terraza",
         light: "Escena 'Social' 45% en Teclado Lux",
@@ -1894,7 +2010,7 @@
         net: "Streaming 8K Ultra HD sin buffering"
       },
       night: {
-        img: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1600&q=85",
+        img: "assets/apex-corona-noche.webp",
         overlay: "linear-gradient(180deg, rgba(4,11,36,0.18) 0%, rgba(4,11,36,0.48) 100%)",
         audio: "TV Audio Swap en Audífonos Sonos Ace",
         light: "Todo Apagado • Guía Nocturna 5%",
