@@ -1465,7 +1465,7 @@
   </nav>
 
   <!-- Hero Section -->
-  <header class="hero">
+  <header class="hero" style="min-height: 58vh; padding: 6.5rem 5% 2.5rem;">
     <div class="hero-bg"></div>
     <div class="hero-grid">
       <div>
@@ -1473,36 +1473,18 @@
           <span class="eyebrow-dot"></span>
           <span id="heroEyebrow">Propuesta Privada • Apartamento</span>
         </div>
-        <h1 id="heroTitle">Tecnología a la medida de su Apartamento.</h1>
-        <p class="hero-lead" id="heroLead">
-          Proyecto oficial de sonido empotrado Sonos, domótica Control4 Lux y red UniFi configurado para su distribución en APEX 07.
+        <h1 id="heroTitle" style="font-size: clamp(2.4rem, 4.4vw, 3.8rem); margin-bottom: 0.85rem;">Proyecto para su Apartamento.</h1>
+        <p class="hero-lead" id="heroLead" style="font-size: 1rem; font-weight: 600; color: #ffffff; margin-bottom: 1.5rem;">
+          Sonos & Sonance &nbsp;•&nbsp; Control4 Serie Lux &nbsp;•&nbsp; Ubiquiti UniFi
         </p>
         <div class="hero-actions">
           <a href="#configurador" class="btn-primary">
-            <span id="heroPrimaryBtnText">Personalizar Mi Propuesta</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span id="heroPrimaryBtnText">Ver Mis Ambientes</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
           </a>
-          <a href="#domotica" class="btn-secondary">
-            <span>Explorar Control4 Lux & UniFi</span>
+          <a href="#domotica" class="btn-secondary" style="background: rgba(4,11,36,0.72); backdrop-filter: blur(10px);">
+            <span>Ver Teclados Control4 Lux</span>
           </a>
-        </div>
-
-        <div class="hero-pillars">
-          <div class="pillar-mini">
-            <span class="pillar-mini-brand">01 • Acústica Residencial</span>
-            <span class="pillar-mini-title">Sonos & Sonance</span>
-            <span class="pillar-mini-desc">Cornetas empotradas invisibles, cine inmersivo Arc Ultra y audio multi-zona.</span>
-          </div>
-          <div class="pillar-mini">
-            <span class="pillar-mini-brand">02 • Domótica de Lujo</span>
-            <span class="pillar-mini-title">Control4 Serie Lux</span>
-            <span class="pillar-mini-desc">Botoneras metálicas grabadas a láser, escenas de iluminación, clima y persianas.</span>
-          </div>
-          <div class="pillar-mini">
-            <span class="pillar-mini-brand">03 • Conectividad Total</span>
-            <span class="pillar-mini-title">Ubiquiti UniFi</span>
-            <span class="pillar-mini-desc">Roaming sin cortes y estabilidad empresarial en todo el apartamento.</span>
-          </div>
         </div>
       </div>
 
@@ -4326,10 +4308,10 @@
       document.getElementById("navAptSub").textContent = `Apartamento ${APT.code} • Valle Arriba`;
       document.getElementById("navSonosLink").textContent = `Sonido Sonos (${APT.code})`;
       document.getElementById("navCtaBtn").textContent = `Personalizar Apt. ${APT.code}`;
-      document.getElementById("heroEyebrow").textContent = `Propuesta Oficial • Apartamento ${APT.code}`;
-      document.getElementById("heroTitle").innerHTML = `Proyecto tecnológico para su <em>Apartamento ${APT.code}</em>.`;
-      document.getElementById("heroLead").innerHTML = `Cómputo oficial de sonido empotrado <strong>Sonos & Sonance</strong>, domótica <strong>Control4 Serie Lux</strong> y red <strong>Ubiquiti UniFi</strong> diseñado a la medida del <strong>Apartamento ${APT.code}</strong> en APEX 07.`;
-      document.getElementById("heroPrimaryBtnText").textContent = `Personalizar Mi Propuesta (${APT.code})`;
+      document.getElementById("heroEyebrow").textContent = `Dossier Exclusivo • Apartamento ${APT.code}`;
+      document.getElementById("heroTitle").innerHTML = `Apartamento <em>${APT.code}</em>.<br>Tecnología Invisible.`;
+      document.getElementById("heroLead").innerHTML = `Sonos & Sonance &nbsp;•&nbsp; Control4 Serie Lux &nbsp;•&nbsp; Ubiquiti UniFi`;
+      document.getElementById("heroPrimaryBtnText").textContent = `Ver Ambientes Apt. ${APT.code}`;
 
       document.getElementById("dossierProposalBadge").textContent = `Apt. ${APT.code}`;
       document.getElementById("dossierAptTitle").textContent = `Apartamento ${APT.code}`;
