@@ -1457,7 +1457,6 @@
 
     <ul class="nav-links">
       <li><a href="index.html">← Volver al Portal</a></li>
-      <li><a href="#ambientes">Experiencia Interactiva</a></li>
       <li><a href="#configurador" onclick="switchCategory('sonos')" id="navSonosLink">Sonido Sonos</a></li>
       <li><a href="#domotica">Control4 Lux</a></li>
       <li><a href="#redes">Redes UniFi</a></li>
@@ -1540,70 +1539,22 @@
     </div>
   </header>
 
-  <!-- Interactive Scene Simulator -->
-  <section id="ambientes">
-    <div class="section-header">
-      <div class="eyebrow"><span class="eyebrow-dot"></span><span id="simEyebrow">Simulador de Estilo de Vida</span></div>
-      <h2>Un solo toque transforma todo su apartamento</h2>
-      <p>Descubra cómo interactúan en perfecta armonía el sonido arquitectónico Sonos, las botoneras Control4 Lux y la red de alta velocidad UniFi en su día a día en Valle Arriba.</p>
-    </div>
-
-    <div class="simulator-wrap">
-      <div class="simulator-visual" id="simVisual" style="background-image: url('assets/apex-apartamento.webp');">
-        <div class="simulator-overlay" id="simOverlay" style="background: linear-gradient(180deg, rgba(4,11,36,0.04) 0%, rgba(4,11,36,0.35) 100%);"></div>
-        <div class="simulator-status">
-          <div class="sim-metric">
-            <span class="sim-metric-label">Sonido Sonos</span>
-            <span class="sim-metric-val" id="simAudioStatus">Jazz & Bossa en Sala + Terraza (Move 2)</span>
-          </div>
-          <div class="sim-metric">
-            <span class="sim-metric-label">Control4 Lux</span>
-            <span class="sim-metric-val" id="simLightStatus">Luz Cálida 45% • Cortinas Abiertas</span>
-          </div>
-          <div class="sim-metric">
-            <span class="sim-metric-label">Red UniFi</span>
-            <span class="sim-metric-val" id="simNetStatus">Prioridad Streaming Hi-Res Audio</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="simulator-controls">
-        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold-champagne); font-weight: 700;">Escenas Inteligentes APEX07</div>
-        <h3 style="font-size: 1.6rem; line-height: 1.18;">Pruebe las escenas desde una botonera Control4 Lux</h3>
-
-        <button class="scene-btn active" onclick="setScene('social', this)">
-          <div>
-            <div class="scene-btn-title">🥂 Escena Social en Terraza</div>
-            <div class="scene-btn-sub">Música en sala y Move 2 en terraza con luz cálida.</div>
-          </div>
-        </button>
-
-        <button class="scene-btn" onclick="setScene('cinema', this)">
-          <div>
-            <div class="scene-btn-title">🎬 Cine Dolby Atmos</div>
-            <div class="scene-btn-sub">Sonos Arc Ultra y Sub G4 con luces tenues al 10%.</div>
-          </div>
-        </button>
-
-        <button class="scene-btn" onclick="setScene('morning', this)">
-          <div>
-            <div class="scene-btn-title">☀️ Buenos Días en Suite</div>
-            <div class="scene-btn-sub">Música suave en vestier y apertura de cortinas.</div>
-          </div>
-        </button>
-
-        <button class="scene-btn" onclick="setScene('night', this)">
-          <div>
-            <div class="scene-btn-title">🎧 Escucha Privada Nocturna</div>
-            <div class="scene-btn-sub">Audio de TV a los audífonos Sonos Ace sin molestar.</div>
-          </div>
-        </button>
-      </div>
-    </div>
-  </section>
-
   <!-- Main Configurator Section -->
-  <section id="configurador">
+  <section id="configurador" style="padding-top: 2rem;">
+    <!-- Pre-Installation Urgency & Authority Strip -->
+    <div style="margin-bottom: 2.5rem; background: linear-gradient(135deg, rgba(255,85,30,0.18) 0%, rgba(4,12,40,0.95) 100%); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 1.35rem 1.75rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+      <div style="display: flex; align-items: center; gap: 0.85rem; flex: 1; min-width: 260px;">
+        <span style="background: var(--gold-primary); color: #fff; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.35rem 0.75rem; border-radius: 50px; white-space: nowrap;">⏱️ Etapa de Obra</span>
+        <p style="font-size: 0.88rem; color: var(--text-primary); margin: 0;">
+          <strong>Ventana de Pre-Instalación APEX 07:</strong> Definir sus zonas antes del cierre de techos en drywall asegura <strong>cero cables visibles</strong> y coordinación directa con su arquitecto.
+        </p>
+      </div>
+      <div style="display: flex; gap: 1rem; font-size: 0.76rem; color: var(--gold-champagne); font-weight: 700; flex-wrap: wrap;">
+        <span>✓ Integradores Certificados</span>
+        <span>✓ Soporte en Caracas</span>
+      </div>
+    </div>
+
     <div class="section-header">
       <div class="eyebrow"><span class="eyebrow-dot"></span><span id="configEyebrow">Configurador Exclusivo</span></div>
       <h2>Su Propuesta Personalizada en APEX 07</h2>
@@ -1738,21 +1689,28 @@
             <label for="clientNotes">Personalización o Solicitudes Especiales</label>
             <textarea id="clientNotes" class="form-control" placeholder="Ej. Queremos agregar cornetas en la terraza, acabado Brass en botoneras Control4 Lux o revisar opciones..."></textarea>
           </div>
+          <label style="display: flex; align-items: flex-start; gap: 0.55rem; font-size: 0.78rem; color: var(--text-primary); cursor: pointer; margin-top: 0.5rem; background: rgba(255,85,30,0.1); padding: 0.65rem 0.75rem; border-radius: 8px; border: 1px solid var(--border-gold);">
+            <input type="checkbox" id="coordArchCheck" checked style="margin-top: 2px; accent-color: #ff551e;" />
+            <span>Deseo coordinar revisión de puntos en planos con mi arquitecto / visita a Showroom</span>
+          </label>
         </div>
 
         <div class="summary-actions">
           <button class="btn-whatsapp" onclick="sendWhatsAppQuote()">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
-            <span>Solicitar Cotización por WhatsApp</span>
+            <span>Recibir Presupuesto Formal por WhatsApp</span>
           </button>
           <button class="btn-gold-full" onclick="sendEmailQuote()">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            <span>Enviar Solicitud por Correo</span>
+            <span>Recibir Presupuesto Formal por Correo</span>
           </button>
           <button class="btn-outline-full" onclick="window.print()">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-            <span>Descargar / Imprimir Resumen PDF</span>
+            <span>Descargar / Imprimir Dossier PDF</span>
           </button>
+          <div style="font-size: 0.72rem; color: var(--text-secondary); text-align: center; margin-top: 0.25rem;">
+            ✓ Incluye cómputo de equipos y guía de pre-instalación en obra
+          </div>
         </div>
       </aside>
     </div>
@@ -4328,19 +4286,30 @@
     let selectedUnifi = new Set(["unifi_integral"]);
     let selectedFinish = "Obsidian Black";
 
+    const SKU_BENEFITS = {
+      "INCLGWW1": "Empotrado invisible al ras del techo • Pintable",
+      "AMPG1US1BLK": "Amplificación oculta en rack • 125W por canal",
+      "ARCG2US1BLK": "Barra insignia Cine Dolby Atmos 9.1.4",
+      "SUBG4US1BLK": "Graves profundos de cine • Cero vibración",
+      "BEAM2US1BLK": "Barra inteligente compacta Dolby Atmos",
+      "SUBM1US1BLK": "Subwoofer cilíndrico compacto sin vibración",
+      "MOVE2US1BLK": "Estéreo portátil para terraza • 24h batería",
+      "ACEG1US1BLK": "Audífonos de cine privado • TV Audio Swap"
+    };
+
     function initApp() {
       if (!APT) return;
 
-      document.title = `APEX 07 | Apartamento ${APT.code} (${APT.proposalNum}) — Propuesta Privada Automatizacion`;
+      document.title = `APEX 07 | Apartamento ${APT.code} — Propuesta Privada Automatizacion`;
       document.getElementById("navAptSub").textContent = `Apartamento ${APT.code} • Valle Arriba`;
       document.getElementById("navSonosLink").textContent = `Sonido Sonos (${APT.code})`;
       document.getElementById("navCtaBtn").textContent = `Personalizar Apt. ${APT.code}`;
-      document.getElementById("heroEyebrow").textContent = `Propuesta Privada ${APT.proposalNum} • Apartamento ${APT.code}`;
-      document.getElementById("heroTitle").innerHTML = `Tecnología invisible que acompaña la <em>arquitectura</em> de su Apartamento ${APT.code}.`;
-      document.getElementById("heroLead").innerHTML = `APEX 07 combina espacios amplios, un área social integrada y una arquitectura contemporánea abierta hacia la terraza en Valle Arriba. Para el <strong>Apartamento ${APT.code}</strong> proponemos un ecosistema integral de sonido, domótica y conectividad adaptado a cada ambiente.`;
+      document.getElementById("heroEyebrow").textContent = `Propuesta Oficial • Apartamento ${APT.code}`;
+      document.getElementById("heroTitle").innerHTML = `Proyecto tecnológico para su <em>Apartamento ${APT.code}</em>.`;
+      document.getElementById("heroLead").innerHTML = `Cómputo oficial de sonido empotrado <strong>Sonos & Sonance</strong>, domótica <strong>Control4 Serie Lux</strong> y red <strong>Ubiquiti UniFi</strong> diseñado a la medida del <strong>Apartamento ${APT.code}</strong> en APEX 07.`;
       document.getElementById("heroPrimaryBtnText").textContent = `Personalizar Mi Propuesta (${APT.code})`;
 
-      document.getElementById("dossierProposalBadge").textContent = `Propuesta ${APT.proposalNum}`;
+      document.getElementById("dossierProposalBadge").textContent = `Apt. ${APT.code}`;
       document.getElementById("dossierAptTitle").textContent = `Apartamento ${APT.code}`;
       document.getElementById("dossierAptSub").textContent = `${APT.floor} • Edificio APEX 07, Valle Arriba • Preparado por Andrés Montbrun`;
       document.getElementById("dossierZonesLabel").textContent = `Ambientes Proyectados en su Unidad (${APT.zones.length} Zonas):`;
@@ -4348,15 +4317,14 @@
         .map(z => `<span style="font-size: 0.76rem; padding: 0.3rem 0.65rem; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; color: var(--text-primary);">✓ ${z.name}</span>`)
         .join('');
 
-      document.getElementById("simEyebrow").textContent = `Simulador de Estilo de Vida • Apt. ${APT.code}`;
       document.getElementById("configEyebrow").textContent = `Configurador Exclusivo • Apartamento ${APT.code}`;
-      document.getElementById("configLead").textContent = `Revise los ambientes y equipos contemplados en su propuesta oficial (${APT.proposalNum}), active o desactive zonas a su gusto, o incluya Domótica Control4 Lux y Redes Ubiquiti UniFi.`;
-      document.getElementById("tabSonosBadge").textContent = `Propuesta ${APT.proposalNum} • Apt. ${APT.code}`;
+      document.getElementById("configLead").textContent = `Active o desactive ambientes, agregue equipos adicionales o incluya Domótica Control4 Lux y Redes Ubiquiti UniFi.`;
+      document.getElementById("tabSonosBadge").textContent = `Cómputo Oficial • Apt. ${APT.code}`;
       document.getElementById("sonosViewTitle").textContent = `Propuesta de Sonido — Apartamento ${APT.code}`;
       document.getElementById("summaryAptBadge").textContent = `APT ${APT.code}`;
-      document.getElementById("summaryRefText").textContent = `Referencia Oficial: Propuesta ${APT.proposalNum} • ${APT.floor}`;
+      document.getElementById("summaryRefText").textContent = `${APT.floor} • Proyecto Residencial APEX 07 (${APT.proposalNum})`;
       document.getElementById("footerDesc").textContent = `Propuesta privada de Sonido Arquitectónico Sonos, Domótica Control4 Serie Lux y Redes Ubiquiti UniFi para el Apartamento ${APT.code} de APEX 07 en Valle Arriba, Caracas.`;
-      document.getElementById("footerCopyright").textContent = `© 2026 Automatizacion Corp — Propuesta Exclusiva Apartamento ${APT.code} (${APT.proposalNum}) • APEX 07 Valle Arriba.`;
+      document.getElementById("footerCopyright").textContent = `© 2026 Automatizacion Corp — Propuesta Exclusiva Apartamento ${APT.code} • APEX 07 Valle Arriba.`;
 
       renderSonosZones();
       renderSonosExtras();
@@ -4441,7 +4409,7 @@
                 <div class="equipment-info">
                   <div class="equipment-brand">${item.brand}</div>
                   <div class="equipment-model" title="${item.model}">${item.model}</div>
-                  <div class="equipment-sku">Modelo: ${item.sku}</div>
+                  <div class="equipment-sku">${SKU_BENEFITS[item.sku] || "Integración residencial a medida"}</div>
                 </div>
                 <div class="equipment-qty">${item.qty}</div>
               </div>
@@ -4643,6 +4611,9 @@
     function buildQuoteText() {
       const clientName = document.getElementById("clientName").value.trim() || "Propietario APEX 07";
       const clientNotes = document.getElementById("clientNotes").value.trim() || "Sin notas adicionales";
+      const coordArch = document.getElementById("coordArchCheck") && document.getElementById("coordArchCheck").checked
+        ? "Sí (Coordinar revisión de planos en obra / visita a Showroom)"
+        : "Solo presupuesto digital por ahora";
 
       const zonesText = APT.zones
         .filter(z => selectedZones.has(z.id))
@@ -4667,7 +4638,7 @@
       return `Hola Andrés / Automatizacion Corp,
 
 Soy *${clientName}*, propietario del *Apartamento ${APT.code}* en *APEX 07 (Valle Arriba)*.
-He revisado y personalizado mi propuesta en el portal web (Ref. ${APT.proposalNum}):
+He revisado mi propuesta personalizada (${APT.proposalNum}) y deseo recibir el presupuesto formal:
 
 *1. SONIDO RESIDENCIAL SONOS (Zonas Base):*
 ${zonesText}${extrasText ? `\n\n*EQUIPOS SONOS ADICIONALES SOLICITADOS:*\n${extrasText}` : ''}
@@ -4678,10 +4649,13 @@ ${c4Text}
 *3. REDES UBIQUITI UNIFI:*
 ${unifiText}
 
+*COORDINACIÓN ARQUITECTÓNICA / SHOWROOM:*
+${coordArch}
+
 *COMENTARIOS / PERSONALIZACIÓN:*
 ${clientNotes}
 
-Quedo atento para revisar la cotización personalizada.`;
+Quedo atento para recibir la cotización y coordinar los siguientes pasos.`;
     }
 
     function sendWhatsAppQuote() {
