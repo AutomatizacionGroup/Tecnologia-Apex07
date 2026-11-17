@@ -1668,8 +1668,15 @@
             <input type="text" id="clientName" class="form-control" placeholder="Ej. Familia Rodríguez" />
           </div>
           <div class="form-group">
+            <label for="clientEmail">Su Correo Electrónico <span style="color: var(--gold-champagne);">* (Para enviarle la cotización)</span></label>
+            <input type="email" id="clientEmail" class="form-control" placeholder="Ej. nombre@correo.com" required oninput="document.getElementById('emailErrorMsg').style.display='none'; this.style.borderColor='';" />
+            <div id="emailErrorMsg" style="display: none; color: #f87171; font-size: 0.75rem; margin-top: 0.35rem; font-weight: 600;">
+              ⚠️ Por favor ingrese su correo electrónico para poder enviarle la cotización formal.
+            </div>
+          </div>
+          <div class="form-group">
             <label for="clientNotes">Personalización o Solicitudes Especiales</label>
-            <textarea id="clientNotes" class="form-control" placeholder="Ej. Queremos agregar cornetas en la terraza, acabado Brass en botoneras Control4 Lux o revisar opciones..."></textarea>
+            <textarea id="clientNotes" class="form-control" placeholder="Ej. Queremos agregar cornetas en la terraza, acabado en botoneras Control4 Lux o revisar opciones..."></textarea>
           </div>
           <label style="display: flex; align-items: flex-start; gap: 0.55rem; font-size: 0.78rem; color: var(--text-primary); cursor: pointer; margin-top: 0.5rem; background: rgba(255,85,30,0.1); padding: 0.65rem 0.75rem; border-radius: 8px; border: 1px solid var(--border-gold);">
             <input type="checkbox" id="coordArchCheck" checked style="margin-top: 2px; accent-color: #ff551e;" />
@@ -4627,8 +4634,24 @@
       document.getElementById("simNetStatus").textContent = s.net;
     }
 
+    function validateClientEmail() {
+      const emailInput = document.getElementById("clientEmail");
+      const errorEl = document.getElementById("emailErrorMsg");
+      const val = (emailInput ? emailInput.value.trim() : "");
+      if (!val || !val.includes("@") || !val.includes(".")) {
+        if (errorEl) errorEl.style.display = "block";
+        if (emailInput) {
+          emailInput.style.borderColor = "#f87171";
+          emailInput.focus();
+        }
+        return false;
+      }
+      return true;
+    }
+
     function buildQuoteText() {
       const clientName = document.getElementById("clientName").value.trim() || "Propietario APEX 07";
+      const clientEmail = document.getElementById("clientEmail").value.trim() || "No indicado";
       const clientNotes = document.getElementById("clientNotes").value.trim() || "Sin notas adicionales";
       const coordArch = document.getElementById("coordArchCheck") && document.getElementById("coordArchCheck").checked
         ? "Sí (Coordinar revisión de planos en obra / visita a Showroom)"
@@ -4659,6 +4682,9 @@
 Soy *${clientName}*, propietario del *Apartamento ${APT.code}* en *APEX 07 (Valle Arriba)*.
 He revisado mi propuesta personalizada (${APT.proposalNum}) y deseo recibir el presupuesto formal:
 
+*📧 CORREO PARA ENVIAR COTIZACIÓN:*
+${clientEmail}
+
 *1. SONIDO RESIDENCIAL SONOS (Zonas Base):*
 ${zonesText}${extrasText ? `\n\n*EQUIPOS SONOS ADICIONALES SOLICITADOS:*\n${extrasText}` : ''}
 
@@ -4678,11 +4704,13 @@ Quedo atento para recibir la cotización y coordinar los siguientes pasos.`;
     }
 
     function sendWhatsAppQuote() {
+      if (!validateClientEmail()) return;
       const msg = encodeURIComponent(buildQuoteText());
       window.open(`https://wa.me/584122370080?text=${msg}`, "_blank");
     }
 
     function sendEmailQuote() {
+      if (!validateClientEmail()) return;
       const subject = encodeURIComponent(`Solicitud de Propuesta Personalizada - APEX 07 Apt ${APT.code} (${APT.proposalNum})`);
       const body = encodeURIComponent(buildQuoteText());
       window.location.href = `mailto:Willy@automatizaciongroup.com?subject=${subject}&body=${body}`;
